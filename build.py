@@ -2,6 +2,72 @@ import re,json,html,os,sys,shutil,datetime
 sys.path.insert(0,'/workspace/learn21'); import data as D
 from curriculum import C
 import skills as SK
+# ===== Days 1-2: the basics first; old Days 1-6 shift to 3-6 (2+3 and 5+6 merged); Day 7 onward unchanged =====
+import copy as _cp
+_O={n:_cp.deepcopy(D.DAYS[n-1]) for n in range(1,22)}; _OC={n:C[n] for n in range(1,22)}; _OE={n:D.EXTRA.get(n,{}) for n in range(1,22)}
+def _merge(a,b,title):
+    A,B=_O[a],_O[b]; ca,cb=_OC[a],_OC[b]
+    d=dict(B,title=title,goal=A['goal'][:-1]+', then '+B['goal'][0].lower()+B['goal'][1:],make=A['make']+' Plus: '+B['make'],
+      dad=A['dad']+' '+B['dad'],tools=list(dict.fromkeys(A['tools']+B['tools'])),
+      blocks=[A['blocks'][0],A['blocks'][1]+' Then: '+B['blocks'][1],A['blocks'][2]+' Then: '+B['blocks'][2],A['blocks'][3].rstrip('.')+', then '+B['blocks'][3][0].lower()+B['blocks'][3][1:]],
+      life=list(dict.fromkeys(A.get('life',[])+B.get('life',[]))))
+    c=(list(dict.fromkeys(ca[0]+cb[0])),ca[1][:2]+cb[1][:2],cb[2],ca[3][:2]+cb[3][:2],ca[4][:2]+cb[4][:2])
+    e={'life':d['life'],'journal':_OE[b].get('journal',_OE[a].get('journal'))}
+    return d,c,e
+L1=[1,2,3,4,5,6]; L2=[7,8,9,10,11]
+LT={1:"What code is",2:"How a website works",3:"Domains &amp; hosting",4:"Hosting options",5:"Change control",6:"Branches &amp; pull requests",7:"Deployment",8:"Old vs modern",9:"Your toolkit map",10:"The project roadmap",11:"Jargon buster"}
+def _ln(ls): return ', '.join(f'<a href="lesson-{i:02d}.html">Lesson {i}: {LT[i]}</a>' for i in ls)
+B1=dict(title="Learn the basics, part 1",basics=True,stages=["learn"],tools=["grok","gh"],
+ goal="Get comfortable with the big ideas behind every website, at your own pace.",
+ make="A head full of new ideas, and your own notes on Web Basics lessons 1–6.",
+ dad="Your teacher and helper today: works through the lessons with you, then sits down for a relaxed chat about what you've learned.",
+ proud="I understand how websites are built and where they live.",skill="Web basics",
+ word=["Code","instructions written in a language a computer understands. HTML, CSS and JavaScript are the three languages of the web."],
+ blocks=["Settle in with Dad, open your learning app and pop the tracker somewhere handy.","Web Basics lessons 1–6: what code is, how a website works, domains and hosting, hosting options, change control, and branches and pull requests.","",""],
+ life=["goals","reflect","team"],journal="What's one idea from today that clicked for me?",
+ tt=[("0:00–0:10","Check-in","Settle in with Dad and open your learning app. Today is all about understanding, so take your time."),
+     ("0:10–0:55","Lessons 1–3",_ln([1,2,3])+". Play with the diagrams and try each quick check."),
+     ("0:55–1:00","Break","5 minutes away from the screen."),
+     ("1:00–1:40","Lessons 4–6",_ln([4,5,6])+". It's fine to go at a comfortable pace."),
+     ("1:40–2:00","Talk it through with Dad","A relaxed sit-down chat about today's lessons, using the questions below. Then jot your journal line.")],
+ lessons=L1,
+ chat=["In your own words, what do HTML, CSS and JavaScript each do on a page?","When someone types a web address, what happens before the page appears?","What's the difference between a domain and hosting? How would you explain it to Nan and Pop?","Which hosting option would you pick for Tomas Web Studio, and why?","Why is change control (saving versions with Git) such a big deal when you work on a real client's site?","What's a branch and a pull request, and how could they keep a live site safe?"])
+B2=dict(title="Learn the basics, part 2",basics=True,stages=["learn"],tools=["grok","gh","netlify","canva","postiz"],
+ goal="Finish the basics: how sites go live, what makes a modern site, and the tools you'll use.",
+ make="Your own notes on Web Basics lessons 7–11, and the big picture of how your project will run.",
+ dad="Your teacher and helper today: works through the lessons with you, then chats through the big picture before the building starts.",
+ proud="I know how the whole project fits together, from idea to launch.",skill="Web basics",
+ word=["Deploy","to put the latest version of your site onto the internet so everyone can see it."],
+ blocks=["Settle in with Dad and look back at one idea from yesterday.","Web Basics lessons 7–11: deployment, old vs modern, your toolkit map, the project roadmap and the jargon buster.","",""],
+ life=["plan","reflect","team"],journal="What am I most looking forward to building?",
+ tt=[("0:00–0:10","Check-in","Settle in with Dad and share one idea from yesterday that stuck."),
+     ("0:10–0:55","Lessons 7–9",_ln([7,8,9])+"."),
+     ("0:55–1:00","Break","5 minutes away from the screen."),
+     ("1:00–1:40","Lessons 10–11",_ln([10,11])+". Keep the jargon buster handy for the weeks ahead."),
+     ("1:40–2:00","Talk it through with Dad","A relaxed sit-down chat about today's lessons, using the questions below. Then jot your journal line.")],
+ lessons=L2,
+ chat=["What does it mean to deploy a site, and how does it happen automatically with Netlify?","What makes a modern website better than an old one? Name three things.","Pick three tools from your toolkit map. What job does each one do?","Walk through the project roadmap: brief, design, build, test, deploy, hand-over. Which step are you most excited about?","How do coding, hosting, deployment and change control all fit together on your own site?","Which words from the jargon buster would you use to explain your business to a client?"])
+NEW={1:B1,2:B2,3:_O[1],5:_O[4],}
+_d4,_c4,_e4=_merge(2,3,"Research, site map &amp; wireframes"); _d6,_c6,_e6=_merge(5,6,"First code + homepage v1")
+NEW[4]=_d4; NEW[6]=_d6
+for n in range(7,22): NEW[n]=_O[n]
+NC={1:([],["Explain what HTML, CSS and JavaScript each do","Describe what happens when someone visits a website","Explain domains, hosting and the main hosting options","Explain change control, branches and pull requests"],
+  "Explain one idea from today to Mum or Nan and Pop in under a minute, no jargon allowed!",
+  [("What are the 3 languages of the web?","HTML for structure, CSS for style, JavaScript for behaviour."),("What's the difference between a domain and hosting?","The domain is the address; hosting is the computer where the site's files live."),("What is a commit?","A saved snapshot of your project with a short message saying what changed.")],
+  ["Lessons 1–6 explored","Talk it through with Dad done","Journal line written"]),
+ 2:([],["Explain how a site gets deployed","Name what makes a modern website great","Match the main tools to their jobs","Walk through the project roadmap from brief to hand-over"],
+  "Draw the project roadmap from memory and add one tool you'll use at each step.",
+  [("What does deploy mean?","Putting the latest version of your site on the internet."),("Name one thing that makes a modern site better than an old one.","For example: works on phones, loads fast, clear call to action, easy to update."),("What is a brief?","A short written plan of what a site must do, for whom, by when and for how much.")],
+  ["Lessons 7–11 explored","Talk it through with Dad done","Journal line written"]),
+ 3:_OC[1],4:_c4,5:_OC[4],6:_c6}
+for n in range(7,22): NC[n]=_OC[n]
+NE={1:{'life':B1['life'],'journal':B1['journal']},2:{'life':B2['life'],'journal':B2['journal']},3:_OE[1],4:_e4,5:_OE[4],6:_e6}
+for n in range(7,22): NE[n]=_OE[n]
+NEW[3]=dict(NEW[3],blocks=[NEW[3]['blocks'][0].replace(' Put the tracker somewhere you&rsquo;ll see it.',''),*NEW[3]['blocks'][1:3],NEW[3]['blocks'][3].replace(' Tick Day 1!',' Nice work!')])
+D.DAYS[:]=[NEW[n] for n in range(1,22)]; C.clear(); C.update(NC); D.EXTRA.clear(); D.EXTRA.update(NE)
+D.WEEKS[0]=dict(D.WEEKS[0],milestone='The basics, then a brief, research, wireframes, brand kit and a homepage online at a Netlify test address.',intro='This week starts with the basics: two days of Web Basics lessons, each ending with a chat with Dad. Then you think like a designer: write your brief, collect ideas, design your brand, write your first code with Grok Bot and put it on the internet.')
+_ODS=None
+
 os.makedirs('learn/raw',exist_ok=True)
 BIZ="https://finlaysonnick74-source.github.io/tomas-web-studio/"
 css=open('/workspace/tomas-site-v-rich-backup/style.css').read()+"""
@@ -74,6 +140,7 @@ for i,s in enumerate(L21S):
     for w in (1,2,3):
         if t.startswith(f'Week {w} of 3'): weekintro[w]=i
         if t.startswith(f'Week {w} · Look back'): review[w]=i
+_dsec=dict(daysec); daysec={3:_dsec.get(1),4:_dsec.get(2),5:_dsec.get(4),6:_dsec.get(5)}; daysec.update({k:v for k,v in _dsec.items() if k>=7}); daysec={k:v for k,v in daysec.items() if v is not None}
 toolsec=[i for i,s in enumerate(L21S) if 'Tools you' in strip(s)[:200]][0]
 # ---------- day pages ----------
 TB=["0:00–0:10","0:10–0:40","0:40–1:25","1:25–1:30","1:30–1:50","1:50–2:00"]
@@ -86,28 +153,31 @@ for n,d in enumerate(D.DAYS,1):
          "Book your first 3 free website checks with local businesses (with Dad) and put the dates in your calendar.",C[21][3],
          ["Business site live to the public on your own domain","Launch post out on Instagram","First pitches booked (dates set)","Retro written + next-21-days plan","Target set: first paying client in the following weeks","Show-and-tell #3: launch night!"])
     wbs,obj,chal,quiz,done=C[n]; b=d['blocks']
-    if n in daysec: pass
-    else: daysec[n]=daysec.get(n-1)
+    if n not in daysec and n>2 and daysec.get(n-1) is not None: daysec[n]=daysec[n-1]
     school=date.weekday()<5
     when="Weekdays: session 4:30–6:30pm at Dad's, straight after school." if school else "Weekend: same 2 hours, Tomas picks the time (e.g. 10am–12pm)."
     tt=[("Check-in + goal",b[0]+" Set today's goal: "+d['goal']),("Learn",b[1]+" Read the lesson below together."),("Build on the business site",b[2]),("Break","5 minutes away from the screen."),("Practise / challenge",chal),("Reflect, commit + log",b[3]+" Write your journal line and update progress.json.")]
+    TT=TB
+    if d.get('basics'): TT=[x[0] for x in d['tt']]; tt=[(x[1],x[2]) for x in d['tt']]
     steps=[x.strip() for x in re.split(r'(?<=[.!])\s+',strip(b[2])) if x.strip()]
     tools=''.join(f'<span class="chip">{D.TOOLS[t]["name"]}</span>' for t in d['tools'])
     life=''.join(f'<span class="chip">{D.LIFE[l][0]}</span>' for l in ex.get('life',[]))
     tooldesc=''.join(f'<li><b>{D.TOOLS[t]["name"]}:</b> {D.TOOLS[t]["what"]}</li>' for t in d['tools'])
     WB2L={2:1,3:2,4:3,5:4,6:5,7:6,8:7,9:8,10:9,11:10,13:11}
     wbl=''.join((f'<a class="card" style="display:block;margin-top:16px;text-decoration:none;border-color:#5ee7c955" href="lesson-{WB2L[i]:02d}.html"><div class="label">Web Basics · Lesson {WB2L[i]} of 11</div><h3>📘 {WBT[i]} →</h3><p class="note" style="margin:0">Interactive lesson with diagrams, a quick check and a quiz.</p></a>' if i in WB2L else f'<h3 style="margin-top:18px">Web Basics: {WBT[i]}</h3>'+IFR.format(f'raw/wb-{i:02d}.html')) for i in wbs)
+    if d.get('basics'): wbl=''.join(f'<a class="card" style="display:block;margin-top:16px;text-decoration:none;border-color:#5ee7c955" href="lesson-{L:02d}.html"><div class="label">Web Basics · Lesson {L} of 11</div><h3>📘 {LT[L]} →</h3><p class="note" style="margin:0">Interactive lesson with diagrams, a quick check and a quiz.</p></a>' for L in d['lessons'])
     plan21=f'<details class="quiz" style="margin-top:14px"><summary>Open this day\'s page from the 21-day plan</summary>{IFR.format("raw/l21-%02d.html"%daysec[n])}</details>' if n in daysec else ''
     show=f'<div class="card" style="border-color:var(--b)"><h3>🎤 Show-and-tell #{d["show"]} tonight</h3><ul class="l">'+''.join(f'<li>{x}</li>' for x in W['show_items'])+'</ul><p class="note">Family questions: '+' · '.join(W['ask'])+'</p></div>' if d.get('show') else ''
     pv=f'<a class="btn o" href="day-{n-1:02d}.html">← Day {n-1}</a>' if n>1 else '<a class="btn o" href="index.html">← Learn</a>'
     nx=f'<a class="btn o" href="day-{n+1:02d}.html">Day {n+1} →</a>' if n<21 else '<a class="btn o" href="../tracker.html">Tracker →</a>'
+    BUILDCARD=(f'<div class="card feat"><h3>💬 Talk it through with Dad</h3><p>To finish the session, sit down together for a relaxed chat about today&rsquo;s lessons. There are no wrong answers, it&rsquo;s just a chance to put the ideas into your own words.</p><ol class="l" style="margin-top:10px">'+''.join(f"<li>{q}</li>" for q in d['chat'])+'</ol></div><div class="card" style="border-style:dashed"><h3>🛠️ Dive in (optional)</h3><p>Keen to get your hands dirty? Whenever you feel like it, open your <a href="'+BIZ+'">business site</a> and start tinkering: change a heading, try a colour, ask Grok Bot to add a section. Totally optional, and the brief and real building start on Day 3.</p></div>') if d.get('basics') else f'<div class="card"><h3>🔨 Build tasks on the business site</h3><ol class="l">{''.join(f"<li>{s}</li>" for s in steps)}<li>Commit and push, then check the live site: <a href="{BIZ}">business site</a>.</li></ol></div>'
     body=f'''<header style="padding:60px 0 20px"><div class="w"><div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Program</a> › Week {wk} › Day {n}</div><div class="tag">Week {wk} · {W["theme"]} · Day {n} of 21</div><div class="pn" style="margin:0 0 14px">{pv}{nx}</div><h1 style="font-size:clamp(2rem,5vw,3.6rem)">{d["title"]}</h1>
 <p class="lead">{ds} · {when}</p>{'<p><a class="btn" href="../outcomes.html">🚀 Launch countdown: '+str(21-n)+' days to Launch Day</a></p>' if n>=15 and n<21 else ('<p><a class="btn" href="../outcomes.html">🚀 Launch Day! See what I can do now</a></p>' if n==21 else '')}<div class="bar2"><i style="width:{n/21*100:.0f}%"></i></div></div></header>
 <section style="padding:10px 0 40px"><div class="w stack">{show}
 <div class="card"><h3>🎯 By the end you can…</h3><ul class="l">{''.join(f"<li>{o}</li>" for o in obj)}</ul><p class="note"><b>Today you make:</b> {d["make"]}</p></div>
-{SK.today(n)}<div class="card"><h3>⏱ Your 2 hours</h3><table class="tt">{''.join(f"<tr><td>{TB[i]}</td><td><b>{a}</b><br>{x}</td></tr>" for i,(a,x) in enumerate(tt))}</table></div>
+{SK.today(n)}<div class="card"><h3>⏱ Your 2 hours</h3><table class="tt">{''.join(f"<tr><td>{TT[i]}</td><td><b>{a}</b><br>{x}</td></tr>" for i,(a,x) in enumerate(tt))}</table></div>
 <div class="card"><h3>📚 The lesson</h3><p><b>Word of the day: {d["word"][0]}</b>: {d["word"][1]}</p><p style="margin-top:10px">{b[1]}</p><ul class="l" style="margin-top:10px">{tooldesc}</ul>{wbl}{plan21}</div>
-<div class="card"><h3>🔨 Build tasks on the business site</h3><ol class="l">{''.join(f"<li>{s}</li>" for s in steps)}<li>Commit and push, then check the live site: <a href="{BIZ}">business site</a>.</li></ol></div>
+{BUILDCARD}
 <div class="card"><h3>🚀 Challenge</h3><p>{chal}</p></div>
 <div class="card quiz"><h3>❓ Quick quiz</h3>{''.join(f"<details><summary>{i+1}. {q}</summary><p>{a}</p></details>" for i,(q,a) in enumerate(quiz))}</div>
 <div class="grid"><div class="card"><h3>🧰 Tools</h3><div class="chips">{tools}</div></div><div class="card"><h3>🌱 Life skills</h3><div class="chips">{life}</div></div>
@@ -122,7 +192,7 @@ json.dump({"start":"2026-10-17","days":days},open('progress.json','w'),indent=2,
 for w in (1,2,3):
     for kind,idx in (("week",weekintro[w]),("review",review.get(w))):
         if idx is None: continue
-        page(f'learn/{kind}-{w}.html',f'Week {w} {kind}',f'<section style="padding:40px 0"><div class="w"><div class="label">Week {w} · {"Overview" if kind=="week" else "Self-review"}</div><h2>{D.WEEKS[w-1]["theme"]}</h2>{IFR.format("raw/l21-%02d.html"%idx)}</div></section>')
+        page(f'learn/{kind}-{w}.html',f'Week {w} {kind}',f'<section style="padding:40px 0"><div class="w"><div class="label">Week {w} · {"Overview" if kind=="week" else "Self-review"}</div><h2>{D.WEEKS[w-1]["theme"]}</h2>{'<p class="note" style="margin:10px 0">Plan update: Days 1 and 2 are now the Web Basics lessons, each finishing with a chat with Dad. The brief starts on Day 3, and the show-and-tells and Launch Day stay put. The <a href="index.html">day pages</a> have the latest plan; the guide below is the original version.</p>' if w==1 else ''}{IFR.format("raw/l21-%02d.html"%idx)}</div></section>')
 # tools page
 tc=''.join(f'<div class="card"><h3>{t["name"]} <span class="st upcoming">{t["tag"]}</span></h3><p>{t["what"]}</p><p class="note"><b>You\'ll use it for:</b> {t["use"]}</p><p class="note">Learned on: '+', '.join(f'<a href="day-{n:02d}.html">Day {n}</a>' for n,d in enumerate(D.DAYS,1) if k in d['tools'])+'</p></div>' for k,t in D.TOOLS.items())
 page('learn/tools.html',"Tools I'll master",hero("Tools I'll master","Fourteen <span class='g'>real tools</span>.","The same tools professionals use, each learned on the day I need it.")+f'<section style="padding-top:0"><div class="w"><div class="grid">{tc}</div><details class="quiz" style="margin-top:20px"><summary>The toolkit page from the 21-day plan</summary>{IFR.format("raw/l21-%02d.html"%toolsec)}</details></div></section>')
