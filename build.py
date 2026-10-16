@@ -264,3 +264,30 @@ s=s.replace('</header>','</header>'+dash,1)
 s=s.replace('<a class="btn" href="outcomes.html">By Day 21, I can…</a>','<a class="btn" href="today.html">See today\'s lesson</a><a class="btn o" href="outcomes.html">By Day 21, I can…</a>',1)
 s=s.replace('<a class="btn o" href="{BIZ}">','<a class="btn o" href="ambition.html">My ambition</a><a class="btn o" href="plan.html">The business plan</a><a class="btn o" href="'+BIZ+'">')
 open('index.html','w').write(s)
+# ===== transformation story + school page =====
+story='''<section style="padding:0 0 40px" aria-label="My transformation story"><div class="w r"><div class="label">My transformation story</div><h2>A story in the making</h2><div class="grid" style="margin-top:16px">
+<div class="card"><div class="label">Chapter 1</div><h3>Where I'm starting</h3><p>I haven't had much structure so far, and I'm ready to change that. I've got ideas, I'm good with tech, and I've chosen to put in the work.</p></div>
+<div class="card" id="ch2"><div class="label">Chapter 2</div><h3>The 21 days</h3><p id="ch2t">Starting Sat 17 Oct: 2 hours a day with Dad, building my business and my routine.</p><div class="bar2"><i id="ch2b" style="width:0%"></i></div></div>
+<div class="card" id="ch3"><div class="label">Chapter 3</div><h3>Launch and beyond</h3><p id="ch3t">Coming on Fri 6 Nov: Launch Day. My site goes public, my first pitches are booked, and my first paying client is the next goal.</p></div>
+</div></div></section>
+<script>fetch("progress.json?"+Date.now()).then(r=>r.json()).then(function(d){var D=d.days,done=D.filter(x=>x.status=="done");
+if(done.length){var last=done[done.length-1];document.getElementById("ch2t").innerHTML="<b>"+done.length+" of 21 days done.</b> Latest: Day "+last.day+", "+(last.built||last.plan)+(last.proud?". Proud of: "+last.proud:"")+".";}
+document.getElementById("ch2b").style.width=(done.length/21*100)+"%";
+var l=D[20];if(l.status=="done"){document.getElementById("ch3t").innerHTML="<b>Launched! 🚀</b> "+(l.built||"Tomas Web Studio is live.")+(l.proud?" "+l.proud:"")}
+else if(done.length>=14){document.getElementById("ch3t").innerHTML="<b>Launch countdown: "+(21-done.length)+" days to go.</b> Site going public, first pitches being booked."}});</script>'''
+s=open('index.html').read()
+s=s.replace('<section style="padding:0 0 40px"><div class="w r"><div class="card" style="background:linear-gradient(135deg,#ff6b4a1f','STORYMARK<section style="padding:0 0 40px"><div class="w r"><div class="card" style="background:linear-gradient(135deg,#ff6b4a1f',1).replace('STORYMARK',story,1)
+s=s.replace('<a class="btn o" href="careers.html">Where this can take me</a>','<a class="btn o" href="careers.html">Where this can take me</a><a class="btn o" href="school.html">Why school is part of my plan</a>',1)
+open('index.html','w').write(s)
+J="https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles/occupations/"
+page('school.html','Why staying in school is part of my plan',hero("In my words","Why staying in school is <span class='g'>part of my plan</span>.","I want to build a real business and a great career. Finishing school while I do this program is how I open the most doors.")+f'''<section style="padding-top:0"><div class="w stack">
+<div class="card"><h3>Every path deserves respect</h3><p>Trades, apprenticeships, starting work, uni: people I respect have taken all of them, and they're all great paths. I'm choosing this one because it fits what I love: tech, building things and running my own business.</p></div>
+<div class="card"><h3>📘 School subjects that fit my plan</h3><p>The NSW HSC now has two courses made for what I'm doing: <b>Software Engineering</b> (programming, web, secure software, automation) and <b>Enterprise Computing</b> (UX, networking, cybersecurity, data). They started in 2024. (<a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/tas/leading-tas-7-12/software-engineering-11-12-syllabus-information">NSW Education</a>)</p></div>
+<div class="card"><h3>🎓 TAFE and uni pathways</h3><p>Finishing school keeps every option open: TAFE NSW courses in IT and digital, uni degrees in software, cyber or data, and programs like the APS Data and Digital Cadet Program and the ASD Cadetship, which are for uni students. (<a href="https://content.apsjobs.gov.au/career-pathways/data-and-digital-cadet-program">APSJobs</a>, <a href="https://www.asd.gov.au/careers/im-starting-my-career">ASD</a>)</p></div>
+<div class="card"><h3>🏅 Certifications alongside school</h3><p>I can add things like AWS Certified Cloud Practitioner and Google Career Certificates while I study.</p></div>
+<div class="card"><h3>💼 Where it leads</h3><p>IT careers pay well. Jobs and Skills Australia reports median full-time weekly earnings of <b>A$2,537</b> for software and applications programmers and <b>A$2,476</b> for web developers and multimedia specialists, compared with <b>A$1,852</b> across all occupations (ABS, May 2025). <a href="careers.html">See all the careers →</a></p><p class="note">Sources: <a href="{J}2613-software-and-applications-programmers">JSA 2613</a>, <a href="{J}2612-multimedia-specialists-and-web-developers">JSA 2612</a>, viewed Oct 2026.</p></div>
+<div class="card feat"><h3>Why this one is mine</h3><p>School gives me the qualifications. This program gives me real skills, a real business and the routine to keep going. Together they open the most doors, and I want all of them open.</p></div>
+</div></section>''')
+for fn,anchor in [('careers.html','<a class="btn" href="outcomes.html">Start with: By Day 21, I can…</a>'),('support.html','<div class="card"><h3>Mum, Nan and Pop, Dad</h3>')]:
+    s=open(fn).read(); s=s.replace(anchor,('<a class="btn o" href="school.html">Why school is part of my plan</a> ' if fn=='careers.html' else '<div class="card"><h3>📘 School is part of my plan</h3><p>I&rsquo;m staying in school too. <a href="school.html">Here&rsquo;s why →</a></p></div>')+anchor,1); open(fn,'w').write(s)
+import subprocess;subprocess.run(['python3','postfix.py'])
