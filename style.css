@@ -219,3 +219,4 @@ nav ul.sub li.more ul a:hover{background:#ffffff14}
 .dw input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:#5ee7c9}.dw li.on label{border-color:#5ee7c9;background:#5ee7c91a}
 .ck-sec{margin-top:18px}
 @media(max-width:700px){.ht-steps li{padding-left:48px}.ex-t{font-size:.84rem}}
+.tm-ba>*{min-width:0}.tm-ba img{width:100%}@media(max-width:600px){.tm-ba{grid-template-columns:1fr}.tm-log img{max-width:100%}}
