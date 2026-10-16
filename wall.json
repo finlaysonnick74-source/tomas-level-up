@@ -1,4 +1,29 @@
 {
- "_how": "Pinned messages for the Wall of support. New posts from wall.html are stored live and show automatically.",
- "items": []
+ "_how": "Pinned messages for the Wall of support (the first four posts, kept here permanently). New posts from wall.html are stored live and show automatically.",
+ "items": [
+  {
+   "type": "message",
+   "from": "Riz",
+   "text": "Wow Tomas, this is such an amazing thing to do with your time and energy! I truly wish I had the same tools (including your dad’s brains) when I was your age. Good luck and I will be cheering you on from the sidelines. Virtual pom-poms up in the air! 🎉",
+   "date": "2026-10-16"
+  },
+  {
+   "type": "message",
+   "from": "Demian",
+   "text": "Great job Tom. Looks amazing.\nKeep up the good work buddy!",
+   "date": "2026-10-16"
+  },
+  {
+   "type": "message",
+   "from": "The Wests",
+   "text": "Good on you mate. Show your Dad how it is done!!!",
+   "date": "2026-10-16"
+  },
+  {
+   "type": "message",
+   "from": "Uncle Jason",
+   "text": "Well done buddy, it will be awesome to see what you can create",
+   "date": "2026-10-16"
+  }
+ ]
 }
