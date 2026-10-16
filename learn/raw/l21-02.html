@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">For Mum and the school counsellor</div><h1>A structured turnaround,<br>built on real work.</h1>
+<p class="lead" style="max-width:none">This page is for Mum and for Tomas&rsquo;s school counsellor. It explains what the next 21 days are, how they&rsquo;re structured, and how everyone can see that Tomas is sticking with it.</p>
+<div class="grid2" style="gap:16px">
+<div>
+<h2 style="margin-top:0">What this is</h2>
+<p style="font-size:12px">A 21-day program, Sat 17 Oct to Fri 6 Nov 2026, while Tomas lives with Dad. It&rsquo;s the &ldquo;Build&rdquo; part of the first phase (Reset) of his <b>Level up</b> 12-month game plan. The business website is the <i>vehicle</i>. The <i>destination</i> is character and life skills: routine, responsibility, resilience, communication and pride in his work (page 4).</p>
+<h2>How it&rsquo;s structured</h2>
+<ul class="clean" style="font-size:12px">
+<li><b>Same time, every day.</b> Weekdays 5:30&ndash;7:30pm, after he&rsquo;s home by 4:30pm and homework is done. Weekends: 2 hours, flexible.</li>
+<li><b>Same routine.</b> Check-in, learn and build, short break, build, then reflect, save (commit) and a journal line.</li>
+<li><b>One clear output every day</b>, and a milestone at the end of every week.</li>
+<li><b>Weekly show-and-tell</b> for Mum and the family, then a self-review at the Sunday check-in.</li>
+</ul>
+</div>
+<div>
+<h2 style="margin-top:0">Why real work</h2>
+<p style="font-size:12px">Teenagers build self-respect by making something real that other people can see and use. Every day ends with a finished piece of work, so progress is visible, not promised. The skills carry straight back into school: planning, deadlines, explaining his thinking, and sticking at hard problems.</p>
+<div class="box accent" style="margin-top:8px"><h3>School comes first</h3><p style="font-size:12px;margin:3px 0 0">Sessions sit after school and after homework. Being at school on time and doing homework first are ticked every day in his log, alongside the build. If school needs more time, school wins.</p></div>
+<div class="box" style="margin-top:8px"><h3>Nothing to sign</h3><p style="font-size:12px;margin:3px 0 0">There are no signatures or sign-offs here. This rests on trust and on Tomas choosing it. The evidence (page 29) speaks for itself.</p></div>
+</div></div>
+<h2>Who does what</h2>
+<div class="grid3">
+<div class="box" style="margin:0"><h3>Tomas</h3><p style="font-size:11.5px;margin:3px 0 0">Shows up on time, does the work, keeps his own log and trackers, writes his journal line, and presents his week at show-and-tell.</p></div>
+<div class="box" style="margin:0"><h3>Dad (Nick)</h3><p style="font-size:11.5px;margin:3px 0 0">Works side by side every session, keeps him on track, reviews his work, and looks after money, contracts and adult-only accounts.</p></div>
+<div class="box accent" style="margin:0"><h3>Mum</h3><p style="font-size:11.5px;margin:3px 0 0">Comes to the Friday show-and-tells (in person or video), gets Tomas&rsquo;s weekly update, joins the Sunday check-in, and encourages school attendance.</p></div>
+</div>
+<div class="box dark" style="margin-top:10px"><h3>The three show-and-tells</h3><p style="margin:4px 0 0;font-size:12px"><b>Fri 23 Oct</b> &middot; homepage online &nbsp;&nbsp; <b>Fri 30 Oct</b> &middot; full site working &nbsp;&nbsp; <b>Fri 6 Nov</b> &middot; launch night, live on his own domain</p></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">03</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
