@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="wb.css"><style> body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page">
+  <div class="kicker">03 &middot; Domains &amp; hosting</div>
+  <h1>The address and<br>the house.</h1>
+  <p class="lead">Every website needs two things: a <b>name</b> people can type, and a <b>place</b> where its files live. They're often bought from different companies and then connected together.</p>
+  <svg viewBox="0 0 680 330">
+    <defs><marker id="ar5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#FF5A36"/></marker></defs>
+    <rect x="0" y="250" width="680" height="12" rx="6" fill="#E3E1DC"/>
+    <!-- address plate -->
+    <g transform="translate(10,90)">
+      <rect width="190" height="110" rx="16" fill="#14161A"/>
+      <text x="95" y="40" text-anchor="middle" font-size="12" font-weight="800" fill="#FF5A36" letter-spacing="2">DOMAIN</text>
+      <rect x="16" y="54" width="158" height="28" rx="14" fill="#fff"/>
+      <text x="95" y="73" text-anchor="middle" font-size="11.5" font-family="Fira Code" font-weight="600" fill="#14161A">yourname.com.au</text>
+      <text x="95" y="100" text-anchor="middle" font-size="10.5" fill="#C9CCD1">the street address</text>
+      <rect x="85" y="110" width="20" height="50" fill="#14161A"/>
+    </g>
+    <!-- signpost -->
+    <g transform="translate(250,40)">
+      <rect x="82" y="40" width="14" height="170" fill="#9A9EA5"/>
+      <path d="M10 40 H160 L185 70 L160 100 H10 Z" fill="#FF5A36"/>
+      <text x="90" y="66" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" letter-spacing="2">DNS</text>
+      <text x="90" y="86" text-anchor="middle" font-size="10.5" fill="#fff">“that name lives over here”</text>
+      <text x="90" y="128" text-anchor="middle" font-size="10.5" fill="#5B6068" style="paint-order:stroke" stroke="#fff" stroke-width="6">the signpost</text>
+    </g>
+    <!-- house -->
+    <g transform="translate(480,40)">
+      <path d="M0 90 L95 10 L190 90 Z" fill="#14161A"/>
+      <rect x="15" y="88" width="160" height="122" fill="#fff" stroke="#14161A" stroke-width="3"/>
+      <text x="95" y="114" text-anchor="middle" font-size="12" font-weight="800" fill="#FF5A36" letter-spacing="2">HOSTING</text>
+      <g font-family="Fira Code" font-size="9.5" fill="#14161A">
+        <rect x="30" y="126" width="60" height="22" rx="4" fill="#FFE7E0"/><text x="60" y="141" text-anchor="middle">.html</text>
+        <rect x="100" y="126" width="60" height="22" rx="4" fill="#FFE7E0"/><text x="130" y="141" text-anchor="middle">.css</text>
+        <rect x="30" y="154" width="60" height="22" rx="4" fill="#FFE7E0"/><text x="60" y="169" text-anchor="middle">.js</text>
+        <rect x="100" y="154" width="60" height="22" rx="4" fill="#FFE7E0"/><text x="130" y="169" text-anchor="middle">.jpg</text>
+      </g>
+      <text x="95" y="198" text-anchor="middle" font-size="10.5" fill="#5B6068">the house (your files live here)</text>
+      <!-- padlock -->
+      <g transform="translate(160,0)"><rect x="0" y="22" width="28" height="22" rx="4" fill="#FF5A36"/><path d="M6 22 v-6 a8 8 0 0 1 16 0 v6" fill="none" stroke="#FF5A36" stroke-width="3.5"/></g>
+    </g>
+    <path d="M205 150 C 225 150, 240 128, 256 116" fill="none" stroke="#FF5A36" stroke-width="3" marker-end="url(#ar5)"/>
+    <path d="M440 110 C 455 110, 470 125, 488 140" fill="none" stroke="#FF5A36" stroke-width="3" marker-end="url(#ar5)"/>
+    <text x="105" y="290" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14161A">Rented yearly from a registrar</text>
+    <text x="340" y="290" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14161A">Set in DNS settings</text>
+    <text x="575" y="290" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14161A">Provided by a host, e.g. Netlify</text>
+    <text x="575" y="308" text-anchor="middle" font-size="10.5" fill="#5B6068">padlock = HTTPS (secure)</text>
+  </svg>
+  <div class="grid2" style="margin-top:6px;gap:18px">
+    <div>
+      <h2 style="margin-top:0">Domains</h2>
+      <p>You don't buy a domain forever &mdash; you <b>rent</b> it, usually one or more years at a time, from a <b class="t">registrar</b> (a company allowed to sell domain names). Australian registrars include VentraIP and Crazy Domains; there are many others.</p>
+      <p>A <code>.com.au</code> name needs an Australian business connection, such as an <b class="t">ABN</b> (Australian Business Number &mdash; the ID number for a business). Dad can help you sort that out.</p>
+      <p>Forget to renew, and someone else can grab the name. Always turn on auto-renew.</p>
+    </div>
+    <div>
+      <h2 style="margin-top:0">Hosting</h2>
+      <p>Most small business websites are <b class="t">static sites</b>: the same files are sent to every visitor. These are fast, cheap (often free) and very hard to hack. Netlify is great at these.</p>
+      <p>Good hosts give you <b class="t">HTTPS</b> for free &mdash; the padlock in the address bar, meaning the connection is private and secure. Every site you make should have it.</p>
+      <div class="box accent" style="margin-top:6px">
+        <h3>Pro tip for client work</h3>
+        <p style="margin:0">Set up each client's domain in <b>their</b> name and account, with you helping. It's their business &mdash; and it makes hand-over clean and trustworthy.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Web Basics for Tomas</span><span class="n">05</span></div>
+</section>
+
+<!-- PAGE 6 HOSTING OPTIONS -->
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
