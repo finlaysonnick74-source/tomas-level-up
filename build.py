@@ -512,6 +512,7 @@ nav ul.sub li.more{position:relative}
 nav ul.sub li.more ul{position:absolute;right:0;top:calc(100% + 4px);z-index:60;list-style:none;margin:0;padding:6px;min-width:200px;background:#151a30;border:1px solid #ffffff2a;border-radius:14px;box-shadow:0 18px 40px -10px #000c}
 nav ul.sub li.more ul a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#eef0ff;text-decoration:none}
 nav ul.sub li.more ul a:hover{background:#ffffff14}
+.logo{display:inline-flex;align-items:center;min-height:44px}
 .vsw .vs{min-height:44px;display:inline-flex;align-items:center}
 .btn{min-height:44px;display:inline-flex;align-items:center}
 @media(max-width:700px){nav ul.sub{gap:0;justify-content:space-between}nav ul.sub>li>a,nav ul.sub summary{padding:0 8px;font-size:.88rem}.vsw .vs{padding:0 8px;font-size:.78rem}}
@@ -533,5 +534,6 @@ for _d,_,_fs in _o.walk('.'):
         if not _f.endswith('.html') or '/raw' in _d: continue
         _p=_o.path.join(_d,_f);_s=open(_p).read()
         if 'classList.add("io")' in _s: continue
+        _s=re.sub(r'href="((?:\.\./)*)style\.css"',r'href="\1style.css?v=3"',_s)
         _s=_s.replace('</head>',IOHEAD+'</head>',1).replace('</body>',IOBODY+'</body>',1)
         open(_p,'w').write(_s)
