@@ -1,12 +1,12 @@
 
-@font-face{font-family:Poppins;src:url(/usr/share/fonts/truetype/sand-box/google/Poppins/Poppins-Bold.ttf);font-weight:700}
-@font-face{font-family:Poppins;src:url(/usr/share/fonts/truetype/sand-box/google/Poppins/Poppins-SemiBold.ttf);font-weight:600}
-@font-face{font-family:Inter;src:url("/usr/share/fonts/truetype/sand-box/google/Inter/Inter-VariableFont_opsz,wght.ttf")}
+
+
+
 @page{size:A4;margin:16mm 16mm 16mm 16mm;
  @bottom-left{content:"Tomas's streetwear business plan · Oct 2026";font:8pt Inter;color:#9aa5ad}
  @bottom-right{content:counter(page);font:8pt Inter;color:#9aa5ad}}
 @page:first{@bottom-left{content:none}@bottom-right{content:none}}
-:root{--navy:#12324a;--coral:#5FA8D3;--sand:#f7f1e8;--teal:#1f8a7a;--grey:#5b6770}
+:root{--navy:#12324a;--coral:#ff6b4a;--sand:#f7f1e8;--teal:#1f8a7a;--grey:#5b6770}
 body{font-family:Inter;font-size:10.2pt;line-height:1.45;color:#1d2a33;margin:0}
 h1{font-family:Poppins;font-weight:700;font-size:30pt;line-height:1.1;color:var(--navy);margin:0 0 4mm}
 h2{font-family:Poppins;font-weight:700;font-size:21pt;color:var(--navy);margin:0 0 1mm;line-height:1.15}
