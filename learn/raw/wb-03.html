@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="wb.css"><style> body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page">
+  <div class="kicker">02 &middot; How a website works</div>
+  <h1>What happens when<br>you type a web address?</h1>
+  <p class="lead">It feels instant, but there's a quick five-step conversation going on behind the scenes &mdash; usually in less than a second.</p>
+  <svg viewBox="0 0 680 470">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#14161A"/></marker>
+      <marker id="arA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#FF5A36"/></marker>
+    </defs>
+    <!-- DNS -->
+    <rect x="240" y="0" width="200" height="110" rx="16" fill="#F4F3F0"/>
+    <circle cx="268" cy="28" r="16" fill="#14161A"/><text x="268" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">2</text>
+    <text x="292" y="34" font-size="16" font-weight="800" fill="#14161A">DNS</text>
+    <text x="256" y="60" font-size="11.5" fill="#5B6068">The internet's phone book.</text>
+    <text x="256" y="76" font-size="11.5" fill="#5B6068">Turns a name into a number:</text>
+    <rect x="256" y="84" width="168" height="18" rx="9" fill="#fff"/>
+    <text x="340" y="97" text-anchor="middle" font-size="10" font-family="Fira Code" fill="#14161A">name → 75.2.60.5</text>
+    <!-- Browser -->
+    <rect x="0" y="150" width="210" height="160" rx="16" fill="#fff" stroke="#14161A" stroke-width="3"/>
+    <rect x="12" y="186" width="186" height="22" rx="11" fill="#F4F3F0"/>
+    <text x="24" y="201" font-size="10" font-family="Fira Code" fill="#14161A">tomasbuilds.com.au</text>
+    <circle cx="28" cy="168" r="14" fill="#14161A"/><text x="28" y="173" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">1</text>
+    <text x="50" y="173" font-size="15" font-weight="800" fill="#14161A">Your browser</text>
+    <text x="14" y="232" font-size="11.5" fill="#5B6068">You type a domain name</text>
+    <text x="14" y="248" font-size="11.5" fill="#5B6068">and press Enter.</text>
+    <rect x="14" y="262" width="80" height="34" rx="6" fill="#FFE7E0"/><rect x="102" y="262" width="96" height="34" rx="6" fill="#F4F3F0"/>
+    <text x="54" y="283" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FF5A36">5 · page built!</text>
+    <!-- Server -->
+    <rect x="470" y="150" width="210" height="160" rx="16" fill="#14161A"/>
+    <circle cx="498" cy="168" r="14" fill="#FF5A36"/><text x="498" y="173" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">3</text>
+    <text x="520" y="173" font-size="15" font-weight="800" fill="#fff">Server (host)</text>
+    <g fill="#2A2D33"><rect x="488" y="190" width="174" height="22" rx="5"/><rect x="488" y="218" width="174" height="22" rx="5"/><rect x="488" y="246" width="174" height="22" rx="5"/></g>
+    <g fill="#FF5A36"><circle cx="500" cy="201" r="3.5"/><circle cx="500" cy="229" r="3.5"/><circle cx="500" cy="257" r="3.5"/></g>
+    <text x="512" y="205" font-size="10" fill="#C9CCD1">always on, always online</text>
+    <text x="512" y="233" font-size="10" fill="#C9CCD1">stores your site's files</text>
+    <text x="512" y="261" font-size="10" fill="#C9CCD1">at address 75.2.60.5</text>
+    <text x="488" y="292" font-size="10.5" fill="#9A9EA5">e.g. Netlify's computers</text>
+    <!-- arrows -->
+    <path d="M110 148 C 110 80, 170 60, 236 56" fill="none" stroke="#14161A" stroke-width="2.5" marker-end="url(#ar)"/>
+    <text x="0" y="42" font-size="11" font-weight="700" fill="#14161A">“Where is</text>
+    <text x="0" y="57" font-size="11" font-weight="700" fill="#14161A">tomasbuilds.com.au?”</text>
+    <path d="M444 56 C 520 60, 575 80, 575 146" fill="none" stroke="#9A9EA5" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <path d="M300 112 C 280 140, 240 160, 214 175" fill="none" stroke="#14161A" stroke-width="2.5" marker-end="url(#ar)"/>
+    <text x="300" y="142" font-size="11" font-weight="700" fill="#14161A">“It lives at 75.2.60.5”</text>
+    <text x="590" y="96" font-size="10" fill="#9A9EA5">DNS knows</text>
+    <text x="590" y="109" font-size="10" fill="#9A9EA5">where the</text>
+    <text x="590" y="122" font-size="10" fill="#9A9EA5">host is</text>
+    <path d="M214 215 L 466 215" fill="none" stroke="#14161A" stroke-width="2.5" marker-end="url(#ar)"/>
+    <text x="340" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#14161A">“Please send me the home page”</text>
+    <!-- files back -->
+    <path d="M575 314 C 575 400, 500 420, 340 420 C 180 420, 105 400, 105 314" fill="none" stroke="#FF5A36" stroke-width="4" marker-end="url(#arA)"/>
+    <circle cx="340" cy="420" r="16" fill="#FF5A36"/><text x="340" y="426" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">4</text>
+    <g font-family="Fira Code" font-size="10" font-weight="600">
+      <rect x="200" y="356" width="80" height="24" rx="12" fill="#FFE7E0"/><text x="240" y="372" text-anchor="middle" fill="#14161A">index.html</text>
+      <rect x="290" y="356" width="76" height="24" rx="12" fill="#FFE7E0"/><text x="328" y="372" text-anchor="middle" fill="#14161A">style.css</text>
+      <rect x="376" y="356" width="64" height="24" rx="12" fill="#FFE7E0"/><text x="408" y="372" text-anchor="middle" fill="#14161A">app.js</text>
+      <rect x="450" y="356" width="80" height="24" rx="12" fill="#FFE7E0"/><text x="490" y="372" text-anchor="middle" fill="#14161A">photo.jpg</text>
+    </g>
+    <text x="340" y="456" text-anchor="middle" font-size="12.5" font-weight="800" fill="#14161A">The files come back, and the browser puts the page together (step 5)</text>
+  </svg>
+  <div class="grid2" style="margin-top:14px;font-size:12.3px">
+    <div>
+      <p><b class="t">Browser</b> &mdash; the app you use to visit websites, like Chrome, Safari or Edge.</p>
+      <p><b class="t">Domain</b> &mdash; a website's human-friendly name, like <code>tomasbuilds.com.au</code> (just an example name).</p>
+      <p><b class="t">IP address</b> &mdash; the number every computer on the internet has, like a phone number. Computers use these, not names.</p>
+    </div>
+    <div>
+      <p><b class="t">DNS</b> <span class="def">(Domain Name System)</span> &mdash; the giant phone book that matches domain names to IP addresses.</p>
+      <p><b class="t">Server</b> &mdash; a computer that's always on and connected, whose job is to &ldquo;serve&rdquo; files to anyone who asks.</p>
+      <p><b class="t">Host</b> &mdash; the company that runs the server and keeps your site online, like Netlify. &ldquo;Hosting&rdquo; is the service they sell.</p>
+    </div>
+  </div>
+  <div class="chat">
+    <h3>Chat about it</h3>
+    <p style="margin:4px 0 0">If DNS is the phone book, what would happen if a business's DNS pointed to the wrong address? (Their site would seem to vanish, even though the files are fine!)</p>
+  </div>
+  <div class="foot"><span>Web Basics for Tomas</span><span class="n">04</span></div>
+</section>
+<!-- PAGE 5 DOMAINS & HOSTING -->
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
