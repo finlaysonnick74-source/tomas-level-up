@@ -365,3 +365,51 @@ for k,i in enumerate(WBN,1):
     open(f'learn/wb-{i:02d}.html','w').write(f'<!doctype html><meta charset=utf-8><meta name=robots content="noindex,nofollow"><meta http-equiv=refresh content="0;url=lesson-{k:02d}.html"><p>Moved: <a href="lesson-{k:02d}.html">continue</a></p>')
 exec(open('zones.py').read())
 import subprocess;subprocess.run(['python3','postfix.py'])
+
+# ===== warm tone pass: Tomas's choice, Dad as teacher and helper, family welcome =====
+SOFT=[
+("I&rsquo;ve worked out a program with my dad, who is going to teach me, and I want everyone&rsquo;s support to make this a success.","This is my choice and my opportunity. Dad is my teacher and helper, and with everyone&rsquo;s support I know I can make it a success."),
+("I've worked out a program with my dad, who is going to teach me, and I want everyone's support to make this a success.","This is my choice and my opportunity. Dad is my teacher and helper, and with everyone's support I know I can make it a success."),
+("This is what I want to do. If I stay","If I stay"),("This is what I want to do. If I stay","If I stay"),
+("If I stay at Dad&rsquo;s for these 21 days, this is what I could achieve:","If I choose this, commit to it, and have everyone behind me, here&rsquo;s what I could achieve by staying at Dad&rsquo;s for these 21 days:"),
+("If I stay at Dad's for these 21 days, this is what I could achieve:","If I choose this, commit to it, and have everyone behind me, here's what I could achieve by staying at Dad's for these 21 days:"),
+("A 21-day turnaround built on real work: 2 hours a day, side by side with Dad,","A 21-day opportunity Tomas has chosen for himself: 2 hours a day, with Dad as his teacher and helper,"),
+('<div class="label">The turnaround</div>','<div class="label">The opportunity</div>'),
+("The destination is the person: someone who shows up, plans, finishes what he starts and is proud of his work.","The real prize is what Tomas could grow into: someone who plans, finishes what he starts and is proud of his work."),
+("<li><b>School first:</b> at school on time, every day</li>","<li><b>School comes first:</b> a great day at school, then the fun part</li>"),
+("the 2-hour build session at Dad's, straight after school","the 2-hour build session at Dad's, after school"),
+("<li><b>6:30pm</b> commit + journal line, then the evening is his</li>","<li><b>6:30pm</b> a quick log of the day, then the evening's free for family, friends and fun</li>"),
+("<li><b>Weekends:</b> same 2 hours, Tomas picks when</li>","<li><b>Weekends:</b> 2 hours whenever suits Tomas, and the rest is free for sport, family and outings</li><li><b>Anytime:</b> he can see everyone, all the time: Mum, Nan and Pop, Melanie and Sio, and Dad</li>"),
+("🕓 The daily routine","🕓 How a day could look"),
+('<span class="chip">Discipline</span>','<span class="chip">Focus</span>'),('<span class="chip">School on time</span>','<span class="chip">Loving school</span>'),('<span class="chip">Structure</span>','<span class="chip">Confidence</span>'),
+("Dad and I set up this site. Watch it change.","Dad and I built this site together. Watch it grow."),
+("A 21-day program where Tomas spends 2 hours a day (4:30–6:30pm on school days) with Dad,","A 21-day opportunity Tomas has chosen: 2 hours a day (4:30–6:30pm on school days, 2 hours on weekends) with Dad as his teacher and helper,"),
+("For 21 days, Tomas spends 2 hours a day with Dad learning","For 21 days, Tomas has chosen to spend 2 hours a day with Dad as his teacher, learning"),
+("A real <span class='g'>21-day</span> program.","Your <span class='g'>21-day</span> adventure."),
+("2 hours a day, side by side with Dad, Sat 17 Oct","2 hours a day, with Dad as your teacher and helper, Sat 17 Oct"),
+("Weekdays: session 4:30–6:30pm at Dad's, straight after school.","School day: your session runs 4:30–6:30pm at Dad's."),
+("Weekend: same 2 hours, Tomas picks the time (e.g. 10am–12pm).","Weekend: 2 hours whenever suits you (e.g. 10am–12pm), and the rest of the day is yours."),
+("Put the tracker somewhere you&rsquo;ll see it.","Pop the tracker somewhere handy."),
+("Tick Day 1!","Tick Day 1, nice work!"),
+("Discipline and routine","Focus and routine"),("Commitment, discipline &amp; routine","Commitment, focus &amp; routine"),
+("4:30pm start, every school day, same steps.","A steady 4:30pm start on school days, with the same simple steps."),
+("Doing all 21 days, even the hard ones.","Choosing to keep going through all 21 days, even the tricky ones."),
+("Hitting the timetable and the Day 21 deadline.","Planning my sessions and aiming for Launch Day."),
+("On-time sessions, launch on schedule","Sessions planned, launch day reached"),
+("School attendance on time","Enjoying school and arriving on time"),
+("Don’t post yet!","Hold off posting for now: launch is coming!"),
+("Only approves from the preview link, never &ldquo;just put it live&rdquo;.","Likes to see the preview link before anything goes live."),
+("keep it alive","you've got this"),
+("This program gives me real skills, a real business and the routine to keep going.","This program is my chance to gain real skills, a real business and a routine I'm proud of."),
+("A business that runs on my own commitment","A business built on my own choice and commitment"),
+("Hey Tomas. <span class=\"g\">Let&rsquo;s build.</span>","Hey Tomas. <span class=\"g\">Ready when you are.</span>"),
+("<h3>👨 Dad's role</h3>","<h3>👨 How Dad helps</h3>"),("<span class=\"zn\">3</span>What he needs</div>","<span class=\"zn\">3</span>How to cheer him on</div>"),("Not promises: the actual work.","Real work, shared with everyone cheering him on."),
+]
+import os as _o
+for _d,_,_fs in _o.walk('.'):
+    if '/raw' in _d or '__pycache__' in _d: continue
+    for _f in _fs:
+        if not _f.endswith(('.html','.md')): continue
+        _p=_o.path.join(_d,_f);_s=open(_p).read();_t=_s
+        for a,b2 in SOFT: _t=_t.replace(a,b2)
+        if _t!=_s: open(_p,'w').write(_t)
