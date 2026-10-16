@@ -1,0 +1,60 @@
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>What code is: HTML, CSS, JavaScript · Tomas Levels Up</title><script src="../gate.js"></script><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="lessons.css"></head><body><a class="skip" href="#main">Skip to content</a><nav aria-label="Main"><div class="w"><a class="logo" href="../index.html" style="text-decoration:none">Tomas <span>Levels Up</span></a>
+<ul><li><a href="../index.html">Home</a></li><li><a href="../today.html">Today</a></li><li><a href="../tracker.html">Tracker</a></li><li><a href="../learn/index.html">Program</a></li><li><a href="../skills.html">Skills</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../plan/index.html">Plan</a></li><li><a href="../library/index.html">Library</a></li><li><a href="../support.html">Support</a></li></ul></div></nav>
+<main id="main"><!-- Web Basics · Lesson 1: What code is · fragment: place inside <main>. Needs style.css + lessons.css + lessons.js -->
+<article class="ls" id="lesson-01" data-lesson="1">
+<header><div class="w"><div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Program</a> › Web Basics › Lesson 1</div><div class="tag">Web Basics · Lesson 1 of 11 · What code is</div><h1>Three languages,<br>one web page.</h1><p class="lead">How websites really work, the tools behind them, and how you'll use AI to build them for local businesses — explained in plain English. First up: <dfn class="ls-t">Code</dfn> is a set of written instructions a computer can follow. Every website is made from three kinds of code, each with its own job.</p><div class="bar2"><i style="width:9%"></i></div></div></header>
+<section class="ls-sec"><div class="w stack">
+
+<div class="card"><h3>Hey Tomas — welcome in.</h3><p>You're starting a real business: building websites and running Instagram marketing for local businesses around the Northern Beaches. This guide gives you the big picture of how it all fits together, so nothing feels like magic or mystery.</p></div>
+<div class="grid">
+<div class="card"><h3>How to use this guide</h3><ul class="l"><li>Read one or two sections at a time with Dad. No rush.</li><li>Every new word is <dfn class="ls-t">highlighted like this</dfn> and explained straight away. They're all collected in the <b>Jargon buster</b> (lesson 11) too.</li><li>Look for the dashed <b style="color:var(--a)">Chat about it</b> boxes — quick questions to talk through together.</li><li>You don't need to memorise anything. The goal is to <i>understand</i> it well enough to explain it to a client.</li></ul></div>
+<div class="ls-dark"><h3>Three big ideas to hold on to</h3><p><b>1.</b> A website is just a bunch of files, sitting on a computer that's always switched on.</p><p><b>2.</b> Every change you make gets saved as a version, so mistakes can always be undone.</p><p><b>3.</b> AI writes the code fast, but <i>you</i> are the builder who decides, checks and delivers.</p></div>
+</div>
+<div class="ls-chat"><h3>Chat about it</h3><p>Which three local businesses near you have a website that could be better? What would you change first?</p></div>
+</div></section>
+<section class="ls-sec"><div class="w stack"><h2>See it in action</h2>
+
+<div data-layers class="ls-stage">
+<div class="ls-ctl" style="margin:0 0 14px" role="group" aria-label="Choose which code is switched on">
+<button type="button" class="ls-b" data-layer-btn="html">1 · HTML only</button><button type="button" class="ls-b" data-layer-btn="css">2 · + CSS</button><button type="button" class="ls-b" data-layer-btn="js">3 · + JavaScript</button></div>
+<div class="ls-demo" data-layer="html"><div class="bar"><i></i><i></i><i></i>&nbsp;tomasbuilds.com.au</div>
+<div class="pg"><h4>Tomas Builds Websites</h4><p>Fresh sites for local businesses.</p><button type="button">Get a quote</button><div class="toast" role="status">Thanks! Tomas will be in touch.</div></div></div>
+<p class="ls-layerhint" data-hint="html"><b>HTML</b> — the structure (the skeleton). Plain text, default fonts. It works, but it isn't pretty.</p>
+<p class="ls-layerhint" data-hint="css" hidden><b>+ CSS</b> — the looks (paint &amp; clothes). Same words, now with colour, fonts and a proper button.</p>
+<p class="ls-layerhint" data-hint="js" hidden><b>+ JavaScript</b> — the behaviour (the brain). Now try clicking <b>Get a quote</b>.</p>
+</div>
+</div></section>
+<section class="ls-sec"><div class="w stack"><h2>The three languages</h2>
+<div class="grid ls-trio">
+<div class="card"><h3>HTML <span>skeleton</span></h3><p><dfn class="ls-t">HTML</dfn> <span class="ls-def">(HyperText Markup Language)</span> says <i>what</i> is on the page: a heading, a paragraph, a button. Things are wrapped in <dfn class="ls-t">tags</dfn> — labels in angle brackets like <code>&lt;h1&gt;</code>.</p>
+<pre><span class="c">&lt;!-- heading, text, button --&gt;</span>
+&lt;h1&gt;Tomas Builds Websites&lt;/h1&gt;
+&lt;p&gt;Fresh sites for local businesses.&lt;/p&gt;
+&lt;button&gt;Get a quote&lt;/button&gt;</pre></div>
+<div class="card"><h3>CSS <span>skin &amp; clothes</span></h3><p><dfn class="ls-t">CSS</dfn> <span class="ls-def">(Cascading Style Sheets)</span> says how things <i>look</i>: colours, fonts, sizes, spacing. Each rule picks a thing, then lists its styles.</p>
+<pre><span class="c">/* make it look good */</span>
+h1 { color: <span class="k">#FF5A36</span>;
+     font-size: 40px; }
+button { background: black;
+         color: white;
+         border-radius: 99px; }</pre></div>
+<div class="card"><h3>JavaScript <span>brain</span></h3><p><dfn class="ls-t">JavaScript</dfn> (often just “JS”) says what <i>happens</i> when someone clicks, types or scrolls. It makes a page interactive.</p>
+<pre><span class="c">// when the button is clicked…</span>
+const btn = document
+  .querySelector("button");
+btn.addEventListener("click", () =&gt; {
+  alert("Thanks! Tomas will be in touch.");
+});</pre></div></div>
+<div class="ls-tip"><p><b>Easy way to remember:</b> if a website were a person, HTML is the skeleton, CSS is the skin and clothes, and JavaScript is the brain that makes it move. You'll rarely type all of this by hand — Grok Bot will write most of it — but knowing which part does what lets you ask for exactly the right change.</p></div>
+<div class="ls-chat"><h3>Chat about it</h3><p>Look at a favourite website. Point to one thing that's HTML, one that's CSS, and one that's JavaScript.</p></div>
+</div></section>
+<section class="ls-sec"><div class="w stack">
+<div class="ls-quiz"><h2>Quick quiz</h2><p class="sub" style="margin:0">Tap an answer, or tap “Show answer”.</p><div class="ls-q"><p>A client wants their heading to be orange. Which code changes?</p><div class="opts"><button type="button">HTML</button><button type="button" data-ok>CSS</button><button type="button">JavaScript</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>CSS</b> — CSS controls how things look: colours, fonts, sizes and spacing.</p></div>
+<div class="ls-q"><p>What does a tag like <code>&lt;button&gt;</code> belong to?</p><div class="opts"><button type="button" data-ok>HTML</button><button type="button">CSS</button><button type="button">JavaScript</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>HTML</b> — tags are HTML labels that say what is on the page.</p></div>
+<div class="ls-q"><p>A pop-up message appears when someone clicks. Which code made that happen?</p><div class="opts"><button type="button">HTML</button><button type="button">CSS</button><button type="button" data-ok>JavaScript</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>JavaScript</b> — JavaScript is the brain: it decides what happens when people click, type or scroll.</p></div>
+<p class="ls-score" aria-live="polite"></p><button type="button" class="ls-b" data-quiz-reset>Try again</button></div>
+</div></section>
+<section class="ls-sec"><div class="w"><div class="pn"><span></span><a class="btn" href="lesson-02.html">How a website works →</a></div></div></section>
+</article>
+</main>
+<footer><div class="w">Tomas Levels Up · a private family page · <a href="https://finlaysonnick74-source.github.io/tomas-web-studio/">Watch the business site grow →</a></div></footer><script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll(".r").forEach(el=>o.observe(el));</script><script src="lessons.js"></script></body></html>
