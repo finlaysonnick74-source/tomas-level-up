@@ -76,7 +76,7 @@ wall=hero("👪 Supporters&rsquo; view · Wall of support","Wall of <span class=
 <form id="wf"><div id="ofr" hidden><label>Pick a card</label><div class="offers">{''.join(f'<button type="button" class="offer" aria-pressed="false" data-o="{t}"><b>{i}</b>{t}</button>' for i,t in OFFERS)}</div>
 <label for="wmil">Tied to a milestone</label><select id="wmil">{''.join(f'<option>{m}</option>' for m in MIL)}</select><label for="wwhen">When could it happen?</label><input id="wwhen" maxlength="80" placeholder="e.g. Saturday 24 Oct, after the show-and-tell"></div>
 <label for="wtxt" id="wlab">Your message to Tomas</label><textarea id="wtxt" rows="4" required maxlength="500" placeholder="Proud of you for..."></textarea><div style="position:absolute;left:-9999px" aria-hidden="true"><label for="wweb">Leave this empty</label><input id="wweb" tabindex="-1" autocomplete="off"></div>
-<label for="wfrom">Who is it from?</label><input id="wfrom" required maxlength="60" placeholder="e.g. Mum, Nan and Pop, Melanie and Sio">
+<label for="wfrom">Who is it from?</label><input id="wfrom" required maxlength="60" placeholder="e.g. Mum, Gran &amp; Gramps, Pa &amp; Deb, Melanie and Sio">
 <p style="margin-top:16px"><button class="btn" type="submit" style="border:0;cursor:pointer">Post to Tomas&rsquo;s wall 💛</button></p>
 <p class="note" id="wok" aria-live="polite">Your message goes straight to Tomas&rsquo;s wall. Keep it kind, up to 500 characters.</p></form></div>
 <h2 style="margin-top:34px">From Tomas&rsquo;s crew</h2><div class="wallg" id="wall"></div></div></section>'''
