@@ -1,4 +1,4 @@
-T=[("The plan is never a punishment.","This plan is all about growth."),("The ground rules (Phase 1) aren't up for debate.","The Phase 1 basics are the foundation everything else is built on."),
+T=[("Tomas &amp; Nick","Tomas &amp; Dad"),("Thu · Nick","Thu · Dad"),("Dad (Nick)","Dad"),("The plan is never a punishment.","This plan is all about growth."),("The ground rules (Phase 1) aren't up for debate.","The Phase 1 basics are the foundation everything else is built on."),
 ("Ground rules for the 21 days","My commitments for the 21 days"),("This is a turnaround, and you’re the one turning it.","This is your transformation, and you’re the one leading it."),("This is a turnaround, and you&rsquo;re the one turning it.","This is your transformation, and you&rsquo;re the one leading it."),
 ("A structured turnaround,","A structured transformation,"),("21-Day Turnaround Build","21-Day Transformation Build"),("21-DAY TURNAROUND BUILD","21-DAY TRANSFORMATION BUILD"),("Turnaround","Transformation"),
 ("Every subject maps to something you'd otherwise pay for, or learn the hard way by losing money.","Every subject maps to something useful for running a business."),
