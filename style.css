@@ -172,3 +172,17 @@ nav ul.sub li.more ul a:hover{background:#ffffff14}
 .tm-empty{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1.5px dashed #ffffff33;border-radius:12px;opacity:.9}.tm-empty span{font-size:1.6rem}.tm-empty p{margin:0}
 .tm-f{margin:10px 0}.tm-f img,.tm-f video{max-width:100%;border-radius:12px;display:block}.tm-f figcaption{font-size:.85rem;opacity:.8;margin-top:4px}
 .tm-ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tm-log img,.tm-log video{max-width:320px}
+
+/* self-serve daily log */
+.howl{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.howl li{background:#151a30;border:1px solid #ffffff22;border-radius:16px;padding:12px 10px;text-align:center;font-weight:700;font-size:.92rem;position:relative}
+.howl b{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;color:#141018;margin-bottom:6px}
+.howl li:nth-child(1) b{background:#ff6b4a}.howl li:nth-child(2) b{background:#ff8f47}.howl li:nth-child(3) b{background:#ffb443}.howl li:nth-child(4) b{background:#a8d58a}.howl li:nth-child(5) b{background:#5ee7c9}
+.howl span{display:block}.how{padding:10px 0 26px}
+@media(max-width:700px){.howl{grid-template-columns:1fr;gap:8px}.howl li{display:flex;align-items:center;gap:12px;text-align:left;padding:10px 14px}.howl b{margin:0;flex:none}}
+.dl-card{border-color:#ffb44366}.dl-steps{display:grid;gap:8px;margin:12px 0}
+.dl-step{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid #ffffff2a;background:#ffffff08;cursor:pointer;font-weight:700}
+.dl-step input{width:24px;height:24px;accent-color:#5ee7c9;flex:none}.dl-step.on{border-color:#5ee7c9;background:#5ee7c91a}
+.dl-go{display:block;width:100%;margin-top:16px;padding:16px;font-size:1.15rem;border:0;cursor:pointer;font-weight:900}
+.dl-msg{margin:10px 0 0;font-weight:700;color:#ffcf7a}.dl-msg a{color:#5ee7c9}.dl-pick{display:block;font-weight:700;margin:6px 0}.dl-pick select{font:inherit;padding:8px 10px;border-radius:10px;background:#0b0e1c;color:#fff;border:1px solid #ffffff40;max-width:100%}
+.dl-dad{margin-top:14px;padding:12px 14px;border-radius:14px;background:#5ee7c914;border:1px solid #5ee7c955}.dl-dad p{margin:4px 0 0}
