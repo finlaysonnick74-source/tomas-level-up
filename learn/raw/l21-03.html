@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">The framework</div><h1>Life skills this builds.</h1>
+<p class="lead" style="max-width:none">The website is the vehicle. These eleven life skills are the destination. Each one is practised on specific days and leaves evidence anyone can check. Every day card is tagged with its life skills.</p>
+<table style="font-size:10.4px"><thead><tr><th>Life skill</th><th>What it looks like</th><th>Days</th><th>Evidence</th></tr></thead><tbody><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Routine</span><br>Commitment, discipline &amp; routine</td><td style="width:30%">Home by 4:30pm, up on time, session starts on time, every day for 21 days.</td><td style="width:15%;font-weight:700">Every day (focus: 5&ndash;7, 14)</td><td>Daily log: up on time, home by 4:30pm, on-time start. A dated commit every session.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">School first</span><br>School attendance &amp; homework first</td><td style="width:30%">At school on time every school day; homework done before the session.</td><td style="width:15%;font-weight:700">Every day</td><td>Daily log: at school on time, homework first. Can be compared with school records.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Planning</span><br>Planning, time management &amp; deadlines</td><td style="width:30%">Plans the session, works to the timetable, hits the Day 21 launch date.</td><td style="width:15%;font-weight:700">1&ndash;3, 6, 15, 17, 19&ndash;20</td><td>Timetable kept; weekly milestones met on their dates; launch on Day 21.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Goals</span><br>Goal-setting</td><td style="width:30%">Sets a goal each week and a bigger one for the next 21 days.</td><td style="width:15%;font-weight:700">1, 21</td><td>Weekly goals in each self-review; a next-21-day goal on Day 21.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Money</span><br>Money sense</td><td style="width:30%">Budget, pricing, costs and profit (P&amp;L), using his real business plan.</td><td style="width:15%;font-weight:700">1, 8, 16, 21</td><td>Services &amp; prices page; domain cost in the budget; price and profit check.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Communication</span><br>Communication</td><td style="width:30%">Explains his work, writes to a &ldquo;client&rdquo;, phone manner, presents at show-and-tell.</td><td style="width:15%;font-weight:700">2, 5, 7, 9&ndash;10, 12&ndash;14, 18, 20&ndash;21</td><td>Three show-and-tells; client message (Day 12); phone pitch (Day 18); captions.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Ownership</span><br>Responsibility &amp; ownership</td><td style="width:30%">Owns his work and his mistakes. No excuses, no blaming.</td><td style="width:15%;font-weight:700">4, 8&ndash;9, 11, 15, 20</td><td>Bugs logged and closed in GitHub; honest self-reviews.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Resilience</span><br>Resilience</td><td style="width:30%">Sticks with bugs and setbacks until they&rsquo;re fixed.</td><td style="width:15%;font-weight:700">5, 11&ndash;12, 15</td><td>Fixed bugs; before-and-after Lighthouse scores; nothing left half-done.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Teamwork</span><br>Teamwork with Dad</td><td style="width:30%">Listens, takes feedback, and works side by side.</td><td style="width:15%;font-weight:700">3&ndash;4, 8, 12, 16, 19</td><td>Dad&rsquo;s reviews and approvals, visible on every pull request.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Reflection</span><br>Self-reflection</td><td style="width:30%">A journal line every day and an honest self-review every week.</td><td style="width:15%;font-weight:700">Every day (journal); focus: 7, 14, 17, 21</td><td>21 journal lines, 3 weekly self-reviews, a Day 21 retro.</td></tr><tr><td style="white-space:normal;width:24%"><span class="ls" style="margin:0 0 3px">Online safety</span><br>Online safety &amp; professional conduct</td><td style="width:30%">Protects privacy, asks permission, behaves like a professional online.</td><td style="width:15%;font-weight:700">9&ndash;10, 13, 16, 18</td><td>Privacy and permission checks; nothing private on the site or Instagram.</td></tr></tbody></table>
+<div class="chat" style="margin-top:10px"><h3>Chat about it</h3><p style="margin:4px 0 0;font-size:12px">Which of these skills do you already have? Which one would make the biggest difference at school?</p></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">04</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
