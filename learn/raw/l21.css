@@ -1,6 +1,6 @@
 @page { size: A4; margin: 0; }
 :root{
-  --accent:#FF5A36; --accent-soft:#FFE7E0; --ink:#14161A; --grey:#5B6068;
+  --accent:#CC3A19; --accent-soft:#FFE7E0; --ink:#14161A; --grey:#5B6068;
   --mid:#9A9EA5; --light:#F4F3F0; --line:#E3E1DC; --white:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
