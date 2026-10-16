@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">Week 3 &middot; Days 15&ndash;16</div><div class="day"><div class="dh"><div class="dn">15</div><div class="dt"><div class="t">The launch checklist</div><div class="d">Saturday 31 October 2026 &middot; Weekend: you choose the 2 hours (e.g. 10am&ndash;12pm), after any weekend homework</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#F2B705;color:#14161A">Test</span><span class="stg" style="background:#5B6068;color:#fff">Change control</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>10:00</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Open your GitHub issues. Which are still open?</td></tr><tr class=""><td>10:10</td><td class="b">Learn &amp; build &middot; 45m</td><td>Why pros never skip a launch checklist: links, forms, spelling, phones, speed, the &ldquo;page not found&rdquo; page.</td></tr><tr class="brk"><td>10:55</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>11:00</td><td class="b">Build &middot; 50m</td><td>Work through the checklist. Close the last issues. Add the 404 page. Open a release pull request.</td></tr><tr class=""><td>11:50</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Commit: <code>Launch checklist complete</code>. Tag <code>v1.0</code>. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Get the site launch-ready, with nothing left to chance.</div><div class="fld"><b>What you&rsquo;ll make</b>A finished launch checklist, every GitHub issue closed, a friendly &ldquo;page not found&rdquo; page, and release v1.0 ready.</div><div class="fld dad"><b>Dad&rsquo;s role</b>Reads every page out loud with you to catch typos and anything that sounds off.</div>
+<div class="word"><b>New word: Release</b> &mdash; a finished, numbered version of a site (like v1.0) that&rsquo;s ready to go live.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:#F4F3F0;color:#14161A;border:1px solid #ccc;">{}</i>DevTools</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><span class="tag"><i style="background:#FF5A36;color:#fff;">&lt;/&gt;</i>Grok Bot</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Planning</span><span class="ls">Ownership</span><span class="ls">Resilience</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;Every link and button on my site works.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Quality checking</div>
+<div class="jr"><b>Journal:</b> What would I check twice before anything goes public?<div class="wline"></div></div></div></div></div><div class="day"><div class="dh"><div class="dn">16</div><div class="dt"><div class="t">Domain day: go live!</div><div class="d">Sunday 1 November 2026 &middot; Weekend: you choose the 2 hours (e.g. 10am&ndash;12pm), after any weekend homework</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#2F6BFF;color:#fff">Domain</span><span class="stg" style="background:#0FA3A3;color:#fff">Deploy</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>10:00</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Shortlist 3 domain names, like <code>tomaswebstudio.com.au</code>. Check they&rsquo;re free.</td></tr><tr class=""><td>10:10</td><td class="b">Learn &amp; build &middot; 45m</td><td>How domains, registrars and DNS fit together, and what it costs a year (add it to the budget). Dad buys the winner.</td></tr><tr class="brk"><td>10:55</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>11:00</td><td class="b">Build &middot; 50m</td><td>Add the domain in Netlify, update the DNS records, wait for it to connect, check the padlock. You&rsquo;re live!</td></tr><tr class=""><td>11:50</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Commit: <code>Use custom domain</code>. Screenshot the address bar. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Put your website on your very own web address.</div><div class="fld"><b>What you&rsquo;ll make</b>Your site live on your own domain, secured with HTTPS (the padlock in the address bar).</div><div class="fld dad"><b>Dad&rsquo;s role</b>Buys the domain from the business account (it needs an adult and an ABN) and walks through the DNS settings with you.</div>
+<div class="word"><b>New word: DNS</b> &mdash; the internet&rsquo;s phone book: it points your domain name at the computer where your site lives.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:#2F6BFF;color:#fff;">W</i>Domain &amp; DNS</span><span class="tag"><i style="background:#0FA3A3;color:#fff;">N</i>Netlify</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Money</span><span class="ls">Online safety</span><span class="ls">Teamwork</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;My business has its own web address, and it&rsquo;s live.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Domains &amp; DNS</div>
+<div class="jr"><b>Journal:</b> What does having my own web address mean to me?<div class="wline"></div></div></div></div></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">21</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
