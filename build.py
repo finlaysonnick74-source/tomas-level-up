@@ -2,6 +2,17 @@ import re,json,html,os,sys,shutil,datetime
 sys.path.insert(0,'/workspace/learn21'); import data as D
 from curriculum import C
 import skills as SK
+
+# ===== remap skill-chip days to the new plan (Days 1-2 basics; old 1-6 -> 3-6) =====
+_SM={1:[3],2:[4],3:[4],4:[5],5:[6],6:[6]}
+_B1={'HTML / CSS / JavaScript','DNS and domains','Deployment and hosting','Git and GitHub','Communication','Teamwork with Dad','Self-reflection','Commitment'}
+_B2={'Deployment and hosting','Git and GitHub','AI-assisted building','Social media tools','Communication','Teamwork with Dad','Self-reflection','Planning'}
+for _g in SK.G:
+    for _i,_s in enumerate(_g[3]):
+        _days=sorted(set([x for o in _s[2] if o<=6 for x in _SM[o]]+[o for o in _s[2] if o>=7]+([1] if _s[0] in _B1 else [])+([2] if _s[0] in _B2 else [])))
+        _s=list(_s); _s[2]=_days
+        if _s[0]=='Ownership, no excuses': _s[0]='Ownership'
+        _g[3][_i]=tuple(_s)
 # ===== Days 1-2: the basics first; old Days 1-6 shift to 3-6 (2+3 and 5+6 merged); Day 7 onward unchanged =====
 import copy as _cp
 _O={n:_cp.deepcopy(D.DAYS[n-1]) for n in range(1,22)}; _OC={n:C[n] for n in range(1,22)}; _OE={n:D.EXTRA.get(n,{}) for n in range(1,22)}
