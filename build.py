@@ -73,7 +73,7 @@ for n,d in enumerate(D.DAYS,1):
     if n in daysec: pass
     else: daysec[n]=daysec.get(n-1)
     school=date.weekday()<5
-    when="Weekdays: home by 4:30pm, homework first, session 5:30–7:30pm." if school else "Weekend: same 2 hours, Tomas picks the time (e.g. 10am–12pm)."
+    when="Weekdays: session 4:30–6:30pm at Dad's, straight after school." if school else "Weekend: same 2 hours, Tomas picks the time (e.g. 10am–12pm)."
     tt=[("Check-in + goal",b[0]+" Set today's goal: "+d['goal']),("Learn",b[1]+" Read the lesson below together."),("Build on the business site",b[2]),("Break","5 minutes away from the screen."),("Practise / challenge",chal),("Reflect, commit + log",b[3]+" Write your journal line and update progress.json.")]
     steps=[x.strip() for x in re.split(r'(?<=[.!])\s+',strip(b[2])) if x.strip()]
     tools=''.join(f'<span class="chip">{D.TOOLS[t]["name"]}</span>' for t in d['tools'])
@@ -135,15 +135,15 @@ page('outcomes.html','By Day 21, I can',hero("The outcome · Launch Day, Fri 6 N
 rich=open('/workspace/tomas-site-v-rich-backup/index.html').read()
 jour=re.search(r'<section id="journey">.*?</section>',rich,re.S).group(0).replace('href="tracker.html"','href="tracker.html"')
 jour=re.sub(r'<div class="day upcoming"><b>Day (\d+)</b>',lambda m:f'<a class="day upcoming" style="text-decoration:none" href="learn/day-{int(m.group(1)):02d}.html"><b>Day {m.group(1)}</b>',jour).replace('<br></div>','<br></a>')
-pill=["Structure","Commitment","Discipline","Planning","Timelines","Money skills","Communication","Ownership","Resilience","School first"]
+pill=["Structure","Commitment","Discipline","Planning","Timelines","Money skills","Communication","Ownership","Resilience","School on time"]
 page('index.html','Home',f'''<header><div class="w"><div class="tag">🌊 Northern Beaches · Level up · 17 Oct to 6 Nov 2026</div>
 <h1>Tomas is <span class="g">levelling up</span>.</h1><p class="lead">A 21-day turnaround built on real work: 2 hours a day, side by side with Dad, building and launching a real business, and the habits that come with it.</p>
 <div class="cta"><a class="btn" href="outcomes.html">By Day 21, I can…</a><a class="btn o" href="tracker.html">Daily tracker</a><a class="btn o" href="careers.html">Where this can take me</a><a class="btn o" href="{BIZ}">Watch the business site grow →</a></div></div></header>
 <section style="padding-top:20px"><div class="w r"><div class="label">The turnaround</div><h2>Building the business. Building myself.</h2><p class="sub">The website is the vehicle. The destination is the person: someone who shows up, plans, finishes what he starts and is proud of his work.</p>
 <div class="chips">{''.join(f'<span class="chip">{p}</span>' for p in pill)}</div></div></section>
 <section><div class="w r"><div class="grid">
-<div class="card"><h3>🕓 The daily routine</h3><ul class="l"><li><b>School first:</b> at school on time, every day</li><li><b>4:30pm</b> home on school days</li><li><b>4:30–5:30</b> homework first</li><li><b>5:30–7:30</b> 2-hour build session with Dad</li><li><b>7:30</b> commit + journal line</li><li><b>Weekends:</b> same 2 hours, Tomas picks when</li></ul></div>
-<div class="card"><h3>🎤 Weekly show-and-tells</h3><ul class="l"><li><b>Fri 23 Oct:</b> homepage online</li><li><b>Fri 30 Oct:</b> full site working</li><li><b>Fri 6 Nov:</b> Launch Day, live on his own domain</li></ul><p class="note">Mum, grandparents and the counsellor are warmly invited. <a href="support.html">How to support Tomas →</a></p></div>
+<div class="card"><h3>🕓 The daily routine</h3><ul class="l"><li><b>School first:</b> at school on time, every day</li><li><b>4:30–6:30pm</b> the 2-hour build session at Dad's, straight after school</li><li><b>6:30pm</b> commit + journal line, then the evening is his</li><li><b>Weekends:</b> same 2 hours, Tomas picks when</li></ul></div>
+<div class="card"><h3>🎤 Weekly show-and-tells</h3><ul class="l"><li><b>Fri 23 Oct:</b> homepage online</li><li><b>Fri 30 Oct:</b> full site working</li><li><b>Fri 6 Nov:</b> Launch Day, live on his own domain</li></ul><p class="note">Mum, the grandparents, and Melanie and Sio (The Burdekin) are warmly invited. <a href="support.html">How to support Tomas →</a></p></div>
 <div class="card"><h3>📚 A real learning program</h3><p>21 days of lessons, each with a timetable, objectives, build tasks, a quiz and a reflection.</p><p style="margin-top:12px"><a class="btn o" href="learn/index.html">Open the Learn program</a></p></div></div></div></section>
 {jour}''')
 # ambition (reuse rich, swap nav/foot)
@@ -156,15 +156,18 @@ lab={"done":"✓ done","progress":"in progress","upcoming":"upcoming"}
 def lst(h,xs): return f'<div class="card"><h3>{h}</h3>'+''.join(f'<div class="tick"><span>{n}</span><span class="st {k}">{lab[k]}</span></div>' for n,k in xs)+'</div>'
 page('learning.html',"What I'm learning",hero("What I'm learning","Tools <span class='g'>+</span> life skills","14 professional tools and 11 life skills. Each one ticks over to done when I can do it myself.")+f'<section style="padding-top:0"><div class="w"><div class="grid">{lst("🧰 Tools",tools)}{lst("🌱 Life skills",life)}</div><p class="note"><a href="learn/tools.html">Tools I\'ll master: full details →</a></p><!-- UPDATE: change "st upcoming" to "st progress" or "st done" --></div></section>')
 # support
-page('support.html','How to support Tomas',hero("For Mum, the grandparents and the counsellor","How to <span class='g'>support Tomas</span>.","Thank you for being in Tomas's corner. Here are simple, positive ways to help over the 21 days.")+'''<section style="padding-top:0"><div class="w"><div class="grid">
-<div class="card"><h3>🎤 Come to show-and-tell</h3><p>Fridays 23 Oct, 30 Oct and 6 Nov 2026 (Launch Day), in person or on video. Tomas presents his week; ask him a question or two.</p></div>
-<div class="card"><h3>💬 Leave encouragement</h3><p>A quick message after you check the tracker goes a long way. Notice the effort, not just the result.</p></div>
-<div class="card"><h3>📈 Check the tracker</h3><p>The <a href="tracker.html">daily tracker</a> shows each day's plan, what he built, what he learned and his streak.</p></div></div>
+page('support.html','How to support Tomas',hero("For Mum, the grandparents, Melanie and Sio","How to <span class='g'>support Tomas</span>.","Thank you for being in Tomas's corner. By supporting him, you help him stay with Dad for the whole of this program, and finish something he can be really proud of.")+'''<section style="padding-top:0"><div class="w">
+<div class="card feat"><h3>💛 The one thing that matters most</h3><p>For these 21 days, Tomas needs to be <b>here at Dad's house, with Dad, and focused</b> during the program sessions: <b>4:30–6:30pm on school days</b>, and 2 hours at a time he chooses on weekends. That steady routine is what makes this work.</p><p style="margin-top:10px">Everything else is warmly encouraged.</p></div>
 <div class="grid" style="margin-top:20px">
-<div class="card"><h3>👩 Mum</h3><ul class="l"><li>Comes to the Friday show-and-tells</li><li>Gets Tomas's weekly update every Friday</li><li>Joins the Sunday check-in</li><li>Backs him on school</li></ul></div>
-<div class="card"><h3>👵👴 Grandparents</h3><ul class="l"><li>Cheer on the show-and-tells</li><li>Leave encouragement on his progress</li><li>Be his first "test customers": try the site and give feedback</li></ul></div>
-<div class="card"><h3>🧭 School counsellor</h3><ul class="l"><li>Check the tracker and build log as evidence of routine</li><li>Talk with Tomas about the life skills he's practising</li><li>Help connect the skills back to school</li></ul></div>
-<div class="card"><h3>👨 Dad</h3><ul class="l"><li>Works side by side every session</li><li>Plays the client and gives honest feedback</li><li>Looks after money and adult-only accounts</li></ul></div></div>
+<div class="card"><h3>🏡 Visit any time</h3><p>Mum, the grandparents, and Melanie and Sio (The Burdekin) are welcome to visit daily, or as often as you like. Come and see what he's building.</p></div>
+<div class="card"><h3>🎉 Treats and good times</h3><p>Take him out for treats, movie nights, special dinners, have friends over, give financial rewards for milestones. All encouraged, as long as he's here for the sessions.</p></div>
+<div class="card"><h3>🎤 Show-and-tells</h3><p>Fridays 23 Oct, 30 Oct and 6 Nov 2026 (Launch Day). Come in person or on video, and ask him a question or two.</p></div>
+<div class="card"><h3>📈 Check the tracker</h3><p>The <a href="tracker.html">daily tracker</a> shows each day's plan, what he built, what he learned and his streak. A quick message of encouragement goes a long way.</p></div></div>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>👩 Mum</h3><ul class="l"><li>Visit whenever you like</li><li>Come to the Friday show-and-tells</li><li>Get Tomas's weekly update every Friday</li><li>Celebrate the milestones with him</li></ul></div>
+<div class="card"><h3>👵👴 Grandparents</h3><ul class="l"><li>Drop in and see the work</li><li>Cheer on the show-and-tells</li><li>Be his first "test customers" and give feedback</li><li>Treats and outings around the sessions</li></ul></div>
+<div class="card"><h3>🧭 Melanie and Sio (The Burdekin)</h3><ul class="l"><li>Visit or check in as often as suits</li><li>Use the tracker and build log to see his routine</li><li>Talk with him about the life skills he's practising</li></ul></div>
+<div class="card"><h3>👨 Dad</h3><ul class="l"><li>Works side by side every session</li><li>Plays the client and gives honest feedback</li><li>Keeps the house welcoming for everyone</li></ul></div></div>
 <div class="card" style="margin-top:20px"><h3>Great questions to ask Tomas</h3><ul class="l"><li>What are you proudest of this week?</li><li>Show me one thing you built and how it works.</li><li>What was hard, and how did you get past it?</li><li>What's your goal for next week?</li></ul></div></div></section>''')
 # plan with scenarios
 pb=body_of('plan.html')
@@ -201,3 +204,4 @@ Lesson pages are generated by `build.py` + `curriculum.py` from the Web Basics g
 
 from careers import careers_body
 page('careers.html','Where this can take me',careers_body())
+import subprocess;subprocess.run(['python3','postfix.py'])
