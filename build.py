@@ -35,14 +35,14 @@ B1=dict(title="Learn the basics, part 1",basics=True,stages=["learn"],tools=["gr
  dad="Your teacher and helper today: works through the lessons with you, then sits down for a relaxed chat about what you've learned.",
  proud="I understand how websites are built and where they live.",skill="Web basics",
  word=["Code","instructions written in a language a computer understands. HTML, CSS and JavaScript are the three languages of the web."],
- blocks=["Settle in with Dad, open your learning app and pop the tracker somewhere handy.","Web Basics lessons 1–6: what code is, how a website works, domains and hosting, hosting options, change control, and branches and pull requests.","",""],
+ blocks=["Settle in with Dad, open your learning app and keep the tracker somewhere handy.","Web Basics lessons 1–6: what code is, how a website works, domains and hosting, hosting options, change control, and branches and pull requests.","",""],
  life=["goals","reflect","team"],journal="What's one idea from today that clicked for me?",
  tt=[("0:00–0:10","Check-in","Settle in with Dad and open your learning app. Today mixes learning the basics with your first building."),
      ("0:10–1:00","The basics: lessons 1–6",_ln([1,2,3,4,5,6])+". This is your foundation, so you understand what you&rsquo;re building and why. Go at a comfortable pace and play with the diagrams."),
      ("1:00–1:40","Start building with Grok Bot","Chat with Grok Bot about your business site and try your first changes. Take a 5-minute screen break when it suits."),
      ("1:40–2:00","Talk it through with Dad","A relaxed sit-down chat about today's lessons, using the questions below. Then jot your journal line.")],
  lessons=L1, diveh="🛠️ Start building with Grok Bot",diveb="Building with Grok Bot is a conversation, so it&rsquo;s great to start from Day 1. Open your <a href=\"https://finlaysonnick74-source.github.io/tomas-web-studio/\">business site</a>, chat with Grok Bot about what you want, and try a first change: a heading, a colour, a new section. ",divein="Today&rsquo;s lessons will help you understand what Grok Bot is building and why.",
- chat=["In your own words, what do HTML, CSS and JavaScript each do on a page?","When someone types a web address, what happens before the page appears?","What's the difference between a domain and hosting? How would you explain it to Nan and Pop?","Which hosting option would you pick for Tomas Web Studio, and why?","Why is change control (saving versions with Git) such a big deal when you work on a real client's site?","What's a branch and a pull request, and how could they keep a live site safe?"])
+ chat=["In your own words, what do HTML, CSS and JavaScript each do on a page?","When someone types a web address, what happens before the page appears?","What's the difference between a domain and hosting? How would you explain it to Mum, Gran &amp; Gramps, Pa &amp; Deb and all your family?","Which hosting option would you pick for Tomas Web Studio, and why?","Why is change control (saving versions with Git) such a big deal when you work on a real client's site?","What's a branch and a pull request, and how could they keep a live site safe?"])
 B2=dict(title="Learn the basics, part 2",basics=True,stages=["learn"],tools=["grok","gh","netlify","canva","postiz"],
  goal="Finish the basics: how sites go live, what makes a modern site, and the tools you'll use.",
  make="Your notes on Web Basics lessons 7–11, more progress with Grok Bot, and the big picture of how it all fits together.",
@@ -132,7 +132,7 @@ NEW={1:B1,2:B2,3:B3,4:_d4,5:_d5,6:_d6}
 _c4=([],[o for o in _c4[1] if "GitHub account" not in o],*_c4[2:])
 for n in range(7,22): NEW[n]=_O[n]
 NC={1:([],["Explain what HTML, CSS and JavaScript each do","Describe what happens when someone visits a website","Explain domains, hosting and the main hosting options","Explain change control, branches and pull requests"],
-  "Explain one idea from today to Mum or Nan and Pop in under a minute, no jargon allowed!",
+  "Explain one idea from today to Mum, Gran &amp; Gramps, Pa &amp; Deb and all your family in under a minute, no jargon allowed!",
   [("What are the 3 languages of the web?","HTML for structure, CSS for style, JavaScript for behaviour."),("What's the difference between a domain and hosting?","The domain is the address; hosting is the computer where the site's files live."),("What is a commit?","A saved snapshot of your project with a short message saying what changed.")],
   ["Lessons 1–6 explored","Talk it through with Dad done","Journal line written"]),
  2:([],["Explain how a site gets deployed","Name what makes a modern website great","Match the main tools to their jobs","Walk through the project roadmap from brief to hand-over"],
@@ -326,7 +326,7 @@ page('index.html','Home',f'''<header><div class="w"><div class="tag">🌊 Northe
 <div class="chips">{''.join(f'<span class="chip">{p}</span>' for p in pill)}</div></div></section>
 <section><div class="w r"><div class="grid">
 <div class="card"><h3>🕓 The daily routine</h3><ul class="l"><li><b>School first:</b> at school on time, every day</li><li><b>4:30–6:30pm</b> the 2-hour build session at Dad's, straight after school</li><li><b>6:30pm</b> commit + journal line, then the evening is his</li><li><b>Weekends:</b> same 2 hours, Tomas picks when</li></ul></div>
-<div class="card"><h3>🎤 Weekly show-and-tells</h3><ul class="l"><li><b>Fri 23 Oct:</b> homepage online</li><li><b>Fri 30 Oct:</b> full site working</li><li><b>Fri 6 Nov:</b> Launch Day, live on his own domain</li></ul><p class="note">Mum, the grandparents, and Melanie and Sio (The Burdekin) are warmly invited. <a href="support.html">If I do this, here&rsquo;s what I can achieve →</a></p></div>
+<div class="card"><h3>🎤 Weekly show-and-tells</h3><ul class="l"><li><b>Fri 23 Oct:</b> homepage online</li><li><b>Fri 30 Oct:</b> full site working</li><li><b>Fri 6 Nov:</b> Launch Day, live on his own domain</li></ul><p class="note">Mum, Gran &amp; Gramps, Pa &amp; Deb and all his family, plus Melanie and Sio from The Burdekin, are warmly invited. <a href="support.html">If I do this, here&rsquo;s what I can achieve →</a></p></div>
 <div class="card"><h3>📚 A real learning program</h3><p>21 days of lessons, each with a timetable, objectives, build tasks, a quiz and a reflection.</p><p style="margin-top:12px"><a class="btn o" href="learn/index.html">Open the Learn program</a></p></div></div></div></section>
 {jour}''')
 # ambition (reuse rich, swap nav/foot)
@@ -339,11 +339,11 @@ lab={"done":"✓ done","progress":"in progress","upcoming":"upcoming"}
 def lst(h,xs): return f'<div class="card"><h3>{h}</h3>'+''.join(f'<div class="tick"><span>{n}</span><span class="st {k}">{lab[k]}</span></div>' for n,k in xs)+'</div>'
 page('learning.html',"What I'm learning",hero("What I'm learning","Tools <span class='g'>+</span> life skills","14 professional tools and 11 life skills. Each one ticks over to done when I can do it myself.")+f'<section style="padding-top:0"><div class="w"><div class="grid">{lst("🧰 Tools",tools)}{lst("🌱 Life skills",life)}</div><p class="note"><a href="learn/tools.html">Tools I\'ll master: full details →</a></p><!-- UPDATE: change "st upcoming" to "st progress" or "st done" --></div></section>')
 # support
-page('support.html','If I do this',hero("From Tomas · to Mum, Nan and Pop, Melanie and Sio, and Dad","If I do this, here&rsquo;s what I <span class='g'>can achieve</span>.","This is my choice and my opportunity: 21 days of structured learning, designed as a fast track just for me.")+'''<section style="padding-top:0"><div class="w stack">
+page('support.html','If I do this',hero("From Tomas · to Mum, Gran &amp; Gramps, Pa &amp; Deb and all my family, and Melanie and Sio from The Burdekin","If I do this, here&rsquo;s what I <span class='g'>can achieve</span>.","This is my choice and my opportunity: 21 days of structured learning, designed as a fast track just for me.")+'''<section style="padding-top:0"><div class="w stack">
 <div class="card feat"><div class="label">If I do this</div><h3>By Launch Day (Fri 6 Nov), I could have…</h3><ul class="l"><li>🚀 A launched business site, live on my own domain</li><li>🛠️ Real skills: code, design, hosting, pitching and money</li><li>🤝 My first clients</li><li>💻 A foundation for a career in IT</li><li>🌱 A routine I&rsquo;m proud of, and the confidence that comes with finishing something big</li></ul><p style="margin-top:10px"><a href="outcomes.html">See everything I could do by Day 21 →</a></p></div>
 <div class="card"><div class="label">A fast track, made for me</div><h3>Structured learning, just for me</h3><p>Every day has a plan, a lesson, real building on my business site and a quick reflection. It&rsquo;s designed around what I want to do, so each session moves me closer to launching.</p><p style="margin-top:10px">My sessions are 4:30&ndash;6:30pm after school and 2 hours on weekends, at Dad&rsquo;s. Around them I can see everyone, all the time: dinners out, movies, gym sessions with Mum and all sorts of outings.</p></div>
 <div class="card"><div class="label">Both of us, all in</div><h3>Matching Dad&rsquo;s commitment</h3><p>Dad is taking time out of his own schedule to teach and help me through these 21 days. I&rsquo;m really grateful for that, and I want to match it by giving it my full commitment too. We&rsquo;re in this together.</p></div>
-<div class="card"><h3>Mum, Nan and Pop, and Dad</h3><p>Having you all cheering me on means everything. Come and visit any time, and ask me how it&rsquo;s going. I&rsquo;d love to show you what I&rsquo;m building. 💛</p><p style="margin-top:10px"><a href="wall.html">Leave me a message on my wall →</a> · <a href="tracker.html">Follow my tracker →</a></p></div>
+<div class="card"><h3>Mum, Gran &amp; Gramps, Pa &amp; Deb and all my family</h3><p>Having you all cheering me on means everything. Come and visit any time, and ask me how it&rsquo;s going. I&rsquo;d love to show you what I&rsquo;m building. 💛</p><p style="margin-top:10px"><a href="wall.html">Leave me a message on my wall →</a> · <a href="tracker.html">Follow my tracker →</a></p></div>
 <div class="card" style="text-align:center;padding:44px;background:linear-gradient(135deg,#ff6b4a26,#5ee7c922)"><h2>21 days. Big things to achieve. <span class="g">Everyone in my corner.</span></h2><p class="note">Tomas</p></div>
 </div></section>''')
 # plan with scenarios
@@ -484,7 +484,7 @@ page('school.html','Why staying in school is part of my plan',hero("In my words"
 <div class="card"><h3>💼 Where it leads</h3><p>IT careers pay well. Jobs and Skills Australia reports median full-time weekly earnings of <b>A$2,537</b> for software and applications programmers and <b>A$2,476</b> for web developers and multimedia specialists, compared with <b>A$1,852</b> across all occupations (ABS, May 2025). <a href="careers.html">See all the careers →</a></p><p class="note">Sources: <a href="{J}2613-software-and-applications-programmers">JSA 2613</a>, <a href="{J}2612-multimedia-specialists-and-web-developers">JSA 2612</a>, viewed Oct 2026.</p></div>
 <div class="card feat"><h3>Why this one is mine</h3><p>School gives me the qualifications. This program gives me real skills, a real business and the routine to keep going. Together they open the most doors, and I want all of them open.</p></div>
 </div></section>''')
-for fn,anchor in [('careers.html','<a class="btn" href="outcomes.html">Start with: By Day 21, I can…</a>'),('support.html','<div class="card"><h3>Mum, Nan and Pop, and Dad</h3>')]:
+for fn,anchor in [('careers.html','<a class="btn" href="outcomes.html">Start with: By Day 21, I can…</a>'),('support.html','<div class="card"><h3>Mum, Gran &amp; Gramps, Pa &amp; Deb and all my family</h3>')]:
     s=open(fn).read(); s=s.replace(anchor,('<a class="btn o" href="school.html">Why school is part of my plan</a> ' if fn=='careers.html' else '<div class="card"><h3>📘 School is part of my plan</h3><p>I&rsquo;m staying in school too. <a href="school.html">Here&rsquo;s why →</a></p></div>')+anchor,1); open(fn,'w').write(s)
 import subprocess;subprocess.run(['python3','postfix.py'])
 # ===== core message pull-quote =====
@@ -538,7 +538,7 @@ SOFT=[
 ("<li><b>School first:</b> at school on time, every day</li>","<li><b>School comes first:</b> a great day at school, then the fun part</li>"),
 ("the 2-hour build session at Dad's, straight after school","the 2-hour build session at Dad's, after school"),
 ("<li><b>6:30pm</b> commit + journal line, then the evening is his</li>","<li><b>6:30pm</b> a quick log of the day, then the evening's free for family, friends and fun</li>"),
-("<li><b>Weekends:</b> same 2 hours, Tomas picks when</li>","<li><b>Weekends:</b> 2 hours whenever suits Tomas, and the rest is free for sport, family and outings</li><li><b>Anytime:</b> he can see everyone, all the time: Mum, Nan and Pop, Melanie and Sio, and Dad</li>"),
+("<li><b>Weekends:</b> same 2 hours, Tomas picks when</li>","<li><b>Weekends:</b> 2 hours whenever suits Tomas, and the rest is free for sport, family and outings</li><li><b>Anytime:</b> he can see everyone, all the time: Mum, Gran &amp; Gramps, Pa &amp; Deb and all his family, plus Melanie and Sio from The Burdekin</li>"),
 ("🕓 The daily routine","🕓 How a day could look"),
 ('<span class="chip">Discipline</span>','<span class="chip">Focus</span>'),('<span class="chip">School on time</span>','<span class="chip">Loving school</span>'),('<span class="chip">Structure</span>','<span class="chip">Confidence</span>'),
 ("Dad and I set up this site. Watch it change.","Dad and I built this site together. Watch it grow."),
@@ -548,7 +548,7 @@ SOFT=[
 ("2 hours a day, side by side with Dad, Sat 17 Oct","2 hours a day, with Dad as your teacher and helper, Sat 17 Oct"),
 ("Weekdays: session 4:30–6:30pm at Dad's, straight after school.","School day: your session runs 4:30–6:30pm at Dad's."),
 ("Weekend: same 2 hours, Tomas picks the time (e.g. 10am–12pm).","Weekend: 2 hours whenever suits you (e.g. 10am–12pm), and the rest of the day is yours."),
-("Put the tracker somewhere you&rsquo;ll see it.","Pop the tracker somewhere handy."),
+("Put the tracker somewhere you&rsquo;ll see it.","Keep the tracker somewhere handy."),
 ("Tick Day 1!","Tick Day 1, nice work!"),
 ("Discipline and routine","Focus and routine"),("Commitment, discipline &amp; routine","Commitment, focus &amp; routine"),
 ("4:30pm start, every school day, same steps.","A steady 4:30pm start on school days, with the same simple steps."),
