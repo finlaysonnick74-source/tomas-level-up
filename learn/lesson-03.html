@@ -1,0 +1,43 @@
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Domains and hosting · Tomas Levels Up</title><script src="../gate.js"></script><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="lessons.css"></head><body><a class="skip" href="#main">Skip to content</a><nav aria-label="Main"><div class="w"><a class="logo" href="../index.html" style="text-decoration:none">Tomas <span>Levels Up</span></a>
+<ul><li><a href="../index.html">Home</a></li><li><a href="../today.html">Today</a></li><li><a href="../tracker.html">Tracker</a></li><li><a href="../learn/index.html">Program</a></li><li><a href="../skills.html">Skills</a></li><li><a href="../careers.html">Careers</a></li><li><a href="../plan/index.html">Plan</a></li><li><a href="../library/index.html">Library</a></li><li><a href="../support.html">Support</a></li></ul></div></nav>
+<main id="main"><!-- Web Basics · Lesson 3: Domains & hosting · fragment: place inside <main>. Needs style.css + lessons.css + lessons.js -->
+<article class="ls" id="lesson-03" data-lesson="3">
+<header><div class="w"><div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Program</a> › Web Basics › Lesson 3</div><div class="tag">Web Basics · Lesson 3 of 11 · Domains &amp; hosting</div><h1>The address and<br>the house.</h1><p class="lead">Every website needs two things: a <b>name</b> people can type, and a <b>place</b> where its files live. They're often bought from different companies and then connected together.</p><div class="bar2"><i style="width:27%"></i></div></div></header>
+<section class="ls-sec"><div class="w stack">
+<div class="ls-stage"><svg viewBox="0 0 900 330" role="img" aria-label="Domain is the street address, DNS is the signpost, hosting is the house where your files live">
+<defs><linearGradient id="ls3g" x1="0" x2="1"><stop offset="0" stop-color="#ff6b4a"/><stop offset="1" stop-color="#ffb443"/></linearGradient></defs>
+<path d="M0 290h900" stroke="#2a2f4a" stroke-width="40"/><path class="ls-dash" d="M0 290h900" stroke="#ffffff44" stroke-width="3"/>
+<g class="ls-bob"><rect x="40" y="70" width="230" height="110" rx="18" fill="#141829" stroke="url(#ls3g)" stroke-width="3"/>
+<text x="155" y="105" text-anchor="middle" fill="#ffb443" font-weight="800" font-size="15" letter-spacing="3">DOMAIN</text>
+<text x="155" y="140" text-anchor="middle" fill="#eef0ff" font-family="monospace" font-weight="700" font-size="20">yourname.com.au</text>
+<text x="155" y="165" text-anchor="middle" fill="#9aa3c7" font-size="15">the street address</text></g>
+<path class="ls-dash" d="M280 125 C330 125 340 125 380 125" stroke="#ffb443" stroke-width="4" fill="none"/>
+<g class="ls-sway"><rect x="445" y="80" width="12" height="190" fill="#9aa3c7"/><path d="M380 92h170l26 24-26 24H380z" fill="#5ee7c9"/>
+<text x="470" y="123" text-anchor="middle" fill="#06231d" font-weight="900" font-size="20">DNS</text>
+<text x="451" y="175" text-anchor="middle" fill="#eef0ff" font-size="15">“that name lives over here”</text><text x="451" y="198" text-anchor="middle" fill="#9aa3c7" font-size="15">the signpost</text></g>
+<path class="ls-dash" d="M585 125 C620 125 630 150 660 160" stroke="#5ee7c9" stroke-width="4" fill="none"/>
+<g><path d="M660 170 L765 90 L870 170 Z" fill="#ff6b4a"/><rect x="675" y="168" width="180" height="102" fill="#141829" stroke="#ff6b4a" stroke-width="3"/>
+<text x="765" y="140" text-anchor="middle" fill="#111" font-weight="900" font-size="15" letter-spacing="2">HOSTING</text>
+<g font-family="monospace" font-size="14" font-weight="700" fill="#ffb443"><text x="700" y="200">.html</text><text x="770" y="200">.css</text><text x="700" y="228">.js</text><text x="770" y="228">.jpg</text></g>
+<text x="765" y="258" text-anchor="middle" fill="#9aa3c7" font-size="12">the house (your files live here)</text>
+<g transform="translate(838 74)"><rect x="0" y="10" width="22" height="18" rx="3" fill="#5ee7a0"/><path d="M5 10V5a6 6 0 0112 0v5" fill="none" stroke="#5ee7a0" stroke-width="3"/></g>
+<text x="800" y="62" text-anchor="middle" fill="#5ee7a0" font-size="13">padlock = HTTPS (secure)</text></g>
+</svg>
+<div class="ls-trip"><div><b>Domain · the address</b><small>Rented yearly from a registrar</small></div><div><b>DNS · the signpost</b><small>Set in DNS settings</small></div><div><b>Hosting · the house</b><small>Provided by a host, e.g. Netlify</small></div></div></div>
+</div></section>
+<section class="ls-sec"><div class="w stack">
+<div class="grid">
+<div class="card"><h3>Domains</h3><p>You don't buy a domain forever — you <b>rent</b> it, usually one or more years at a time, from a <dfn class="ls-t">registrar</dfn> (a company allowed to sell domain names). Australian registrars include VentraIP and Crazy Domains; there are many others.</p><p style="margin-top:10px">A <code>.com.au</code> name needs an Australian business connection, such as an <dfn class="ls-t">ABN</dfn> (Australian Business Number — the ID number for a business). Dad can help you sort that out.</p><p style="margin-top:10px">Forget to renew, and someone else can grab the name. Always turn on auto-renew.</p></div>
+<div class="card"><h3>Hosting</h3><p>Most small business websites are <dfn class="ls-t">static sites</dfn>: the same files are sent to every visitor. These are fast, cheap (often free) and very hard to hack. Netlify is great at these.</p><p style="margin-top:10px">Good hosts give you <dfn class="ls-t">HTTPS</dfn> for free — the padlock in the address bar, meaning the connection is private and secure. Every site you make should have it.</p></div></div>
+<div class="ls-tip"><h3>Pro tip for client work</h3><p>Set up each client's domain in <b>their</b> name and account, with you helping. It's their business — and it makes hand-over clean and trustworthy.</p></div>
+</div></section>
+<section class="ls-sec"><div class="w stack">
+<div class="ls-quiz"><h2>Quick quiz</h2><p class="sub" style="margin:0">Tap an answer, or tap “Show answer”.</p><div class="ls-q"><p>How do you get a domain name?</p><div class="opts"><button type="button">Buy it once, forever</button><button type="button" data-ok>Rent it from a registrar, usually a year or more at a time</button><button type="button">It comes free with every website</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>Rent it from a registrar, usually a year or more at a time</b> — and always turn on auto-renew.</p></div>
+<div class="ls-q"><p>In the address-and-house picture, what is DNS?</p><div class="opts"><button type="button">The house</button><button type="button" data-ok>The signpost pointing the name to the right place</button><button type="button">The front door key</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>The signpost pointing the name to the right place</b> — it says “that name lives over here”.</p></div>
+<div class="ls-q"><p>What does the padlock (HTTPS) in the address bar mean?</p><div class="opts"><button type="button">The site is closed</button><button type="button" data-ok>The connection is private and secure</button><button type="button">The site costs money</button></div><button type="button" class="ls-b show">Show answer</button><p class="ans">✓ <b>The connection is private and secure</b> — good hosts give it for free, and every site you make should have it.</p></div>
+<p class="ls-score" aria-live="polite"></p><button type="button" class="ls-b" data-quiz-reset>Try again</button></div>
+</div></section>
+<section class="ls-sec"><div class="w"><div class="pn"><a class="btn o" href="lesson-02.html">← How a website works</a><a class="btn" href="lesson-04.html">Hosting options compared →</a></div></div></section>
+</article>
+</main>
+<footer><div class="w">Tomas Levels Up · a private family page · <a href="https://finlaysonnick74-source.github.io/tomas-web-studio/">Watch the business site grow →</a></div></footer><script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll(".r").forEach(el=>o.observe(el));</script><script src="lessons.js"></script></body></html>
