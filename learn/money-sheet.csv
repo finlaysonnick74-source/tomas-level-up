@@ -1,0 +1,6 @@
+Date,What happened,Money in (A$),Money out (A$),Set aside 30% (A$),Notes
+2026-11-20,Starter website - Saltwater Cafe (example),600,,180,Paid into the account Dad holds
+2026-11-21,Domain renewal (example),,25,,Receipt saved in Money folder
+,,,,,
+,,,,,
+TOTALS,,=SUM(C2:C40),=SUM(D2:D40),=SUM(E2:E40),Profit = money in - money out
