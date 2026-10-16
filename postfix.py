@@ -16,6 +16,8 @@ R=[("At school on time, homework done before you build.","At school on time, eve
 ("the school counsellor","the counsellors, Melanie and Sio (The Burdekin)"),("school counsellor","counsellors, Melanie and Sio (The Burdekin)"),
 ("the counsellor and Mum","Melanie, Sio and Mum"),("Mum, grandparents and the counsellor ","Mum, the grandparents and Melanie and Sio (The Burdekin) "),
 ("For Mum, the grandparents and the counsellor","For Mum, the grandparents, Melanie and Sio")]
+from tone import T
+R=R+T
 for f in glob.glob('**/*.html',recursive=True):
     s=open(f).read();o=s
     for a,b in R: s=s.replace(a,b)
