@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="wb.css"><style> body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page">
+  <div class="kicker">06 &middot; Branches, pull requests &amp; undo</div>
+  <h1>Try things safely,<br>then make them real.</h1>
+  <p class="lead">The live website shouldn't change until you're happy. Git lets you work on a side copy, check it, and only then add it to the real thing.</p>
+  <svg viewBox="0 0 680 300">
+    <defs><marker id="ar8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#14161A"/></marker></defs>
+    <!-- main line -->
+    <line x1="20" y1="170" x2="660" y2="170" stroke="#14161A" stroke-width="6" stroke-linecap="round"/>
+    <text x="20" y="150" font-size="12" font-weight="800" fill="#14161A">main</text>
+    <text x="20" y="200" font-size="10.5" fill="#5B6068">= the live website</text>
+    <!-- branch -->
+    <path d="M200 170 C 240 170, 240 70, 290 70 L 460 70 C 510 70, 510 170, 550 170" fill="none" stroke="#FF5A36" stroke-width="6" stroke-linecap="round"/>
+    <text x="300" y="44" font-size="12" font-weight="800" fill="#FF5A36">branch: new-prices</text>
+    <!-- commits main -->
+    <g stroke="#fff" stroke-width="3">
+      <circle cx="110" cy="170" r="13" fill="#14161A"/>
+      <circle cx="200" cy="170" r="13" fill="#14161A"/>
+      <circle cx="550" cy="170" r="15" fill="#14161A"/>
+      <circle cx="635" cy="170" r="13" fill="#9A9EA5"/>
+      <circle cx="320" cy="70" r="13" fill="#FF5A36"/>
+      <circle cx="420" cy="70" r="13" fill="#FF5A36"/>
+    </g>
+    <text x="320" y="104" text-anchor="middle" font-size="10.5" fill="#5B6068">commit</text>
+    <text x="420" y="104" text-anchor="middle" font-size="10.5" fill="#5B6068">commit</text>
+    <!-- PR label -->
+    <g transform="translate(470,104)"><rect width="104" height="26" rx="13" fill="#14161A"/><text x="52" y="17" text-anchor="middle" font-size="10.5" font-weight="800" fill="#fff">Pull request ✓</text></g>
+    <text x="550" y="206" text-anchor="middle" font-size="11" font-weight="800" fill="#14161A">merge</text>
+    <text x="635" y="148" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5B6068">oops, bug</text>
+    <!-- rollback -->
+    <path d="M635 186 C 635 270, 540 272, 210 260 C 200 258, 200 230, 200 192" fill="none" stroke="#14161A" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ar8)"/>
+    <text x="420" y="290" text-anchor="middle" font-size="12" font-weight="800" fill="#14161A">Roll back: put the site back to a version that worked</text>
+  </svg>
+  <div class="grid2" style="margin-top:16px;gap:18px">
+    <div>
+      <p><b class="t">Main</b> &mdash; the main line of your project&rsquo;s history. Whatever is on main is what's on the live website.</p>
+      <p><b class="t">Branch</b> &mdash; a side copy of the project where you can try changes without touching main. Like a draft.</p>
+      <p><b class="t">Pull request</b> (or <b>PR</b>) &mdash; on GitHub, a request that says &ldquo;please add my branch's changes into main&rdquo;. It shows exactly what changed, line by line, so you can check before saying yes.</p>
+      <p><b class="t">Merge</b> &mdash; joining a branch's changes into main.</p>
+      <p><b class="t">Roll back</b> (or <b>revert</b>) &mdash; undoing a change by going back to an earlier version. Because every version is saved, nothing is ever truly lost.</p>
+    </div>
+    <div class="box" style="margin:0">
+      <h3>The everyday loop</h3>
+      <ol style="padding-left:20px;margin-top:6px">
+        <li style="margin-bottom:5px">Make a <b>branch</b> for the change, e.g. <code>new-prices</code>.</li>
+        <li style="margin-bottom:5px">Ask Grok Bot to make the change.</li>
+        <li style="margin-bottom:5px"><b>Commit</b> with a clear message and <b>push</b> to GitHub.</li>
+        <li style="margin-bottom:5px">Open a <b>pull request</b>.</li>
+        <li style="margin-bottom:5px">Netlify makes a <b>preview</b> link &mdash; check it on your phone <i>and</i> laptop.</li>
+        <li style="margin-bottom:5px">Happy? <b>Merge</b>. The live site updates by itself.</li>
+        <li>Something broke? <b>Roll back</b> and breathe. Fix it calmly.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="chat">
+    <h3>Chat about it</h3>
+    <p style="margin:4px 0 0">Why might a client feel safer knowing their site has a full history and can be rolled back in a minute?</p>
+  </div>
+  <div class="foot"><span>Web Basics for Tomas</span><span class="n">08</span></div>
+</section>
+<!-- PAGE 9 DEPLOYMENT -->
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
