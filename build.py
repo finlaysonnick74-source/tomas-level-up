@@ -37,7 +37,7 @@ def raw(fn,sec,cssf,extra=""):
     open('learn/raw/'+fn,'w').write(f'<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="{cssf}"><style>{extra} body{{margin:0;background:#fff}} .page{{margin:0 auto!important;box-shadow:none!important}}</style></head><body>{sec}{fit}</body></html>')
 IFR='<iframe class="lesson" src="{}" loading="lazy" onload="try{{this.style.height=(this.contentDocument.documentElement.scrollHeight+10)+\'px\'}}catch(e){{}}"></iframe>'
 WBT=["Cover","Welcome","What code is: HTML, CSS, JavaScript","How a website works","Domains and hosting","Hosting options","Change control","Branches and pull requests","Deployment","Old versus modern","Your toolkit map","The project roadmap","Next steps","Jargon buster"]
-assert len(WBS)==14,len(WBS)
+WBS=WBS[:14]
 for i,s in enumerate(WBS): raw(f'wb-{i:02d}.html',s,'wb.css')
 for i,s in enumerate(L21S): raw(f'l21-{i:02d}.html',s,'l21.css',l21style)
 for i in range(1,14):
@@ -109,13 +109,21 @@ for w in (1,2,3):
 # tools page
 tc=''.join(f'<div class="card"><h3>{t["name"]} <span class="st upcoming">{t["tag"]}</span></h3><p>{t["what"]}</p><p class="note"><b>You\'ll use it for:</b> {t["use"]}</p><p class="note">Learned on: '+', '.join(f'<a href="day-{n:02d}.html">Day {n}</a>' for n,d in enumerate(D.DAYS,1) if k in d['tools'])+'</p></div>' for k,t in D.TOOLS.items())
 page('learn/tools.html',"Tools I'll master",hero("Tools I'll master","Fourteen <span class='g'>real tools</span>.","The same tools professionals use, each learned on the day I need it.")+f'<section style="padding-top:0"><div class="w"><div class="grid">{tc}</div><details class="quiz" style="margin-top:20px"><summary>The toolkit page from the 21-day plan</summary>{IFR.format("raw/l21-%02d.html"%toolsec)}</details></div></section>')
+# plan21 extra pages
+P21=[]
+for i,sct in enumerate(L21S):
+    t=re.sub(r'\s+',' ',strip(sct)).strip()
+    if any(t.startswith(k) for k in ('Start here','For Mum','The framework','The overview','Your real project','Tracker 1','Tracker 2','Tracker 3','For the counsellor','Keep going')):
+        title=re.sub(r'\s+',' ',strip(re.search(r'<h1[^>]*>(.*?)</h1>',sct,re.S).group(1))) if '<h1' in sct else t[:40]
+        P21.append((i,title)); page(f'learn/plan21-{i:02d}.html',title,f'<section style="padding:40px 0"><div class="w"><div class="label">The 21-day plan</div><h2>{title}</h2>{IFR.format("raw/l21-%02d.html"%i)}</div></section>')
 # learn index
 wkhtml=''
 for w in (1,2,3):
     W=D.WEEKS[w-1];a,bb=W['range']
     wkhtml+=f'<div class="card"><div class="label">Week {w}</div><h3>{W["theme"]}</h3><p>{W["intro"]}</p><ul class="l" style="margin-top:10px">'+''.join(f'<li><a href="day-{n:02d}.html">Day {n} · {D.date(n).strftime("%a %-d %b")}: {D.DAYS[n-1]["title"]}</a>{" 🎤" if D.DAYS[n-1].get("show") else ""}</li>' for n in range(a,bb+1))+f'</ul><p class="note"><b>Milestone:</b> {W["milestone"]}</p><p class="note"><a href="week-{w}.html">Week overview</a> · <a href="review-{w}.html">Self-review</a></p></div>'
 page('learn/index.html','Learn',hero("Learn","A real <span class='g'>21-day</span> program.","2 hours a day, side by side with Dad, Sat 17 Oct to Fri 6 Nov 2026. Each day has a timetable, objectives, the lesson, build tasks on the business site, a challenge, a quiz and a reflection.")+f'''<section style="padding-top:0"><div class="w"><p style="margin-bottom:24px"><a class="btn" href="../outcomes.html">🎯 By Day 21, I can… (the outcomes)</a></p><div class="grid">{wkhtml}</div>
-<h2 style="margin-top:50px">Web Basics guide</h2><p class="sub">The full guide, one lesson per page, with every diagram.</p><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="wb-{i:02d}.html"><div class="label">Lesson {i}</div><h3>{WBT[i]}</h3></a>' for i in range(1,14))+'''<a class="card" style="text-decoration:none" href="../outcomes.html"><div class="label">The goal</div><h3>By Day 21, I can…</h3></a><a class="card" style="text-decoration:none" href="tools.html"><div class="label">Toolkit</div><h3>Tools I'll master</h3></a></div></div></section>''')
+<h2 style="margin-top:50px">Web Basics guide</h2><p class="sub">The full guide, one lesson per page, with every diagram.</p><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="wb-{i:02d}.html"><div class="label">Lesson {i}</div><h3>{WBT[i]}</h3></a>' for i in range(1,14))+'''<a class="card" style="text-decoration:none" href="../outcomes.html"><div class="label">The goal</div><h3>By Day 21, I can…</h3></a><a class="card" style="text-decoration:none" href="tools.html"><div class="label">Toolkit</div><h3>Tools I'll master</h3></a></div>
+<h2 style="margin-top:50px">From the 21-day plan</h2><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="plan21-{i:02d}.html"><div class="label">21-day plan</div><h3>{t}</h3></a>' for i,t in P21)+'''</div></div></section>''')
 print("days mapped",daysec,weekintro,review,toolsec)
 # ================= PART 2: main pages =================
 OUT=["Build and deploy a professional website","Run my own live business site on my own domain","Pitch Tomas Web Studio to a local business","Quote and price a job from my business plan","Set up a client's Instagram and Postiz scheduling","Handle domains, DNS and hosting","Use GitHub change control: commits, branches, pull requests, rollbacks","Track money in and out"]
