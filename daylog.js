@@ -11,9 +11,9 @@ function rd(k){return g(k).then(function(c){c=parseInt(c)||0;if(!c||c>40)return 
 function wr(k,o){var e=enc(o),ch=[];for(var i=0;i<e.length;i+=180)ch.push(e.slice(i,i+180));return Promise.all(ch.map(function(c,j){return p(k+"_"+j,c)})).then(function(){return p(k,ch.length)})}
 function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function okUrl(u){u=String(u||"").trim();return /^https:\/\/[^\s"'<>]+$/.test(u)?u:""}
-var LIVE=null;
+var LIVE=null,DW={};
 function load(){if(LIVE)return LIVE;var a=[];for(var n=1;n<=21;n++){(function(n){a.push(Promise.all([rd("day-"+pad(n)),rd("day-"+pad(n)+"-dad")]).then(function(r){return{day:n,e:r[0],dad:r[1]}}))})(n)}
- LIVE=Promise.all(a).then(function(r){var m={};r.forEach(function(x){var loc=null;try{loc=JSON.parse(localStorage.getItem("dl-"+x.day)||"null")}catch(e){}m[x.day]={e:x.e||loc,dad:x.dad}});return m});return LIVE}
+ LIVE=Promise.all(a).then(function(r){var m={};r.forEach(function(x){var loc=null;try{loc=JSON.parse(localStorage.getItem("dl-"+x.day)||"null")}catch(e){}m[x.day]={e:x.e||loc,dad:x.dad};var ee=m[x.day].e;if(ee&&ee.dw&&!DW[x.day])DW[x.day]=ee.dw});return m});return LIVE}
 function streak(D){/* D lists only session days (curriculum dates), so non-session days never break it. Count back from the latest done day. */
  var st=0,l=-1;D.forEach(function(x,i){if(x.status=="done")l=i});for(var i=l;i>=0&&D[i].status=="done";i--)st++;return st}
 function merge(d){return load().then(function(m){d.days.forEach(function(x){var L=m[x.day]||{},e=L.e;
@@ -22,7 +22,7 @@ function merge(d){return load().then(function(m){d.days.forEach(function(x){var 
   if(L.dad&&L.dad.note)x.dad_note=esc(L.dad.note)});
  var nx=d.days.find(function(x){return x.status!="done"})||d.days[d.days.length-1];nx.next=true;d.streak=streak(d.days);return d}).catch(function(){return d})}
 window.fetch=function(u,o){if(typeof u=="string"&&/progress\.json/.test(u)&&!(o&&o.method&&o.method!="GET"))return _f(u,o).then(function(r){return r.json()}).then(merge).then(function(d){return new Response(JSON.stringify(d),{headers:{"Content-Type":"application/json"}})});return _f.apply(window,arguments)};
-function save(n,o){o.at=new Date().toISOString();try{localStorage.setItem("dl-"+n,JSON.stringify(o))}catch(e){}LIVE=null;return wr("day-"+pad(n),o)}
+function save(n,o){if(o.dw)DW[n]=o.dw;else if(DW[n])o.dw=DW[n];o.at=new Date().toISOString();try{localStorage.setItem("dl-"+n,JSON.stringify(o))}catch(e){}LIVE=null;return wr("day-"+pad(n),o)}
 function saveDad(n,note){LIVE=null;return wr("day-"+pad(n)+"-dad",{note:note,at:new Date().toISOString()})}
 /* ---- widget ---- */
 function base(){return /\/(learn|results|plan|library)\//.test(location.pathname)?"../":""}
@@ -53,6 +53,14 @@ function dadBox(el){var B=base();fetch(B+"progress.json?"+Date.now()).then(funct
   el.querySelector("#dd-day").onchange=function(){render(+this.value)};
   el.querySelector("#dd-go").onclick=function(){var t=el.querySelector("#dd-n").value.trim();saveDad(n,t).then(function(){m[n]=Object.assign(m[n]||{},{dad:{note:t}});el.querySelector("#dd-msg").textContent="Saved ✓ Tomas will see it on Day "+n+"."}).catch(function(){el.querySelector("#dd-msg").textContent="Couldn't save just now. Try again in a moment."})}}
  render(cur)})})}
+/* ---- Done-when boxes: saved into the same day-NN entry (field dw). Launch checklist: this device only. ---- */
+function doneBox(el){var n=parseInt(el.getAttribute("data-done"))||0,bx=[].slice.call(el.querySelectorAll("input[data-k]")),msg=el.querySelector(".dl-msg");if(!n)return;
+ function paint(){bx.forEach(function(b){b.closest("li").classList.toggle("on",b.checked)})}
+ load().then(function(m){var e=(m[n]||{}).e||{},w=e.dw||DW[n]||[];bx.forEach(function(b,i){b.checked=!!w[i]});paint();
+  bx.forEach(function(b){b.onchange=function(){paint();var w=bx.map(function(x){return x.checked});DW[n]=w;var cur=Object.assign({},(m[n]||{}).e||{},{dw:w});m[n]=Object.assign(m[n]||{},{e:cur});
+   save(n,cur).then(function(){msg.textContent=w.every(Boolean)?"All done! 🎉 Saved ✓":"Saved ✓"}).catch(function(){msg.textContent="Saved on this device. It'll sync next time."})}})})}
+function ckBox(el){var k="ck-"+el.getAttribute("data-ck"),bx=[].slice.call(el.querySelectorAll("input[data-k]")),msg=el.querySelector(".dl-msg"),w=[];try{w=JSON.parse(localStorage.getItem(k)||"[]")}catch(e){}
+ bx.forEach(function(b,i){b.checked=!!w[i];b.closest("li").classList.toggle("on",b.checked);b.onchange=function(){b.closest("li").classList.toggle("on",b.checked);var v=bx.map(function(x){return x.checked});try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}if(msg)msg.textContent=v.every(Boolean)?"Section done! 🎉":"Saved on this device ✓"}})}
 window.DL={load:load,save:save,saveDad:saveDad,streak:streak,esc:esc};
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-dlog]").forEach(widget);document.querySelectorAll("[data-dlad]").forEach(dadBox)});
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-dlog]").forEach(widget);document.querySelectorAll("[data-dlad]").forEach(dadBox);document.querySelectorAll("[data-done]").forEach(doneBox);document.querySelectorAll("[data-ck]").forEach(ckBox)});
 })();
