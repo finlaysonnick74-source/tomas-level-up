@@ -330,3 +330,15 @@ s=open('index.html').read()
 s=s.replace('<div class="label">New here? Start here</div>','<div class="label">New here? Start here</div>'+Q,1); open('index.html','w').write(s)
 s=open('support.html').read()
 s=s.replace('<section style="padding-top:0"><div class="w stack">','<section style="padding-top:0"><div class="w stack">'+Q,1); open('support.html','w').write(s)
+
+# ===== giving back cards =====
+GB='<div class="card" style="border-color:#ffb44366"><h3>💛 Giving back</h3><p>I&rsquo;ll also build websites for charities for free (about 1 a quarter is the plan), to give back to my community and the people who&rsquo;ve supported me. <a href="plan/giving.html">Read more →</a></p></div>'
+s=open('index.html').read()
+s=s.replace('<div class="card"><h3>📚 A real learning program</h3>',GB+'<div class="card"><h3>📚 A real learning program</h3>',1); open('index.html','w').write(s)
+s=open('ambition.html').read()
+s=s.replace('<li>A business that runs on my own commitment</li>','<li>A business that runs on my own commitment</li><li>Free websites for local charities, about 1 a quarter</li>',1)
+s=s.replace('<li>Pitching confidently in person</li>','<li>Pitching confidently in person</li><li>My first free charity website built</li>',1)
+s=s.replace('</div></div></section>','</div><div style="margin-top:20px">'+GB+'</div></div></section>',1); open('ambition.html','w').write(s)
+s=open('outcomes.html').read()
+s=s.replace('<li>Launch-night show-and-tell with the family</li>','<li>Launch-night show-and-tell with the family</li><li>Next: offer my first free charity website (<a href="plan/giving.html">giving back</a>)</li>',1); open('outcomes.html','w').write(s)
+import subprocess;subprocess.run(['python3','postfix.py'])
