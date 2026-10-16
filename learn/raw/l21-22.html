@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">Week 3 &middot; Days 19&ndash;20</div><div class="day"><div class="dh"><div class="dn">19</div><div class="dt"><div class="t">Instagram &harr; website link-up</div><div class="d">Wednesday 4 November 2026 &middot; Home by 4:30pm &middot; homework first &middot; build 5:30&ndash;7:30pm</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#C13584;color:#fff">Get seen</span><span class="stg" style="background:#5B6068;color:#fff">Change control</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>5:30</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Open Instagram Insights. Anything yet?</td></tr><tr class=""><td>5:40</td><td class="b">Learn &amp; build &middot; 45m</td><td>Linking both ways: your site in your bio, Instagram buttons on your site, and tracking links.</td></tr><tr class="brk"><td>6:25</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>6:30</td><td class="b">Build &middot; 50m</td><td>Branch <code>instagram-links</code>: add the links and a &ldquo;Follow along&rdquo; section. PR &rarr; preview &rarr; merge. Post your teaser.</td></tr><tr class=""><td>7:20</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Commit: <code>Link website and Instagram</code>. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Join up your website and Instagram so each sends people to the other.</div><div class="fld"><b>What you&rsquo;ll make</b>Website and Instagram linked both ways (with a tracking link) and your first post: a teaser for Friday&rsquo;s launch.</div><div class="fld dad"><b>Dad&rsquo;s role</b>Taps from Instagram through to your site on his phone to check it works, then gives your first post its first like.</div>
+<div class="word"><b>New word: Tracking link</b> &mdash; a link with a tag on the end (like <code>?utm_source=instagram</code>) so analytics knows where visitors came from.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:linear-gradient(135deg,#F58529,#DD2A7B 55%,#8134AF);color:#fff;">IG</i>Instagram</span><span class="tag"><i style="background:#FF5A36;color:#fff;">&lt;/&gt;</i>Grok Bot</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><span class="tag"><i style="background:#0FA3A3;color:#fff;">N</i>Netlify</span><span class="tag"><i style="background:#F9AB00;color:#14161A;">GA</i>Analytics</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Teamwork</span><span class="ls">Planning</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;My website and Instagram now work as a team.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Linking social &amp; web</div>
+<div class="jr"><b>Journal:</b> How have Dad and I worked as a team these 3 weeks?<div class="wline"></div></div></div></div></div><div class="day"><div class="dh"><div class="dn">20</div><div class="dt"><div class="t">Schedule a week with Postiz</div><div class="d">Thursday 5 November 2026 &middot; Home by 4:30pm &middot; homework first &middot; build 5:30&ndash;7:30pm</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#C13584;color:#fff">Get seen</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>5:30</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Plan 4 posts: behind the scenes, a tip, your showcase, the launch.</td></tr><tr class=""><td>5:40</td><td class="b">Learn &amp; build &middot; 45m</td><td>Why businesses batch their posts. Connect your Instagram to Postiz.</td></tr><tr class="brk"><td>6:25</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>6:30</td><td class="b">Build &middot; 50m</td><td>Make the posts in Canva. Write captions with local hashtags (#NorthernBeaches #Freshwater). Schedule them all.</td></tr><tr class=""><td>7:20</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Commit: <code>Add launch-week content plan</code>. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Plan a week of posts in one go: exactly how you&rsquo;ll do it for clients.</div><div class="fld"><b>What you&rsquo;ll make</b>4 launch-week posts designed and scheduled in Postiz, with the launch post set for Friday.</div><div class="fld dad"><b>Dad&rsquo;s role</b>Reads every caption before it&rsquo;s scheduled: spelling, tone, and no over-promising.</div>
+<div class="word"><b>New word: Scheduling</b> &mdash; setting a post to publish by itself at a date and time you choose.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:#612BD3;color:#fff;">P</i>Postiz</span><span class="tag"><i style="background:linear-gradient(135deg,#00C4CC,#7D2AE8);color:#fff;">C</i>Canva</span><span class="tag"><i style="background:linear-gradient(135deg,#F58529,#DD2A7B 55%,#8134AF);color:#fff;">IG</i>Instagram</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Planning</span><span class="ls">Communication</span><span class="ls">Ownership</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;I planned a whole week of marketing in one session.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Content planning &amp; scheduling</div>
+<div class="jr"><b>Journal:</b> Which caption am I proudest of, and why?<div class="wline"></div></div></div></div></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">23</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
