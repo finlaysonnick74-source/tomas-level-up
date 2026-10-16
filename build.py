@@ -487,3 +487,51 @@ for _d,_,_fs in _o.walk('.'):
         _p=_o.path.join(_d,_f);_s=open(_p).read();_t=_s
         for a,b2 in SOFT: _t=_t.replace(a,b2)
         if _t!=_s: open(_p,'w').write(_t)
+
+# ===== design layer: visible-by-default reveals, nav, readability, cards =====
+DCSS=r'''
+/* reveal: visible by default; animate only when JS + IntersectionObserver are available */
+.r,.r.in{opacity:1;transform:none}
+html.io .r:not(.in){opacity:0;transform:translateY(24px)}
+html.io .r{transition:opacity .7s,transform .7s}
+@media (prefers-reduced-motion:reduce){html.io .r:not(.in){opacity:1;transform:none}}
+/* readability */
+body{font-size:17.5px;line-height:1.65;color:#e4e8ef}
+p,li,td,dd{color:#dde2ea}
+.lead,.sub{color:#e1e6ee}
+.note,.wm .f{color:#c9d0de}
+main p,main li{max-width:72ch}
+.grid p,.grid li,.dash p{max-width:none}
+a{color:#ffc46b}
+/* nav */
+nav ul.sub{flex-wrap:nowrap;gap:2px 6px;align-items:center;padding:4px 0 8px;margin:4px 0 0}
+nav ul.sub>li>a,nav ul.sub summary{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:12px;color:#e6eaf5;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap}
+nav ul.sub>li>a:hover,nav ul.sub summary:hover{background:#ffffff14;color:#fff;text-decoration:none}
+nav ul.sub summary{list-style:none}nav ul.sub summary::-webkit-details-marker{display:none}nav ul.sub summary::after{content:" ▾";margin-left:4px}
+nav ul.sub li.more{position:relative}
+nav ul.sub li.more ul{position:absolute;right:0;top:calc(100% + 4px);z-index:60;list-style:none;margin:0;padding:6px;min-width:200px;background:#151a30;border:1px solid #ffffff2a;border-radius:14px;box-shadow:0 18px 40px -10px #000c}
+nav ul.sub li.more ul a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:#eef0ff;text-decoration:none}
+nav ul.sub li.more ul a:hover{background:#ffffff14}
+.vsw .vs{min-height:44px;display:inline-flex;align-items:center}
+.btn{min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:700px){nav ul.sub{gap:0;justify-content:space-between}nav ul.sub>li>a,nav ul.sub summary{padding:0 8px;font-size:.88rem}.vsw .vs{padding:0 8px;font-size:.78rem}}
+/* wall empty */
+.wempty{border-style:dashed;background:#ffb4430d}
+/* results day cards */
+.dayg{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-top:10px}
+.dc{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:16px;border:1px solid #ffffff22;background:#131830;color:#eef0ff;text-decoration:none;min-height:44px}
+.dc b{font-size:1.1rem}.dc .st2{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#c9d0de}
+.dc.done{border-color:#5ee7c9;background:#5ee7c914}.dc.done .st2{color:#5ee7c9}
+.dc.today{border-color:#ffb443;box-shadow:0 0 0 2px #ffb443 inset;background:#ffb4431a}.dc.today .st2{color:#ffc46b}
+'''
+open('style.css','a').write(DCSS)
+IOHEAD='<script>if("IntersectionObserver" in window)document.documentElement.classList.add("io")</script>'
+IOBODY='<script>(function(){if(!("IntersectionObserver" in window))return;var o=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}})},{threshold:.05});document.querySelectorAll(".r").forEach(function(el){o.observe(el)});setTimeout(function(){document.querySelectorAll(".r").forEach(function(el){el.classList.add("in")})},2500)})()</script>'
+for _d,_,_fs in _o.walk('.'):
+    if '__pycache__' in _d: continue
+    for _f in _fs:
+        if not _f.endswith('.html') or '/raw' in _d: continue
+        _p=_o.path.join(_d,_f);_s=open(_p).read()
+        if 'classList.add("io")' in _s: continue
+        _s=_s.replace('</head>',IOHEAD+'</head>',1).replace('</body>',IOBODY+'</body>',1)
+        open(_p,'w').write(_s)
