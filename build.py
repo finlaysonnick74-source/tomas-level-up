@@ -291,3 +291,13 @@ page('school.html','Why staying in school is part of my plan',hero("In my words"
 for fn,anchor in [('careers.html','<a class="btn" href="outcomes.html">Start with: By Day 21, I can…</a>'),('support.html','<div class="card"><h3>Mum, Nan and Pop, Dad</h3>')]:
     s=open(fn).read(); s=s.replace(anchor,('<a class="btn o" href="school.html">Why school is part of my plan</a> ' if fn=='careers.html' else '<div class="card"><h3>📘 School is part of my plan</h3><p>I&rsquo;m staying in school too. <a href="school.html">Here&rsquo;s why →</a></p></div>')+anchor,1); open(fn,'w').write(s)
 import subprocess;subprocess.run(['python3','postfix.py'])
+# ===== core message pull-quote =====
+Q='<blockquote class="pq"><p>&ldquo;Give me the space to do something I want to do, and get behind me.&rdquo;</p><cite>Tomas</cite></blockquote>'
+css=open('style.css').read()
+if '.pq{' not in css:
+    css+='\n.pq{margin:0 0 22px;padding:34px 36px;border-radius:24px;background:linear-gradient(135deg,#ff6b4a,#ffb443);color:#141018;box-shadow:0 20px 50px -20px #ff6b4a88}.pq p{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin:0}.pq cite{display:block;margin-top:12px;font-style:normal;font-weight:700;opacity:.8}\n'
+    open('style.css','w').write(css)
+s=open('index.html').read()
+s=s.replace('<div class="label">New here? Start here</div>','<div class="label">New here? Start here</div>'+Q,1); open('index.html','w').write(s)
+s=open('support.html').read()
+s=s.replace('<section style="padding-top:0"><div class="w stack">','<section style="padding-top:0"><div class="w stack">'+Q,1); open('support.html','w').write(s)
