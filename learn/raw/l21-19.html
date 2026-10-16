@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">Week 3 of 3</div><div style="display:flex;align-items:flex-end;gap:16px"><div style="font-family:'Archivo Black';font-size:110px;line-height:.8;color:var(--accent)">3</div><div><h1 style="margin:0">Launch &amp; get seen.</h1><div style="font-weight:700;color:var(--grey);font-size:13px">Sat 31 Oct &ndash; Fri 6 Nov 2026</div></div></div>
+<p class="lead" style="margin-top:14px;max-width:none">This week your site goes live and starts working for you. You&rsquo;ll check everything, connect your domain, get onto Google, join up Instagram and schedule your launch.</p>
+<div class="box dark"><h3>Week 3 milestone</h3><p style="margin:4px 0 0;font-size:13px">Live on your own domain with HTTPS, found on Google, analytics running, Instagram linked, launch posts scheduled in Postiz: launched!</p></div>
+<h2>The 7 days</h2>
+<table style="font-size:10.8px"><thead><tr><th>Day</th><th>Date</th><th>What you&rsquo;ll do</th><th>Stage</th><th>Skill earned</th></tr></thead><tbody><tr><td>Day 15</td><td style="font-weight:700;white-space:nowrap">Sat 31 Oct</td><td>The launch checklist</td><td><span class="stg" style="background:#F2B705;color:#14161A">Test</span></td><td style="font-weight:400">Quality checking</td></tr><tr><td>Day 16</td><td style="font-weight:700;white-space:nowrap">Sun 1 Nov</td><td>Domain day: go live!</td><td><span class="stg" style="background:#2F6BFF;color:#fff">Domain</span></td><td style="font-weight:400">Domains &amp; DNS</td></tr><tr><td>Day 17</td><td style="font-weight:700;white-space:nowrap">Mon 2 Nov</td><td>Get found on Google</td><td><span class="stg" style="background:#C13584;color:#fff">Get seen</span></td><td style="font-weight:400">Search Console &amp; analytics</td></tr><tr><td>Day 18</td><td style="font-weight:700;white-space:nowrap">Tue 3 Nov</td><td>Google Business Profile</td><td><span class="stg" style="background:#C13584;color:#fff">Get seen</span></td><td style="font-weight:400">Local search</td></tr><tr><td>Day 19</td><td style="font-weight:700;white-space:nowrap">Wed 4 Nov</td><td>Instagram &harr; website link-up</td><td><span class="stg" style="background:#C13584;color:#fff">Get seen</span></td><td style="font-weight:400">Linking social &amp; web</td></tr><tr><td>Day 20</td><td style="font-weight:700;white-space:nowrap">Thu 5 Nov</td><td>Schedule a week with Postiz</td><td><span class="stg" style="background:#C13584;color:#fff">Get seen</span></td><td style="font-weight:400">Content planning &amp; scheduling</td></tr><tr><td>Day 21</td><td style="font-weight:700;white-space:nowrap">Fri 6 Nov</td><td>Launch day + show-and-tell</td><td><span class="stg" style="background:#C13584;color:#fff">Get seen</span></td><td style="font-weight:400">Launching &amp; reflecting</td></tr></tbody></table>
+<div class="grid2" style="margin-top:12px;gap:14px">
+<div><div class="lbl">Life-skill focus this week</div><span class="ls">Planning</span><span class="ls">Communication</span><span class="ls">Ownership</span><span class="ls">Money</span><span class="ls">Online safety</span><div class="lbl" style="margin-top:8px">Tools this week</div><span class="tag"><i style="background:#F4F3F0;color:#14161A;border:1px solid #ccc;">{}</i>DevTools</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><span class="tag"><i style="background:#FF5A36;color:#fff;">&lt;/&gt;</i>Grok Bot</span><span class="tag"><i style="background:#2F6BFF;color:#fff;">W</i>Domain &amp; DNS</span><span class="tag"><i style="background:#0FA3A3;color:#fff;">N</i>Netlify</span><span class="tag"><i style="background:#4285F4;color:#fff;">SC</i>Search Console</span><span class="tag"><i style="background:#F9AB00;color:#14161A;">GA</i>Analytics</span><span class="tag"><i style="background:#34A853;color:#fff;">G</i>Business Profile</span><span class="tag"><i style="background:linear-gradient(135deg,#00C4CC,#7D2AE8);color:#fff;">C</i>Canva</span><span class="tag"><i style="background:linear-gradient(135deg,#F58529,#DD2A7B 55%,#8134AF);color:#fff;">IG</i>Instagram</span><span class="tag"><i style="background:#612BD3;color:#fff;">P</i>Postiz</span></div>
+<div class="box accent" style="margin:0"><h3>Family moments this week</h3><ul class="clean" style="font-size:11.5px;margin-top:4px"><li><b>Fri 6 Nov:</b> show-and-tell #3 with Mum and the family.</li><li><b>Fri:</b> Tomas sends Mum his weekly update.</li><li><b>Sun:</b> check-in with Mum and Dad, using the self-review.</li></ul></div></div>
+<div class="box" style="margin-top:12px;border-left:6px solid var(--accent)"><h3>This week&rsquo;s character challenge</h3><p style="margin:3px 0 0;font-size:12.5px">Finish strong. The last 10% is where most people stop. You&rsquo;re going to be the one who doesn&rsquo;t.</p></div>
+<div class="lbl" style="margin-top:12px">My goal for this week (in my own words)</div><div class="lines"><div></div><div></div><div></div></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">20</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
