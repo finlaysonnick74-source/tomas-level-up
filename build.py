@@ -34,7 +34,7 @@ addEventListener('DOMContentLoaded',function(){var g=document.createElement('div
 document.body.prepend(g);g.querySelector('form').onsubmit=function(e){e.preventDefault();if(document.getElementById('gp').value.trim()===P){localStorage.setItem('lu','1');location.reload()}else document.getElementById('ge').textContent='Not quite. Try again.'}})})();""")
 open('robots.txt','w').write("User-agent: *\nDisallow: /\n")
 def NAV(p): return f'''<a class="skip" href="#main">Skip to content</a><nav aria-label="Main"><div class="w"><a class="logo" href="{p}index.html" style="text-decoration:none">Tomas <span>Levels Up</span></a>
-<ul><li><a href="{p}index.html">Home</a></li><li><a href="{p}today.html">Today</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}learn/index.html">Program</a></li><li><a href="{p}skills.html">Skills</a></li><li><a href="{p}careers.html">Careers</a></li><li><a href="{p}library/index.html">Library</a></li><li><a href="{p}support.html">Support</a></li></ul></div></nav><div id="main"></div>'''
+<ul><li><a href="{p}index.html">Home</a></li><li><a href="{p}today.html">Today</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}learn/index.html">Program</a></li><li><a href="{p}skills.html">Skills</a></li><li><a href="{p}careers.html">Careers</a></li><li><a href="{p}plan/index.html">Plan</a></li><li><a href="{p}library/index.html">Library</a></li><li><a href="{p}support.html">Support</a></li></ul></div></nav><div id="main"></div>'''
 FOOT='<footer><div class="w">Tomas Levels Up · a private family page · <a href="'+BIZ+'">Watch the business site grow →</a></div></footer><script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll(".r").forEach(el=>o.observe(el));</script>'
 def page(fn,title,body,extra=""):
     p='../'*fn.count('/')
@@ -223,6 +223,35 @@ from careers import careers_body
 page('careers.html','Where this can take me',careers_body().replace('<section style="padding-top:0">','<section style="padding-top:0"><div class="w"><p style="margin-bottom:16px"><a class="btn" href="skills.html">See the skills framework: what I\'m learning →</a></p></div>',1))
 page('skills.html','Skills framework',SK.page_body())
 import library;EXCL=library.build(page,IFR,strip)
+import plannative,tone
+PD=plannative.build(page,tone.T,[("On my Level up plan, I work after 4:30pm and some weekend hours. Homework comes before client work. If grades slip, I take fewer clients.","I work from 4:30pm on school days and some weekend hours. If school needs more time, I take fewer clients.")])
+plannative.doc_native(page,'/workspace/tb/b.html','library/tools-budget.html','Tools budget','Every tool, what it costs, who pays, and what gets passed on to clients.',tone.T)
+plannative.doc_native(page,'/workspace/bp/p.html','library/prospects.html','Brookvale prospects','Local businesses to approach with a free website and Instagram check (public business information).',tone.T)
+def redirect(fn,to):
+    open(fn,'w').write(f'<!doctype html><meta charset=utf-8><meta name=robots content="noindex,nofollow"><meta http-equiv=refresh content="0;url={to}"><link rel=canonical href="{to}"><p>Moved: <a href="{to}">continue</a></p>')
+redirect('library/business-plan.html','../plan/index.html'); redirect('plan.html','plan/index.html')
+for f in ['business-plan.html','tools-budget.html','prospects.html']:
+    p='library/raw/'+f
+    if os.path.exists(p): os.remove(p)
+css=open('style.css').read()
+if '.planwrap' not in css:
+    css+='''
+.planwrap{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
+.side{position:sticky;top:80px;display:flex;flex-direction:column;gap:4px;background:#121628;border:1px solid var(--line);border-radius:18px;padding:16px}
+.side a{padding:8px 12px;border-radius:10px;color:#cfd5f2;text-decoration:none;font-size:.92rem}.side a:hover{background:#ffffff10}.side a.on{background:linear-gradient(90deg,#ff6b4a33,#ffb44322);color:#fff;font-weight:700}
+@media(max-width:900px){.planwrap{grid-template-columns:1fr}.side{position:static;flex-direction:row;overflow-x:auto;white-space:nowrap}}
+.doc h3{margin:22px 0 8px}.doc p{margin:10px 0}.doc ul,.doc ol{padding-left:20px;margin:10px 0}.doc li{margin:4px 0}
+.doc>div,.doc .note{margin:12px 0}.doc b{color:#fff}
+.tbl{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:14px;background:#0f1324}
+.tbl table.tt{min-width:520px;font-size:.88rem}.tbl th,.tbl tr:first-child td{background:#ffffff0c;font-weight:700;color:#fff}
+.tbl td,.tbl th{padding:9px 12px;border-bottom:1px solid #ffffff10;text-align:left}.tbl tr:nth-child(even) td{background:#ffffff05}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:22px}
+.tile{background:linear-gradient(160deg,#1b2140,#121628);border:1px solid var(--line);border-radius:18px;padding:18px}.tv{font-size:1.8rem;font-weight:900;background:linear-gradient(90deg,#ff6b4a,#ffb443);-webkit-background-clip:text;background-clip:text;color:transparent}.tl{color:var(--mut);font-size:.9rem}
+.toggle{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.toggle button{padding:9px 16px;border-radius:99px;border:1px solid #ffffff30;background:none;color:#fff;font:inherit;font-weight:700;cursor:pointer}.toggle button.on{background:linear-gradient(90deg,#ff6b4a,#ffb443);color:#111;border-color:transparent}
+.price small{font-size:1rem;color:var(--mut)}
+'''
+    open('style.css','w').write(css)
+
 import subprocess;subprocess.run(['python3','postfix.py'])
 # ===== today.html + dashboard =====
 PICK='''function pick(D){var t=new Date();t.setHours(0,0,0,0);var p=D.find(function(x){return x.status=="progress"});if(p)return p;
