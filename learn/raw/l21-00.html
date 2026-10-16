@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style="padding:0"><svg viewBox="0 0 794 1123" style="position:absolute;inset:0;width:100%;height:100%">
+<rect width="794" height="1123" fill="#fff"/><circle cx="700" cy="120" r="260" fill="#FFE7E0"/><circle cx="700" cy="120" r="150" fill="#FF5A36"/>
+<text x="700" y="162" text-anchor="middle" font-size="120" class="svgh" fill="#fff">21</text><text x="700" y="198" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" letter-spacing="3">DAYS</text>
+<path d="M0 930 Q 100 890 200 930 T 400 930 T 600 930 T 800 930 V1123 H0Z" fill="#F4F3F0"/>
+<path d="M0 980 Q 100 940 200 980 T 400 980 T 600 980 T 800 980 V1123 H0Z" fill="#E3E1DC"/>
+<path d="M0 1035 Q 100 995 200 1035 T 400 1035 T 600 1035 T 800 1035 V1123 H0Z" fill="#14161A"/>
+<!-- 21-step path -->
+<path d="M60 880 C 160 880, 200 820, 290 820 S 400 790, 440 740" fill="none" stroke="#E3E1DC" stroke-width="16" stroke-linecap="round"/>
+<circle cx="60" cy="880" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="88" cy="878" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="114" cy="874" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="137" cy="867" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="158" cy="859" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="179" cy="850" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="199" cy="841" r="13" fill="#14161A" stroke="#fff" stroke-width="3"/><circle cx="220" cy="833" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="241" cy="826" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="264" cy="822" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="290" cy="820" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="315" cy="819" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="336" cy="816" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="355" cy="812" r="13" fill="#14161A" stroke="#fff" stroke-width="3"/><circle cx="370" cy="806" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="384" cy="799" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="396" cy="790" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="407" cy="779" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="418" cy="768" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="429" cy="754" r="9" fill="#FF5A36" stroke="#fff" stroke-width="3"/><circle cx="440" cy="740" r="13" fill="#14161A" stroke="#fff" stroke-width="3"/>
+<g transform="translate(434,662)"><rect x="0" y="0" width="5" height="78" fill="#14161A"/><path d="M5 2 H52 L42 17 L52 32 H5 Z" fill="#FF5A36"/></g>
+<g transform="translate(470,610) rotate(-4)"><rect width="300" height="200" rx="16" fill="#14161A"/>
+<circle cx="20" cy="18" r="5" fill="#FF5A36"/><circle cx="37" cy="18" r="5" fill="#9A9EA5"/><circle cx="54" cy="18" r="5" fill="#9A9EA5"/>
+<rect x="74" y="9" width="210" height="17" rx="8" fill="#2A2D33"/><text x="86" y="21.5" font-size="10" fill="#C9CCD1" font-family="Fira Code">tomaswebstudio.com.au</text>
+<rect x="12" y="36" width="276" height="152" rx="10" fill="#fff"/><rect x="26" y="52" width="140" height="16" rx="4" fill="#14161A"/>
+<rect x="26" y="76" width="190" height="8" rx="4" fill="#E3E1DC"/><rect x="26" y="90" width="160" height="8" rx="4" fill="#E3E1DC"/>
+<rect x="26" y="110" width="92" height="24" rx="12" fill="#FF5A36"/><rect x="26" y="146" width="74" height="30" rx="7" fill="#F4F3F0"/><rect x="108" y="146" width="74" height="30" rx="7" fill="#F4F3F0"/><rect x="190" y="146" width="84" height="30" rx="7" fill="#FFE7E0"/></g>
+</svg>
+<div style="position:absolute;left:16mm;top:20mm;width:110mm"><div class="kicker">Level up &middot; Phase 1 &middot; 17 Oct &ndash; 6 Nov 2026</div></div>
+<div style="position:absolute;left:16mm;top:52mm;width:112mm">
+<div style="font-family:'Archivo Black';font-size:66px;line-height:.95;letter-spacing:-.02em">The 21-Day<br>Turnaround<br>Build</div>
+<div style="font-family:'Archivo Black';font-size:27px;line-height:1.15;color:#FF5A36;margin-top:14px">Build the business.<br>Build yourself.</div>
+<p style="font-size:14.5px;line-height:1.5;color:#5B6068;margin-top:18px">A structured program for Tomas: 2 hours a day for 21 days, side by side with Dad, building and launching his own business website, and the routine, character and life skills that come with real work.</p>
+<p style="font-size:12.5px;color:#5B6068;margin-top:12px"><b style="color:#14161A">Sat 17 Oct &ndash; Fri 6 Nov 2026</b> &middot; 3 weekly milestones &middot; 3 family show-and-tells</p>
+</div>
+<div style="position:absolute;left:16mm;bottom:12mm;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Routine &middot; Responsibility &middot; Real skills &middot; Real work &middot; Pride</div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">01</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
