@@ -30,34 +30,32 @@ L1=[1,2,3,4,5,6]; L2=[7,8,9,10,11]
 LT={1:"What code is",2:"How a website works",3:"Domains &amp; hosting",4:"Hosting options",5:"Change control",6:"Branches &amp; pull requests",7:"Deployment",8:"Old vs modern",9:"Your toolkit map",10:"The project roadmap",11:"Jargon buster"}
 def _ln(ls): return ', '.join(f'<a href="lesson-{i:02d}.html">Lesson {i}: {LT[i]}</a>' for i in ls)
 B1=dict(title="Learn the basics, part 1",basics=True,stages=["learn"],tools=["grok","gh"],
- goal="Get comfortable with the big ideas behind every website, at your own pace.",
- make="A head full of new ideas, and your own notes on Web Basics lessons 1–6.",
+ goal="Make time for the basics that everything sits on, and start building with Grok Bot.",
+ make="Your notes on Web Basics lessons 1–6, and your first changes to your business site with Grok Bot.",
  dad="Your teacher and helper today: works through the lessons with you, then sits down for a relaxed chat about what you've learned.",
  proud="I understand how websites are built and where they live.",skill="Web basics",
  word=["Code","instructions written in a language a computer understands. HTML, CSS and JavaScript are the three languages of the web."],
  blocks=["Settle in with Dad, open your learning app and pop the tracker somewhere handy.","Web Basics lessons 1–6: what code is, how a website works, domains and hosting, hosting options, change control, and branches and pull requests.","",""],
  life=["goals","reflect","team"],journal="What's one idea from today that clicked for me?",
- tt=[("0:00–0:10","Check-in","Settle in with Dad and open your learning app. Today is all about understanding, so take your time."),
-     ("0:10–0:55","Lessons 1–3",_ln([1,2,3])+". Play with the diagrams and try each quick check."),
-     ("0:55–1:00","Break","5 minutes away from the screen."),
-     ("1:00–1:40","Lessons 4–6",_ln([4,5,6])+". It's fine to go at a comfortable pace."),
+ tt=[("0:00–0:10","Check-in","Settle in with Dad and open your learning app. Today mixes learning the basics with your first building."),
+     ("0:10–1:00","The basics: lessons 1–6",_ln([1,2,3,4,5,6])+". This is your foundation, so you understand what you&rsquo;re building and why. Go at a comfortable pace and play with the diagrams."),
+     ("1:00–1:40","Start building with Grok Bot","Chat with Grok Bot about your business site and try your first changes. Take a 5-minute screen break when it suits."),
      ("1:40–2:00","Talk it through with Dad","A relaxed sit-down chat about today's lessons, using the questions below. Then jot your journal line.")],
- lessons=L1,
+ lessons=L1, diveh="🛠️ Start building with Grok Bot",diveb="Building with Grok Bot is a conversation, so it&rsquo;s great to start from Day 1. Open your <a href=\"https://finlaysonnick74-source.github.io/tomas-web-studio/\">business site</a>, chat with Grok Bot about what you want, and try a first change: a heading, a colour, a new section. ",divein="Today&rsquo;s lessons will help you understand what Grok Bot is building and why.",
  chat=["In your own words, what do HTML, CSS and JavaScript each do on a page?","When someone types a web address, what happens before the page appears?","What's the difference between a domain and hosting? How would you explain it to Nan and Pop?","Which hosting option would you pick for Tomas Web Studio, and why?","Why is change control (saving versions with Git) such a big deal when you work on a real client's site?","What's a branch and a pull request, and how could they keep a live site safe?"])
 B2=dict(title="Learn the basics, part 2",basics=True,stages=["learn"],tools=["grok","gh","netlify","canva","postiz"],
  goal="Finish the basics: how sites go live, what makes a modern site, and the tools you'll use.",
- make="Your own notes on Web Basics lessons 7–11, and the big picture of how your project will run.",
+ make="Your notes on Web Basics lessons 7–11, more progress with Grok Bot, and the big picture of how it all fits together.",
  dad="Your teacher and helper today: works through the lessons with you, then chats through the big picture before the building starts.",
  proud="I know how the whole project fits together, from idea to launch.",skill="Web basics",
  word=["Deploy","to put the latest version of your site onto the internet so everyone can see it."],
  blocks=["Settle in with Dad and look back at one idea from yesterday.","Web Basics lessons 7–11: deployment, old vs modern, your toolkit map, the project roadmap and the jargon buster.","",""],
  life=["plan","reflect","team"],journal="What am I most looking forward to building?",
  tt=[("0:00–0:10","Check-in","Settle in with Dad and share one idea from yesterday that stuck."),
-     ("0:10–0:55","Lessons 7–9",_ln([7,8,9])+"."),
-     ("0:55–1:00","Break","5 minutes away from the screen."),
-     ("1:00–1:40","Lessons 10–11",_ln([10,11])+". Keep the jargon buster handy for the weeks ahead."),
+     ("0:10–1:00","The basics: lessons 7–11",_ln([7,8,9,10,11])+". The rest of your foundation: how it all fits together. Keep the jargon buster handy for the weeks ahead."),
+     ("1:00–1:40","Build with Grok Bot","Keep building your business site with Grok Bot. Take a 5-minute screen break when it suits."),
      ("1:40–2:00","Talk it through with Dad","A relaxed sit-down chat about today's lessons, using the questions below. Then jot your journal line.")],
- lessons=L2,
+ lessons=L2, diveh="🛠️ Start building with Grok Bot",diveb="Building with Grok Bot is a conversation, so keep the conversation going. Open your <a href=\"https://finlaysonnick74-source.github.io/tomas-web-studio/\">business site</a>, chat with Grok Bot about what you want, and build on what you started yesterday. ",divein="As the lessons click, you&rsquo;ll spot deployment, branches and your tools in action.",
  chat=["What does it mean to deploy a site, and how does it happen automatically with Netlify?","What makes a modern website better than an old one? Name three things.","Pick three tools from your toolkit map. What job does each one do?","Walk through the project roadmap: brief, design, build, test, deploy, hand-over. Which step are you most excited about?","How do coding, hosting, deployment and change control all fit together on your own site?","Which words from the jargon buster would you use to explain your business to a client?"])
 # ===== Day 3: set up your toolkit (guided tool lessons) =====
 D.TOOLS.setdefault('cursor',{"name":"Cursor","bg":"#111","g":"Cu","fg":"#fff","tag":"Code editor","what":"A code editor with AI built in, where you open your project, read the code and make changes.","use":"Opening your site on your own computer, editing with AI help and committing to GitHub."})
@@ -125,7 +123,7 @@ B3=dict(title="Set up your toolkit",basics=True,stages=["setup"],tools=TKK,
      ("1:45–2:00","Show Dad: toolkit check","Show Dad each tool working, using the checklist below. Then jot your journal line.")],
  toolcards=TK,chath="✅ Show Dad: toolkit check",
  chatintro="To finish, show Dad each tool working. It&rsquo;s a celebration of what you&rsquo;ve set up, not a test.",
- divein="Brief writing and real building start tomorrow (Day 4), so anything you try today is a bonus.",
+ diveh="🛠️ Keep building with Grok Bot",diveb="Once your tools are set up, keep chatting with Grok Bot about your site. Now you can also open it in Cursor and see your changes go live on Netlify. ",divein="Tomorrow (Day 4) you write your brief, so everything you build has a clear plan behind it.",
  chat=["Show your Grok Bot and a prompt you&rsquo;re proud of.","Open your GitHub repo and walk through your commits.","Open your GitHub Pages address on Dad&rsquo;s phone.","Show your Netlify test address and its deploy list.","Open your project in Cursor and make one live change together.","Show your Canva folder and your first design."])
 
 _O[1]=dict(_O[1],blocks=[_O[1]['blocks'][0].replace(' Put the tracker somewhere you&rsquo;ll see it.',''),_O[1]['blocks'][1],_O[1]['blocks'][2].replace('Create your GitHub account and a project called <code>tomas-web-studio</code>.','Save it in your <code>tomas-web-studio</code> repo.'),_O[1]['blocks'][3].replace(' Tick Day 1!','')])
@@ -150,7 +148,7 @@ for n in range(7,22): NC[n]=_OC[n]
 NE={1:{'life':B1['life'],'journal':B1['journal']},2:{'life':B2['life'],'journal':B2['journal']},3:{'life':B3['life'],'journal':B3['journal']},4:_e4,5:_e5,6:_e6}
 for n in range(7,22): NE[n]=_OE[n]
 D.DAYS[:]=[NEW[n] for n in range(1,22)]; C.clear(); C.update(NC); D.EXTRA.clear(); D.EXTRA.update(NE)
-D.WEEKS[0]=dict(D.WEEKS[0],milestone='The basics and your own toolkit, then a brief, research, wireframes, brand kit and a homepage online at a Netlify test address.',intro='This week starts with the basics: two days of Web Basics lessons, each ending with a chat with Dad, then a day setting up your own toolkit. Then you think like a designer: write your brief, collect ideas, design your brand, write your first code with Grok Bot and put it on the internet.')
+D.WEEKS[0]=dict(D.WEEKS[0],milestone='The basics and your own toolkit, then a brief, research, wireframes, brand kit and a homepage online at a Netlify test address.',intro='You can start building with Grok Bot from Day 1. Alongside it, the first two days make time for the basics, the foundation that helps you understand what you&rsquo;re building and why, each ending with a chat with Dad. Day 3 sets up your own toolkit. Then you think like a designer: write your brief, collect ideas, design your brand, write your first code with Grok Bot and put it on the internet.')
 _ODS=None
 
 os.makedirs('learn/raw',exist_ok=True)
@@ -256,7 +254,7 @@ for n,d in enumerate(D.DAYS,1):
     show=f'<div class="card" style="border-color:var(--b)"><h3>🎤 Show-and-tell #{d["show"]} tonight</h3><ul class="l">'+''.join(f'<li>{x}</li>' for x in W['show_items'])+'</ul><p class="note">Family questions: '+' · '.join(W['ask'])+'</p></div>' if d.get('show') else ''
     pv=f'<a class="btn o" href="day-{n-1:02d}.html">← Day {n-1}</a>' if n>1 else '<a class="btn o" href="index.html">← Learn</a>'
     nx=f'<a class="btn o" href="day-{n+1:02d}.html">Day {n+1} →</a>' if n<21 else '<a class="btn o" href="../tracker.html">Tracker →</a>'
-    BUILDCARD=(f'<div class="card feat"><h3>'+d.get('chath','💬 Talk it through with Dad')+'</h3><p>'+d.get('chatintro','To finish the session, sit down together for a relaxed chat about today&rsquo;s lessons. There are no wrong answers, it&rsquo;s just a chance to put the ideas into your own words.')+'</p><ol class="l" style="margin-top:10px">'+''.join(f"<li>{q}</li>" for q in d['chat'])+'</ol></div><div class="card" style="border-style:dashed"><h3>🛠️ Dive in (optional)</h3><p>Keen to get your hands dirty? Whenever you feel like it, open your <a href="'+BIZ+'">business site</a> and start tinkering: change a heading, try a colour, ask Grok Bot to add a section. '+d.get('divein','Totally optional, and the brief and real building start on Day 4.')+'</p></div>') if d.get('basics') else f'<div class="card"><h3>🔨 Build tasks on the business site</h3><ol class="l">{''.join(f"<li>{s}</li>" for s in steps)}<li>Commit and push, then check the live site: <a href="{BIZ}">business site</a>.</li></ol></div>'
+    BUILDCARD=(f'<div class="card feat"><h3>'+d.get('chath','💬 Talk it through with Dad')+'</h3><p>'+d.get('chatintro','To finish, sit down together for a relaxed 20-minute chat about today&rsquo;s lessons and what you built. It&rsquo;s the part that turns the ideas into real understanding, and there are no wrong answers.')+'</p><ol class="l" style="margin-top:10px">'+''.join(f"<li>{q}</li>" for q in d['chat'])+'</ol></div><div class="card" style="border-style:'+('solid' if d.get('diveh') else 'dashed')+'"><h3>'+d.get('diveh','🛠️ Dive in (optional)')+'</h3><p>'+d.get('diveb','Keen to get your hands dirty? Whenever you feel like it, open your <a href="'+BIZ+'">business site</a> and start tinkering: change a heading, try a colour, ask Grok Bot to add a section. ')+d.get('divein','')+'</p></div>') if d.get('basics') else f'<div class="card"><h3>🔨 Build tasks on the business site</h3><ol class="l">{''.join(f"<li>{s}</li>" for s in steps)}<li>Commit and push, then check the live site: <a href="{BIZ}">business site</a>.</li></ol></div>'
     body=f'''<header style="padding:60px 0 20px"><div class="w"><div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Program</a> › Week {wk} › Day {n}</div><div class="tag">Week {wk} · {W["theme"]} · Day {n} of 21</div><div class="pn" style="margin:0 0 14px">{pv}{nx}</div><h1 style="font-size:clamp(2rem,5vw,3.6rem)">{d["title"]}</h1>
 <p class="lead">{ds} · {when}</p>{'<p><a class="btn" href="../outcomes.html">🚀 Launch countdown: '+str(21-n)+' days to Launch Day</a></p>' if n>=15 and n<21 else ('<p><a class="btn" href="../outcomes.html">🚀 Launch Day! See what I can do now</a></p>' if n==21 else '')}<div class="bar2"><i style="width:{n/21*100:.0f}%"></i></div></div></header>
 <section style="padding:10px 0 40px"><div class="w stack">{show}
@@ -290,7 +288,7 @@ json.dump({"start":"2026-10-17","days":days},open('progress.json','w'),indent=2,
 for w in (1,2,3):
     for kind,idx in (("week",weekintro[w]),("review",review.get(w))):
         if idx is None: continue
-        page(f'learn/{kind}-{w}.html',f'Week {w} {kind}',f'<section style="padding:40px 0"><div class="w"><div class="label">Week {w} · {"Overview" if kind=="week" else "Self-review"}</div><h2>{D.WEEKS[w-1]["theme"]}</h2>{'<p class="note" style="margin:10px 0">Plan update: Days 1 and 2 are now the Web Basics lessons, each finishing with a chat with Dad, and Day 3 is setting up your toolkit. The brief starts on Day 4, and the show-and-tells and Launch Day stay put. The <a href="index.html">day pages</a> have the latest plan; the guide below is the original version.</p>' if w==1 else ''}{IFR.format("raw/l21-%02d.html"%idx)}</div></section>')
+        page(f'learn/{kind}-{w}.html',f'Week {w} {kind}',f'<section style="padding:40px 0"><div class="w"><div class="label">Week {w} · {"Overview" if kind=="week" else "Self-review"}</div><h2>{D.WEEKS[w-1]["theme"]}</h2>{'<p class="note" style="margin:10px 0">Plan update: on Days 1 and 2 you start building with Grok Bot and make time for the Web Basics lessons, each finishing with a chat with Dad, and Day 3 is setting up your toolkit. The brief starts on Day 4, and the show-and-tells and Launch Day stay put. The <a href="index.html">day pages</a> have the latest plan; the guide below is the original version.</p>' if w==1 else ''}{IFR.format("raw/l21-%02d.html"%idx)}</div></section>')
 # tools page
 tc=''.join(f'<div class="card"><h3>{t["name"]} <span class="st upcoming">{t["tag"]}</span></h3><p>{t["what"]}</p><p class="note"><b>You\'ll use it for:</b> {t["use"]}</p><p class="note">Learned on: '+', '.join(f'<a href="day-{n:02d}.html">Day {n}</a>' for n,d in enumerate(D.DAYS,1) if k in d['tools'])+'</p></div>' for k,t in D.TOOLS.items())
 page('learn/tools.html',"Tools I'll master",hero("Tools I'll master","Fourteen <span class='g'>real tools</span>.","The same tools professionals use, each learned on the day I need it.")+f'<section style="padding-top:0"><div class="w"><div class="grid">{tc}</div><details class="quiz" style="margin-top:20px"><summary>The toolkit page from the 21-day plan</summary>{IFR.format("raw/l21-%02d.html"%toolsec)}</details></div></section>')
@@ -621,6 +619,6 @@ for _d,_,_fs in _o.walk('.'):
         if not _f.endswith('.html') or '/raw' in _d: continue
         _p=_o.path.join(_d,_f);_s=open(_p).read()
         if 'classList.add("io")' in _s: continue
-        _s=re.sub(r'href="((?:\.\./)*)style\.css"',r'href="\1style.css?v=5"',_s)
+        _s=re.sub(r'href="((?:\.\./)*)style\.css"',r'href="\1style.css?v=6"',_s)
         _s=_s.replace('</head>',IOHEAD+'</head>',1).replace('</body>',IOBODY+'</body>',1)
         open(_p,'w').write(_s)
