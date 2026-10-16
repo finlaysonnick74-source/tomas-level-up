@@ -18,7 +18,7 @@ addEventListener('DOMContentLoaded',function(){var g=document.createElement('div
 document.body.prepend(g);g.querySelector('form').onsubmit=function(e){e.preventDefault();if(document.getElementById('gp').value.trim()===P){localStorage.setItem('lu','1');location.reload()}else document.getElementById('ge').textContent='Not quite. Try again.'}})})();""")
 open('robots.txt','w').write("User-agent: *\nDisallow: /\n")
 def NAV(p): return f'''<nav><div class="w"><a class="logo" href="{p}index.html" style="text-decoration:none">Tomas <span>Levels Up</span></a>
-<ul><li><a href="{p}index.html#journey">Journey</a></li><li><a href="{p}learn/index.html">Learn</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}ambition.html">Ambition</a></li><li><a href="{p}learning.html">Skills</a></li><li><a href="{p}plan.html">The plan</a></li><li><a href="{p}support.html">Support Tomas</a></li></ul></div></nav>'''
+<ul><li><a href="{p}index.html#journey">Journey</a></li><li><a href="{p}learn/index.html">Learn</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}ambition.html">Ambition</a></li><li><a href="{p}learning.html">Skills</a></li><li><a href="{p}plan.html">The plan</a></li><li><a href="{p}careers.html">Careers</a></li><li><a href="{p}support.html">Support Tomas</a></li></ul></div></nav>'''
 FOOT='<footer><div class="w">Tomas Levels Up · a private family page · <a href="'+BIZ+'">Watch the business site grow →</a></div></footer><script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll(".r").forEach(el=>o.observe(el));</script>'
 def page(fn,title,body,extra=""):
     p='../'*fn.count('/')
@@ -128,7 +128,7 @@ print("days mapped",daysec,weekintro,review,toolsec)
 # ================= PART 2: main pages =================
 OUT=["Build and deploy a professional website","Run my own live business site on my own domain","Pitch Tomas Web Studio to a local business","Quote and price a job from my business plan","Set up a client's Instagram and Postiz scheduling","Handle domains, DNS and hosting","Use GitHub change control: commits, branches, pull requests, rollbacks","Track money in and out"]
 page('outcomes.html','By Day 21, I can',hero("The outcome · Launch Day, Fri 6 Nov 2026","By Day 21, I can <span class='g'>launch my business</span>.","Truly launch Tomas Web Studio to the public, with pride and excitement, and start making money.")+f'''<section style="padding-top:0"><div class="w"><div class="grid">
-<div class="card"><h3>✅ By Day 21, I can…</h3>{''.join(f'<div class="tick"><span>{o}</span><span class="st upcoming">upcoming</span></div>' for o in OUT)}<p class="note">These tick off on the <a href="tracker.html">tracker</a> as I go.</p></div>
+<div class="card"><h3>✅ By Day 21, I can…</h3>{''.join(f'<div class="tick"><span>{o}</span><span class="st upcoming">upcoming</span></div>' for o in OUT)}<p class="note">These tick off on the <a href="tracker.html">tracker</a> as I go.</p><p style="margin-top:12px"><a class="btn o" href="careers.html">And after that? Where this can take me →</a></p></div>
 <div class="card feat"><h3>🚀 Launch Day · Fri 6 Nov</h3><ul class="l"><li>The business site goes public on its own domain</li><li>Announced on Instagram (scheduled in Postiz)</li><li>My first pitches booked with local businesses</li><li>Target: my first paying client in the following weeks</li><li>Launch-night show-and-tell with the family</li></ul><p style="margin-top:14px"><a class="btn" href="learn/day-21.html">See the Launch Day lesson</a></p></div></div>
 <h2 style="margin-top:40px">How week 3 builds to launch</h2><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="learn/day-{n:02d}.html"><div class="label">Day {n} · {D.date(n).strftime("%a %-d %b")}</div><h3>{"Launch Day: go public!" if n==21 else D.DAYS[n-1]["title"]}</h3></a>' for n in range(15,22))+'</div></div></section>')
 # journey section (from rich backup) + home
@@ -138,7 +138,7 @@ jour=re.sub(r'<div class="day upcoming"><b>Day (\d+)</b>',lambda m:f'<a class="d
 pill=["Structure","Commitment","Discipline","Planning","Timelines","Money skills","Communication","Ownership","Resilience","School first"]
 page('index.html','Home',f'''<header><div class="w"><div class="tag">🌊 Northern Beaches · Level up · 17 Oct to 6 Nov 2026</div>
 <h1>Tomas is <span class="g">levelling up</span>.</h1><p class="lead">A 21-day turnaround built on real work: 2 hours a day, side by side with Dad, building and launching a real business, and the habits that come with it.</p>
-<div class="cta"><a class="btn" href="outcomes.html">By Day 21, I can…</a><a class="btn o" href="tracker.html">Daily tracker</a><a class="btn o" href="{BIZ}">Watch the business site grow →</a></div></div></header>
+<div class="cta"><a class="btn" href="outcomes.html">By Day 21, I can…</a><a class="btn o" href="tracker.html">Daily tracker</a><a class="btn o" href="careers.html">Where this can take me</a><a class="btn o" href="{BIZ}">Watch the business site grow →</a></div></div></header>
 <section style="padding-top:20px"><div class="w r"><div class="label">The turnaround</div><h2>Building the business. Building myself.</h2><p class="sub">The website is the vehicle. The destination is the person: someone who shows up, plans, finishes what he starts and is proud of his work.</p>
 <div class="chips">{''.join(f'<span class="chip">{p}</span>' for p in pill)}</div></div></section>
 <section><div class="w r"><div class="grid">
@@ -198,3 +198,6 @@ Light privacy screen only: the passcode (levelup2026) is in gate.js, and the sit
 To tick an outcome or a skill, change `st upcoming` to `st done` in tracker.html / outcomes.html / learning.html.
 Lesson pages are generated by `build.py` + `curriculum.py` from the Web Basics guide and the 21-day plan.
 ''')
+
+from careers import careers_body
+page('careers.html','Where this can take me',careers_body())
