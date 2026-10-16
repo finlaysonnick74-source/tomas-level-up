@@ -10,13 +10,14 @@ R=[("At school on time, homework done before you build.","At school on time, eve
 (", after any weekend homework",""),(", homework first",""),(" School and homework always come before the session.",""),
 ("homework first","at school on time"),("Homework first","At school on time"),
 ("5:30&ndash;7:30","4:30&ndash;6:30"),("5:30–7:30","4:30–6:30"),("5:30-7:30","4:30-6:30"),
-("For Mum and the school counsellor","For Mum and the counsellors, Melanie and Sio (The Burdekin)"),
-("Tomas&rsquo;s school counsellor","Tomas&rsquo;s counsellors, Melanie and Sio (The Burdekin)"),
-("For the counsellor and Mum","For Melanie, Sio and Mum"),("For the school counsellor and for Mum","For Melanie and Sio (The Burdekin) and for Mum"),
-("the school counsellor","the counsellors, Melanie and Sio (The Burdekin)"),("school counsellor","counsellors, Melanie and Sio (The Burdekin)"),
+("For Mum and the school counsellor","For Mum and Melanie and Sio from The Burdekin"),
+("Tomas&rsquo;s school counsellor","Melanie and Sio from The Burdekin"),
+("For the counsellor and Mum","For Melanie and Sio from The Burdekin, and Mum"),("For the school counsellor and for Mum","For Melanie and Sio from The Burdekin, and for Mum"),
+("the school counsellor","Melanie and Sio from The Burdekin"),("school counsellor","Melanie and Sio from The Burdekin"),
 ("the counsellor and Mum","Melanie, Sio and Mum"),("Mum, grandparents and the counsellor ","Mum, the grandparents and Melanie and Sio (The Burdekin) "),
 ("For Mum, the grandparents and the counsellor","For Mum, the grandparents, Melanie and Sio")]
 from tone import T
+T=T+[('counsellors, Melanie and Sio (The Burdekin)','Melanie and Sio from The Burdekin'),('the counsellor','Melanie and Sio from The Burdekin'),('counsellors','Melanie and Sio'),('counsellor','Melanie and Sio'),('Counsellor','Melanie and Sio')]
 R=R+T
 for f in glob.glob('**/*.html',recursive=True):
     s=open(f).read();o=s
