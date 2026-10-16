@@ -358,5 +358,18 @@
       "before": "",
       "after": ""
     }
-  ]
+  ],
+  "preview": {
+    "label": "Sneak peek · first build",
+    "date": "2026-10-16",
+    "status": "preview",
+    "built": "Before Day 1 even started, I gave my business site a proper look: a simple menu bar at the top, a &ldquo;What do you need?&rdquo; picklist that shows a tip and a starting price, and Northern Beaches graphics I made in code: surf, a Norfolk pine, the Barrenjoey lighthouse and a sunrise.",
+    "proud": "",
+    "commit": "",
+    "dad_note": "",
+    "clip": "",
+    "photo": "media/first-build-mobile.png",
+    "before": "media/first-build-before.png",
+    "after": "media/first-build-after.png"
+  }
 }
