@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><script src="../../gate.js"></script><link rel="stylesheet" href="l21.css"><style>/* 21-day plan additions (scoped .l21) */
+.l21 .wk{display:inline-block;font-weight:800;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.l21 .tag{display:inline-flex;align-items:center;gap:4px;font-size:9.4px;font-weight:700;padding:2px 7px 2px 3px;border-radius:99px;background:var(--light);color:var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .tag i{display:inline-block;width:13px;height:13px;border-radius:4px;font-style:normal;font-size:7px;line-height:13px;text-align:center;color:#fff;font-weight:800}
+.l21 .ls{display:inline-block;font-size:9.4px;font-weight:800;padding:2px 8px;border-radius:99px;border:1.5px solid var(--ink);margin:0 3px 3px 0;white-space:nowrap}
+.l21 .stg{display:inline-block;font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;letter-spacing:.04em;margin-left:3px}
+.l21 .day{border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:9px}
+.l21 .dh{display:flex;align-items:center;gap:11px;background:var(--ink);color:#fff;padding:8px 13px}
+.l21 .dn{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--accent);min-width:38px}
+.l21 .dt{flex:1}
+.l21 .dt .t{font-family:'Archivo Black';font-size:16.5px;line-height:1.15}
+.l21 .dt .d{font-size:10.5px;color:#C9CCD1;font-weight:600;margin-top:1px}
+.l21 .db{display:grid;grid-template-columns:1.02fr 1fr;gap:12px;padding:9px 13px 4px}
+.l21 .tt{width:100%;border-collapse:collapse;font-size:10px;line-height:1.35}
+.l21 .tt td{padding:3.5px 5px;border-bottom:1px solid var(--line);vertical-align:top}
+.l21 .tt td:first-child{font-weight:800;white-space:nowrap;color:var(--accent);font-size:9.5px;padding-left:0}
+.l21 .tt td.b{font-weight:800;white-space:nowrap;font-size:9.5px;width:1%}
+.l21 .tt tr.brk td{color:var(--mid)}
+.l21 .fld{margin-bottom:6px;font-size:10.6px;line-height:1.42}
+.l21 .fld b{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1px}
+.l21 .fld.dad{background:var(--accent-soft);border-radius:10px;padding:6px 9px}
+.l21 .df{padding:2px 13px 9px;display:grid;grid-template-columns:1.02fr 1fr;gap:12px;align-items:start}
+.l21 .lbl{font-size:8.6px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:2px 0 3px}
+.l21 .proud{background:var(--light);border-radius:10px;padding:6px 9px;font-size:10.4px;line-height:1.4}
+.l21 .proud b{color:var(--accent)}
+.l21 .jr{font-size:10.3px;border-top:1px dashed var(--mid);padding-top:5px;margin-top:5px}
+.l21 .jr b{color:var(--ink)}
+.l21 .wline{border-bottom:1px solid var(--mid);height:16px}
+.l21 .word{font-size:10px;color:var(--grey);margin-top:4px}
+.l21 .word b{color:var(--ink)}
+.l21 .chk{display:inline-block;width:12px;height:12px;border:2px solid var(--accent);border-radius:3px;vertical-align:-2px;margin-right:4px}
+.l21 .tile{display:flex;gap:10px;align-items:flex-start;background:var(--light);border-radius:14px;padding:9px 11px}
+.l21 .tile .ic{flex:none;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black';font-size:15px;color:#fff;overflow:hidden}
+.l21 .tile h3{font-size:12.6px;margin:0}
+.l21 .tile p{font-size:9.9px;line-height:1.38;margin:1px 0 0;color:var(--grey)}
+.l21 .tile p b{color:var(--ink)}
+.l21 .dpill{display:inline-block;font-size:8.6px;font-weight:800;background:var(--ink);color:#fff;border-radius:99px;padding:1px 6px;margin:3px 2px 0 0}
+.l21 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.l21 .cell{border-radius:10px;padding:6px 6px 7px;min-height:112px;background:var(--light);position:relative;font-size:9.4px;line-height:1.3}
+.l21 .cell .n{font-family:'Archivo Black';font-size:17px;line-height:1}
+.l21 .cell .dd{font-size:8.6px;font-weight:700;color:var(--grey);margin:1px 0 4px}
+.l21 .cell .st{position:absolute;left:0;right:0;top:0;height:5px;border-radius:10px 10px 0 0}
+.l21 .cell.show{outline:2.5px solid var(--accent);outline-offset:-2.5px}
+.l21 .grid{width:100%;border-collapse:collapse;font-size:10px}
+.l21 .grid th{font-size:9px;padding:5px 5px;text-align:center}
+.l21 .grid th:first-child{text-align:left}
+.l21 .grid td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--line);font-weight:400}
+.l21 .grid td:first-child{text-align:left;font-weight:700;white-space:normal}
+.l21 .bx{display:inline-block;width:13px;height:13px;border:2px solid var(--accent);border-radius:3px}
+.l21 .bx.na{border-color:var(--line);background:var(--light)}
+.l21 .rate{display:inline-flex;gap:3px}.l21 .rate span{width:15px;height:15px;border-radius:50%;border:1.6px solid var(--mid);font-size:8px;line-height:12px;text-align:center;color:var(--mid);font-weight:700}
+.l21 .lines div{border-bottom:1px solid var(--mid);height:21px}
+.l21 .num{font-family:'Archivo Black';color:var(--accent)}
+.l21 .logt td{padding:6.2px 5px}
+.l21 .rv td{padding:6px 5px;font-size:10.8px}
+ body{margin:0;background:#fff} .page{margin:0 auto!important;box-shadow:none!important}</style></head><body><section class="page l21 " style=""><div class="kicker">Week 2 &middot; Days 10&ndash;11</div><div class="day"><div class="dh"><div class="dn">10</div><div class="dt"><div class="t">About &amp; a working contact form</div><div class="d">Monday 26 October 2026 &middot; Home by 4:30pm &middot; homework first &middot; build 5:30&ndash;7:30pm</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#FF9A7E;color:#14161A">Build</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>5:30</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Write 3 sentences about you and why you started.</td></tr><tr class=""><td>5:40</td><td class="b">Learn &amp; build &middot; 45m</td><td>How forms work and how Netlify Forms collects messages for you. Only ask for what you need: that&rsquo;s privacy.</td></tr><tr class="brk"><td>6:25</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>6:30</td><td class="b">Build &middot; 50m</td><td>Branch <code>contact</code>. Build About and Contact (name, business, email, message). Send a test enquiry.</td></tr><tr class=""><td>7:20</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Merge. Commit: <code>Add About and Contact pages</code>. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Let customers reach you, while keeping everyone&rsquo;s details safe.</div><div class="fld"><b>What you&rsquo;ll make</b>An About page (your story; Dad looks after contracts and payments) and a contact form that delivers real enquiries.</div><div class="fld dad"><b>Dad&rsquo;s role</b>Sends a test enquiry from his phone and checks the About page shares no home address, school or private details.</div>
+<div class="word"><b>New word: Form</b> &mdash; the boxes on a page where visitors type their details and press Send.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:#FF5A36;color:#fff;">&lt;/&gt;</i>Grok Bot</span><span class="tag"><i style="background:#0FA3A3;color:#fff;">N</i>Netlify</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Online safety</span><span class="ls">Communication</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;People can now send my business a real enquiry.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Forms &amp; online privacy</div>
+<div class="jr"><b>Journal:</b> What personal info should never go online, and why?<div class="wline"></div></div></div></div></div><div class="day"><div class="dh"><div class="dn">11</div><div class="dt"><div class="t">Test like a pro</div><div class="d">Tuesday 27 October 2026 &middot; Home by 4:30pm &middot; homework first &middot; build 5:30&ndash;7:30pm</div></div><div style="text-align:right;max-width:150px"><span class="stg" style="background:#F2B705;color:#14161A">Test</span><span class="stg" style="background:#5B6068;color:#fff">Change control</span></div></div>
+<div class="db"><div><table class="tt"><tr class=""><td>5:30</td><td class="b">Check-in &middot; 10m</td><td>School and homework OK? Pick 3 screen sizes to test: small phone, big phone, laptop.</td></tr><tr class=""><td>5:40</td><td class="b">Learn &amp; build &middot; 45m</td><td>DevTools device mode (see your site as a phone) and Lighthouse (a free speed and quality check). Run a report.</td></tr><tr class="brk"><td>6:25</td><td class="b">Break &middot; 5m</td><td>Stand up, water, no screens.</td></tr><tr class=""><td>6:30</td><td class="b">Build &middot; 50m</td><td>Log each problem as a GitHub issue (a to-do). Fix the top 3 with Grok Bot. Run Lighthouse again.</td></tr><tr class=""><td>7:20</td><td class="b">Reflect &amp; commit &middot; 10m</td><td>Commit: <code>Fix mobile layout and speed</code>. Save both scores. Write your journal line.</td></tr></table></div>
+<div><div class="fld"><b>Learning goal</b>Find and fix problems before your customers do.</div><div class="fld"><b>What you&rsquo;ll make</b>A test checklist, a GitHub issue for every bug, and a before-and-after Lighthouse score.</div><div class="fld dad"><b>Dad&rsquo;s role</b>Tests on his own phone, tries to &ldquo;break&rdquo; the site, and reports bugs for you to log.</div>
+<div class="word"><b>New word: Bug</b> &mdash; a mistake that makes a website look or work wrong. Every site has them; pros find them first.</div></div></div>
+<div class="df"><div><div class="lbl">Tools today</div><span class="tag"><i style="background:#F4F3F0;color:#14161A;border:1px solid #ccc;">{}</i>DevTools</span><span class="tag"><i style="background:#24292F;color:#fff;">Gh</i>GitHub</span><span class="tag"><i style="background:#FF5A36;color:#fff;">&lt;/&gt;</i>Grok Bot</span><div class="lbl" style="margin-top:3px">Life skills today</div><span class="ls">Resilience</span><span class="ls">Ownership</span></div>
+<div><div class="proud"><b>Proud of:</b> &ldquo;I found and fixed bugs myself.&rdquo;<br><span class="chk"></span><b style="color:var(--ink)">Skill earned:</b> Testing &amp; debugging</div>
+<div class="jr"><b>Journal:</b> The bug that annoyed me most, and how I beat it.<div class="wline"></div></div></div></div></div><div class="foot"><span>The 21-Day Turnaround Build &middot; Tomas Web Studio</span><span class="n">16</span></div></section>
+<script>function f(){var w=document.querySelector(".page");if(!w)return;var z=Math.min(1,innerWidth/(w.offsetWidth||794));document.body.style.zoom=z}addEventListener("load",f);addEventListener("resize",f)</script></body></html>
