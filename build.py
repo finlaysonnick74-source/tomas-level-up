@@ -356,4 +356,5 @@ for k,i in enumerate(WBN,1):
     s=open(f'learn/lesson-{k:02d}.html').read().replace('<link rel="stylesheet" href="../style.css">','<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="lessons.css">',1)
     open(f'learn/lesson-{k:02d}.html','w').write(s)
     open(f'learn/wb-{i:02d}.html','w').write(f'<!doctype html><meta charset=utf-8><meta name=robots content="noindex,nofollow"><meta http-equiv=refresh content="0;url=lesson-{k:02d}.html"><p>Moved: <a href="lesson-{k:02d}.html">continue</a></p>')
+exec(open('zones.py').read())
 import subprocess;subprocess.run(['python3','postfix.py'])
