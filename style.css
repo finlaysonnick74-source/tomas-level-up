@@ -186,3 +186,20 @@ nav ul.sub li.more ul a:hover{background:#ffffff14}
 .dl-go{display:block;width:100%;margin-top:16px;padding:16px;font-size:1.15rem;border:0;cursor:pointer;font-weight:900}
 .dl-msg{margin:10px 0 0;font-weight:700;color:#ffcf7a}.dl-msg a{color:#5ee7c9}.dl-pick{display:block;font-weight:700;margin:6px 0}.dl-pick select{font:inherit;padding:8px 10px;border-radius:10px;background:#0b0e1c;color:#fff;border:1px solid #ffffff40;max-width:100%}
 .dl-dad{margin-top:14px;padding:12px 14px;border-radius:14px;background:#5ee7c914;border:1px solid #5ee7c955}.dl-dad p{margin:4px 0 0}
+
+/* how-to + done boxes */
+.ht-steps{counter-reset:s;list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
+.ht-steps li{counter-increment:s;position:relative;padding:12px 14px 12px 52px;border-radius:14px;background:#ffffff08;border:1px solid #ffffff22}
+.ht-steps li:before{content:counter(s);position:absolute;left:12px;top:12px;width:28px;height:28px;border-radius:50%;background:#ff6b4a;color:#141018;font-weight:900;display:flex;align-items:center;justify-content:center}
+.ht-steps li:nth-child(3n+2):before{background:#ffb443}.ht-steps li:nth-child(3n):before{background:#5ee7c9}
+.ht-min{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;background:#ffb44322;color:#ffcf7a;font-size:.8rem;font-weight:800;white-space:nowrap}
+.ht-ex{margin-top:16px;padding:14px;border-radius:14px;background:#5ee7c90f;border:1px solid #5ee7c955}
+.ex-pre{white-space:pre-wrap;word-break:break-word;overflow-x:auto;background:#0b0e1c;border:1px solid #ffffff2a;border-radius:10px;padding:12px;font-size:.86rem;line-height:1.45;margin:8px 0;color:#f3f3f3}
+.ex-t{width:100%;border-collapse:collapse;margin:8px 0;font-size:.92rem}.ex-t th,.ex-t td{border:1px solid #ffffff2a;padding:8px;text-align:left;vertical-align:top;word-break:break-word}.ex-t th{background:#ffffff0d}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:middle;border:1px solid #fff5}
+.ht-links a{color:#5ee7c9;font-weight:700}.ht-hand{border-color:#ffb44399}.ht-lesson{border-color:#ff6b4a88}
+.dw{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.dw label{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px;border:1px solid #ffffff2a;background:#ffffff08;cursor:pointer;font-weight:600}
+.dw input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:#5ee7c9}.dw li.on label{border-color:#5ee7c9;background:#5ee7c91a}
+.ck-sec{margin-top:18px}
+@media(max-width:700px){.ht-steps li{padding-left:48px}.ex-t{font-size:.84rem}}
