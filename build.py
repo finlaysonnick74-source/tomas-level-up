@@ -34,11 +34,11 @@ addEventListener('DOMContentLoaded',function(){var g=document.createElement('div
 document.body.prepend(g);g.querySelector('form').onsubmit=function(e){e.preventDefault();if(document.getElementById('gp').value.trim()===P){localStorage.setItem('lu','1');location.reload()}else document.getElementById('ge').textContent='Not quite. Try again.'}})})();""")
 open('robots.txt','w').write("User-agent: *\nDisallow: /\n")
 def NAV(p): return f'''<a class="skip" href="#main">Skip to content</a><nav aria-label="Main"><div class="w"><a class="logo" href="{p}index.html" style="text-decoration:none">Tomas <span>Levels Up</span></a>
-<ul><li><a href="{p}index.html">Home</a></li><li><a href="{p}today.html">Today</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}learn/index.html">Program</a></li><li><a href="{p}skills.html">Skills</a></li><li><a href="{p}careers.html">Careers</a></li><li><a href="{p}plan/index.html">Plan</a></li><li><a href="{p}library/index.html">Library</a></li><li><a href="{p}support.html">Support</a></li></ul></div></nav><div id="main"></div>'''
+<ul><li><a href="{p}index.html">Home</a></li><li><a href="{p}today.html">Today</a></li><li><a href="{p}tracker.html">Tracker</a></li><li><a href="{p}learn/index.html">Program</a></li><li><a href="{p}skills.html">Skills</a></li><li><a href="{p}careers.html">Careers</a></li><li><a href="{p}plan/index.html">Plan</a></li><li><a href="{p}library/index.html">Library</a></li><li><a href="{p}support.html">Support</a></li></ul></div></nav>'''
 FOOT='<footer><div class="w">Tomas Levels Up · a private family page · <a href="'+BIZ+'">Watch the business site grow →</a></div></footer><script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}}),{threshold:.1});document.querySelectorAll(".r").forEach(el=>o.observe(el));</script>'
 def page(fn,title,body,extra=""):
     p='../'*fn.count('/')
-    open(fn,'w').write(f'<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{title} · Tomas Levels Up</title><script src="{p}gate.js"></script><link rel="stylesheet" href="{p}style.css"></head><body>{NAV(p)}\n{body}\n{FOOT}{extra}</body></html>')
+    open(fn,'w').write(f'<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{title} · Tomas Levels Up</title><script src="{p}gate.js"></script><link rel="stylesheet" href="{p}style.css"></head><body>{NAV(p)}\n<main id="main">{body}</main>\n{FOOT}{extra}</body></html>')
 def hero(tag,h,lead): return f'<header style="padding:70px 0 30px"><div class="w"><div class="tag">{tag}</div><h1>{h}</h1><p class="lead">{lead}</p></div></header>'
 def card(h,items): return f'<div class="card"><h3>{h}</h3><ul class="l">'+''.join(f'<li>{i}</li>' for i in items)+'</ul></div>'
 def strip(x): return html.unescape(re.sub('<[^>]+>','',x))
@@ -95,7 +95,8 @@ for n,d in enumerate(D.DAYS,1):
     tools=''.join(f'<span class="chip">{D.TOOLS[t]["name"]}</span>' for t in d['tools'])
     life=''.join(f'<span class="chip">{D.LIFE[l][0]}</span>' for l in ex.get('life',[]))
     tooldesc=''.join(f'<li><b>{D.TOOLS[t]["name"]}:</b> {D.TOOLS[t]["what"]}</li>' for t in d['tools'])
-    wbl=''.join(f'<h3 style="margin-top:18px">Web Basics: {WBT[i]}</h3>'+IFR.format(f'raw/wb-{i:02d}.html') for i in wbs)
+    WB2L={2:1,3:2,4:3,5:4,6:5,7:6,8:7,9:8,10:9,11:10,13:11}
+    wbl=''.join((f'<a class="card" style="display:block;margin-top:16px;text-decoration:none;border-color:#5ee7c955" href="lesson-{WB2L[i]:02d}.html"><div class="label">Web Basics · Lesson {WB2L[i]} of 11</div><h3>📘 {WBT[i]} →</h3><p class="note" style="margin:0">Interactive lesson with diagrams, a quick check and a quiz.</p></a>' if i in WB2L else f'<h3 style="margin-top:18px">Web Basics: {WBT[i]}</h3>'+IFR.format(f'raw/wb-{i:02d}.html')) for i in wbs)
     plan21=f'<details class="quiz" style="margin-top:14px"><summary>Open this day\'s page from the 21-day plan</summary>{IFR.format("raw/l21-%02d.html"%daysec[n])}</details>' if n in daysec else ''
     show=f'<div class="card" style="border-color:var(--b)"><h3>🎤 Show-and-tell #{d["show"]} tonight</h3><ul class="l">'+''.join(f'<li>{x}</li>' for x in W['show_items'])+'</ul><p class="note">Family questions: '+' · '.join(W['ask'])+'</p></div>' if d.get('show') else ''
     pv=f'<a class="btn o" href="day-{n-1:02d}.html">← Day {n-1}</a>' if n>1 else '<a class="btn o" href="index.html">← Learn</a>'
@@ -138,7 +139,7 @@ for w in (1,2,3):
     W=D.WEEKS[w-1];a,bb=W['range']
     wkhtml+=f'<div class="card"><div class="label">Week {w}</div><h3>{W["theme"]}</h3><p>{W["intro"]}</p><ul class="l" style="margin-top:10px">'+''.join(f'<li><a href="day-{n:02d}.html">Day {n} · {D.date(n).strftime("%a %-d %b")}: {D.DAYS[n-1]["title"]}</a>{" 🎤" if D.DAYS[n-1].get("show") else ""}</li>' for n in range(a,bb+1))+f'</ul><p class="note"><b>Milestone:</b> {W["milestone"]}</p><p class="note"><a href="week-{w}.html">Week overview</a> · <a href="review-{w}.html">Self-review</a></p></div>'
 page('learn/index.html','Learn',hero("Learn","A real <span class='g'>21-day</span> program.","2 hours a day, side by side with Dad, Sat 17 Oct to Fri 6 Nov 2026. Each day has a timetable, objectives, the lesson, build tasks on the business site, a challenge, a quiz and a reflection.")+f'''<section style="padding-top:0"><div class="w"><p style="margin-bottom:24px"><a class="btn" href="../outcomes.html">🎯 By Day 21, I can… (the outcomes)</a></p><div class="grid">{wkhtml}</div>
-<h2 style="margin-top:50px">Web Basics guide</h2><p class="sub">The full guide, one lesson per page, with every diagram.</p><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="wb-{i:02d}.html"><div class="label">Lesson {i}</div><h3>{WBT[i]}</h3></a>' for i in range(1,14))+'''<a class="card" style="text-decoration:none" href="../outcomes.html"><div class="label">The goal</div><h3>By Day 21, I can…</h3></a><a class="card" style="text-decoration:none" href="tools.html"><div class="label">Toolkit</div><h3>Tools I'll master</h3></a></div>
+<h2 style="margin-top:50px">Web Basics guide</h2><p class="sub">The full guide, one lesson per page, with every diagram.</p><div class="grid">'''+'<a class="card" style="text-decoration:none" href="wb-01.html"><div class="label">Start here</div><h3>Welcome</h3></a>'+''.join(f'<a class="card" style="text-decoration:none" href="lesson-{k:02d}.html"><div class="label">Lesson {k} of 11</div><h3>{WBT[i]}</h3></a>' for k,i in enumerate([2,3,4,5,6,7,8,9,10,11,13],1))+'<a class="card" style="text-decoration:none" href="wb-12.html"><div class="label">After the lessons</div><h3>Next steps</h3></a>'+'''<a class="card" style="text-decoration:none" href="../outcomes.html"><div class="label">The goal</div><h3>By Day 21, I can…</h3></a><a class="card" style="text-decoration:none" href="tools.html"><div class="label">Toolkit</div><h3>Tools I'll master</h3></a></div>
 <h2 style="margin-top:50px">From the 21-day plan</h2><div class="grid">'''+''.join(f'<a class="card" style="text-decoration:none" href="plan21-{i:02d}.html"><div class="label">21-day plan</div><h3>{t}</h3></a>' for i,t in P21)+'''</div></div></section>''')
 print("days mapped",daysec,weekintro,review,toolsec)
 # ================= PART 2: main pages =================
@@ -341,4 +342,18 @@ s=s.replace('<li>Pitching confidently in person</li>','<li>Pitching confidently 
 s=s.replace('</div></div></section>','</div><div style="margin-top:20px">'+GB+'</div></div></section>',1); open('ambition.html','w').write(s)
 s=open('outcomes.html').read()
 s=s.replace('<li>Launch-night show-and-tell with the family</li>','<li>Launch-night show-and-tell with the family</li><li>Next: offer my first free charity website (<a href="plan/giving.html">giving back</a>)</li>',1); open('outcomes.html','w').write(s)
+import subprocess;subprocess.run(['python3','postfix.py'])
+
+# ===== native Web Basics lessons =====
+import shutil
+shutil.copy('/workspace/basics-web/lessons.css','learn/lessons.css'); shutil.copy('/workspace/basics-web/lessons.js','learn/lessons.js')
+WBN=[2,3,4,5,6,7,8,9,10,11,13]
+def dadfix(t): return t.replace('Nick','Dad').replace('nick','dad')
+for k,i in enumerate(WBN,1):
+    fr=dadfix(open(f'/workspace/basics-web/lesson-{k:02d}.html').read())
+    fr=fr.replace('<header><div class="w">','<header><div class="w"><div class="crumbs"><a href="../index.html">Home</a> › <a href="index.html">Program</a> › Web Basics › Lesson '+str(k)+'</div>',1)
+    page(f'learn/lesson-{k:02d}.html',WBT[i],fr,'<script src="lessons.js"></script>')
+    s=open(f'learn/lesson-{k:02d}.html').read().replace('<link rel="stylesheet" href="../style.css">','<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="lessons.css">',1)
+    open(f'learn/lesson-{k:02d}.html','w').write(s)
+    open(f'learn/wb-{i:02d}.html','w').write(f'<!doctype html><meta charset=utf-8><meta name=robots content="noindex,nofollow"><meta http-equiv=refresh content="0;url=lesson-{k:02d}.html"><p>Moved: <a href="lesson-{k:02d}.html">continue</a></p>')
 import subprocess;subprocess.run(['python3','postfix.py'])
