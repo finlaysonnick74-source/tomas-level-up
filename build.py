@@ -519,7 +519,7 @@ nav ul.sub li.more ul a:hover{background:#ffffff14}
 /* wall empty */
 .wempty{border-style:dashed;background:#ffb4430d}
 /* results day cards */
-.dayg{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-top:10px}
+.dayg{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));margin-top:10px}
 .dc{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:16px;border:1px solid #ffffff22;background:#131830;color:#eef0ff;text-decoration:none;min-height:44px}
 .dc b{font-size:1.1rem}.dc .st2{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#c9d0de}
 .dc.done{border-color:#5ee7c9;background:#5ee7c914}.dc.done .st2{color:#5ee7c9}
@@ -534,6 +534,6 @@ for _d,_,_fs in _o.walk('.'):
         if not _f.endswith('.html') or '/raw' in _d: continue
         _p=_o.path.join(_d,_f);_s=open(_p).read()
         if 'classList.add("io")' in _s: continue
-        _s=re.sub(r'href="((?:\.\./)*)style\.css"',r'href="\1style.css?v=3"',_s)
+        _s=re.sub(r'href="((?:\.\./)*)style\.css"',r'href="\1style.css?v=4"',_s)
         _s=_s.replace('</head>',IOHEAD+'</head>',1).replace('</body>',IOBODY+'</body>',1)
         open(_p,'w').write(_s)
