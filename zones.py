@@ -94,7 +94,7 @@ page('wall.html','Wall of support',wall,WALLJS+WFJS+'<script>wallRender(document
 # ---------- Tomas's view: today crew widget ----------
 s=open('today.html').read()
 if 'id="crew"' not in s:
-    s=s.replace('</main>','<section><div class="w"><div class="label">Messages from your crew</div><h2>Your crew is behind you 💛</h2><div class="wallg" id="crew"></div><p style="margin-top:12px"><a href="wall.html">See the whole wall →</a></p></div></section></main>',1).replace('</body>',WALLJS+'<script>wallRender(document.getElementById("crew"),{base:"",limit:6,empty:"Messages from Mum, Nan and Pop and everyone will show up here as soon as they post them."})</script></body>',1)
+    s=s.replace('</main>','<section><div class="w"><div class="label">Messages from your crew</div><h2>Your crew is behind you 💛</h2><div class="wallg" id="crew"></div><p style="margin-top:12px"><a href="wall.html">See the whole wall →</a></p></div></section></main>',1).replace('</body>',WALLJS+'<script>wallRender(document.getElementById("crew"),{base:"",limit:6,empty:"Your entire family and friends are cheering you on. Their messages will pop up right here."})</script></body>',1)
     open('today.html','w').write(s)
 # ---------- Tomas's view landing ----------
 from curriculum import C
